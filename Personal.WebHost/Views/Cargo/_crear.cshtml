@@ -1,0 +1,134 @@
+﻿@model Personal.ViewModels.listarAreaCargoxPersonaVM
+@using Personal.Utilities;
+@using BussinessEntity;
+@using Personal.WebHost.Helper;
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <script src="~/Scripts/modulesGlobals/listboxJS.js"></script>
+    <script src="~/Scripts/modulesGlobals/treeAreaJS.js"></script>
+
+    <div class="tabcontent-form">
+        <div class="form" style="margin-top: 20px">
+
+
+            <div class="form-content">
+                <div class="form-row">
+                    <div class="form-row-cell title-cell-bold" style="text-transform: capitalize; font: 12px/16px 'Sg-SemiBold'">
+                        @Html.DisplayNameFor(Model => Model.clsInstancia.V_DES_INSTANCIA)
+                    </div>
+
+                </div>
+                <div class="form-row">
+                    <div class="form-row-cell" style="width:96%">
+                        <div class="umIEB">
+                            <span class="umJEB">
+                                <div class="umJEB-parent-img">
+                                    <img style="top: 0px;" src="../Images/ico-gridview-status.png">
+                                </div>
+                            </span>
+                            <span class="umLEB">
+                                <div class="umAX umLT umKEB" style="-webkit-user-select: none;">
+                                    <span data-name="instancia"></span>
+                                    <div class="umAX umMT" data-value="-1" data-estado="ap">seleccione</div>
+                                    <div class="umAX umJT"></div>
+                                    <div class="listbox-content" id="listbox-instancia" style="display: none;">
+                                    </div>
+                                </div>
+                            </span>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="form-content">
+                <div class="form-row">
+                    <div class="form-row-cell title-cell-bold" style="text-transform: capitalize; font: 12px/16px 'Sg-SemiBold'">
+                        @Html.DisplayNameFor(Model => Model.clsArea.V_DES_FUNCIONES)
+                    </div>
+
+                </div>
+                <div class="form-row">
+                    <div class="form-row-cell" style="width:96%">
+                        <div class="umIEB">
+                            <span class="umJEB">
+                                <div class="umJEB-parent-img">
+                                    <img style="top: 0px;" src="../Images/ico-gridview-status.png">
+                                </div>
+                            </span>
+                            <span class="umLEB">
+                                <div class="umAX umLT umKEB" style="-webkit-user-select: none;">
+                                    <span data-name="Area"></span>
+                                    <div class="umAX umMT" data-value="-1" data-estado="ap">seleccione</div>
+                                    <div class="umAX umJT"></div>
+                                    <div class="listbox-content" id="listbox-area" style="display: none;">
+                                    </div>
+                                </div>
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="form-content">
+                <div class="form-row">
+                    <div class="form-row-cell title-cell-bold" style="text-transform: capitalize; font: 12px/16px 'Sg-SemiBold'">
+                        @Html.DisplayNameFor(Model => Model.clsCargo.V_DES_CARGO)
+                    </div>
+
+                </div>
+                <div class="form-row">
+                    <div class="form-row-cell" style="width: 96%">
+                        <div class="umIEB">
+                            <span class="umJEB">
+                                <div class="umJEB-parent-img">
+                                    <img style="top: 0px;" src="../Images/ico-gridview-status.png">
+                                </div>
+                            </span>
+                            <span class="umLEB">
+                                <div class="umAX umLT umKEB" style="-webkit-user-select: none;">
+                                    <span data-name="Cargo"></span>
+                                    <div class="umAX umMT" data-value="-1" data-estado="ap">seleccione</div>
+                                    <div class="umAX umJT"></div>
+                                    <div class="listbox-content" id="listbox-cargo" style="display: none;">
+                                    </div>
+                                </div>
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-row-cell title-cell-bold">
+                    <label for="MA_CARRERA_PROFESIONALES_V_DES_CARRERA_PROFESIONAL" class="labelText">@Html.DisplayNameFor(m => m.clsPeopleCharge.D_FEC_INGRESO)</label>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-row-cell" style="width:100%">
+                    @Html.selectDia(new Dictionary<string, string>() { { "class", "fecha" }, { "name", Html.DisplayNameFor(Model => Model.iDia).ToString() } })
+                    @Html.selectMes(new Dictionary<string, string>() { { "class", "fecha" }, { "name", Html.DisplayNameFor(Model => Model.iMes).ToString() } })
+                    @Html.selectAño(new Dictionary<string, string>() { { "class", "fecha" }, { "name","iAno" } })
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-row-cell title-cell-bold">
+                    <label for="MA_CARRERA_PROFESIONALES_V_DES_CARRERA_PROFESIONAL" class="labelText">@Html.DisplayNameFor(m => m.clsPeopleCharge.V_OBSERVACION_INGRESO)</label>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-row-cell" style="width:100%">
+                    @Html.TextAreaFor(m => m.clsPeopleCharge.V_OBSERVACION_INGRESO, new { @id = "V_OBSERVACION_INGRESO", @placeholder = "Motivo", @class = "empty observacion" })
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+}
+
+<script src="~/Scripts/pages/CargoJS/createChargeJS.js"></script>

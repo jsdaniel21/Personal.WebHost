@@ -1,0 +1,130 @@
+﻿@model BussinessEntity.RRHH_PERSONA_DOMICILIO
+
+@using (Html.BeginForm())
+{
+
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    @Html.Hidden("latitude")
+    @Html.Hidden("longitude")
+    @Html.Hidden("codPersona", HttpContext.Current.Request.QueryString["codPersona"])
+    @Html.Hidden("optMaps", "inputMaps", htmlAttributes: new { @data_op_maps = "inputMaps" })
+    <div class="tabcontent-form">
+        <div class="form">
+
+            <section data-page="1">
+                <div class="form-content">
+                    <div class="form-row">
+                        <div class="form-row-cell title-cell-bold">
+                            @Html.LabelFor(model => model.I_COD_PAIS)
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-row-cell" style="width:100%">
+                            @Html.DropDownListFor(model => model.I_COD_PAIS, (SelectList)ViewBag.listarPais, "--SELECT--")
+                        </div>
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div class="form-row">
+                        <div class="form-row-cell title-cell-bold">
+                            @Html.LabelFor(model => model.C_COD_DEPARTAMENTO)
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-row-cell" style="width:100%">
+                            <select id="C_COD_DEPARTAMENTO" name="C_COD_DEPARTAMENTO">
+                                <option>--SELECT--</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div class="form-row">
+                        <div class="form-row-cell title-cell-bold">
+                            @Html.LabelFor(model => model.C_COD_PROVINCIA)
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-row-cell" style="width:100%">
+
+                            <select id="C_COD_PROVINCIA" name="C_COD_PROVINCIA">
+                                <option>--SELECT--</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div class="form-row">
+                        <div class="form-row-cell title-cell-bold">
+                            @Html.LabelFor(model => model.C_COD_DISTRITO)
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-row-cell" style="width:100%">
+                            <select id="C_COD_DISTRITO" name="C_COD_DISTRITO">
+                                <option>--SELECT--</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section data-page="2" style="display:none">
+                <div class="form-content">
+                    <div class="form-row">
+                        <div class="form-row-cell title-cell-bold">
+                            @Html.LabelFor(model => model.V_DES_DIRECCION)
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-row-cell" style="width:100%">
+                            @Html.EditorFor(m => m.V_DES_DIRECCION)
+                        </div>
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div class="form-row">
+                        <div class="form-row-cell title-cell-bold">
+                            @Html.LabelFor(model => model.V_DES_URBANIZACION)
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-row-cell" style="width:100%">
+                            @Html.EditorFor(m => m.V_DES_URBANIZACION)
+                        </div>
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div class="form-row">
+                        <div class="form-row-cell title-cell-bold">
+                            @Html.LabelFor(model => model.I_COD_TIPO_DOMICILIO)
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-row-cell" style="width:100%">
+                            @Html.DropDownListFor(m => m.I_COD_TIPO_DOMICILIO, (SelectList)ViewBag.listarTipoDomicilio, "--SELECT--")
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section data-page="3" style="display:none">
+
+                <iframe src="@Url.Action("Maps", "Maps")" class="iframeMaps" id="ifraMaps"></iframe>
+            </section>
+
+        </div>
+
+    </div>
+
+}

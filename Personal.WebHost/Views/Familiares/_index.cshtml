@@ -1,0 +1,196 @@
+﻿@model IEnumerable<Personal.ViewModels.listPeopleFamilyVM>
+
+<script src="~/Scripts/modulesGlobals/listboxJS.js"></script>
+<script src="~/Scripts/animation/SlidePointJS.js"></script>
+<style>
+    input[type="text"]:not(.input-convert-cell) {
+        font-size: 12px;
+        width: 92%;
+        text-transform: lowercase;
+        padding: 0px 0px 0px 6px;
+        font-style: italic;
+        text-transform: capitalize;
+        border: 1px solid #a6a6a6;
+        height: 20px;
+    }
+
+    input.input-convert-cell {
+        border: 1px solid transparent;
+        color: #0C0A0A;
+        padding: 0px 0px 0px 6px;
+        font-style: normal;
+        background: transparent;
+        font-size: 12px;
+        height: 20px;
+        width: 92%;
+        text-transform: lowercase;
+    }
+
+    table.table-control {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    .table-control > thead > tr > th {
+        vertical-align: middle;
+        border-bottom: 2px solid #000;
+        text-align: left;
+        text-transform: uppercase;
+        font-weight: normal;
+        padding-left: 9px;
+        color: #0C0A0A;
+        font-size: 12px;
+        padding-bottom: 5px;
+    }
+
+    .table-control > tbody > tr {
+        background: #f3f3f3;
+    }
+
+        .table-control > tbody > tr > td:first-child {
+            width: 5px;
+            padding: 0;
+            background: #fff;
+        }
+
+        .table-control > tbody > tr > td {
+            box-sizing: border-box;
+            padding-left: 5px;
+            padding-right: 10px;
+            height: 31px;
+            background-color: #f3f3f3;
+            text-transform: capitalize;
+            border-bottom: 2px solid #fff;
+            padding-bottom: 5px;
+            font-size: 12px;
+        }
+
+    .combo-display-text {
+        -webkit-user-select: none;
+        width: 150px;
+        line-height: 22px;
+        border: 1px solid #a6a6a6;
+        font-weight: normal;
+        color: rgb(12, 10, 10);
+    }
+
+    .hidden-ico-combo {
+        display: none;
+    }
+</style>
+<h1 class="itemtitle">Familiares</h1>
+ 
+@Html.Hidden("codMenu", (string)ViewBag.codMenu)
+
+<div class="aux-tabcontent">
+    <div id="content-page-ajax">
+        <div class="tabcontent-form" tabindex="1" style="width:100%">
+            <div class="tabcontent-header">
+                <h2 id="tabcontent-title">Agrege los familiares del personal</h2>
+            </div>
+            <div class="form" id="table-control">
+                <table class="table-control">
+                    <thead>
+                        <tr>
+                            <td></td>
+                            <th>
+                                @Html.DisplayNameFor(m => m.FirstOrDefault().clsPeople.V_NOMBRES)
+                            </th>
+                            <th>
+                                Apellidos
+                            </th>
+                            <th></th>
+                            <th>
+                                @Html.DisplayNameFor(m => m.FirstOrDefault().clsTypeFamily.V_DES_TIPO_FAMILIAR)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(m => m.FirstOrDefault().clsOccupation.V_DES_OCUPACION)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr data-edit="true">
+                                <td></td>
+                                <td>
+                                    @Html.TextBoxFor(model => item.clsPeople.V_NOMBRES, htmlAttributes: new
+                       {
+                           @class = "input-convert-cell "
+                       })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(model => item.clsPeople.V_APELLIDO_PATERNO, htmlAttributes: new
+                       {
+                           @class = "input-convert-cell "
+                       })
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(model => item.clsPeople.V_APELLIDO_MATERNO, htmlAttributes: new
+                       {
+                           @class = "input-convert-cell "
+                       })
+                                </td>
+                                <td>
+                                    <div class="combo-details-cell-content" style="width: 200px; margin-top: 1px; ">
+                                        <div class="umIEB form-inline-input">
+                                            <span class="umLEB" style="margin-left:0">
+                                                <div class="umAX umLT umKEB combo-display-text" style="border:1px solid transparent;background:transparent">
+                                                    <div class="umAX umMT" data-value="-1" data-estado="ap">
+                                                        @Html.DisplayFor(model => item.clsTypeFamily.V_DES_TIPO_FAMILIAR)
+                                                    </div>
+                                                    <div class="umAX umJT hidden-ico-combo"></div>
+                                                    <div class="listbox-content" style="display: none;">
+                                                    </div>
+
+                                                </div>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(model => item.clsOccupation.V_DES_OCUPACION, htmlAttributes: new
+                       {
+                           @class = "input-convert-cell "
+                       })
+                                </td>
+                            </tr>
+                        }
+
+                        <tr data-event="true">
+                            <td></td>
+                            <td>
+                                <input placeholder="nombre del familiar" type="text" value="" />
+                            </td>
+                            <td>
+                                <input placeholder="nombre del familiar" type="text" value="" />
+                            </td>
+                            <td><input placeholder="nombre del familiar" type="text" value="" /></td>
+                            <td>
+                                <div class="combo-details-cell-content" style="width: 200px; margin-top: 1px; ">
+                                    <div class="umIEB form-inline-input">
+                                        <span class="umLEB" style="margin-left:0">
+                                            <div class="umAX umLT umKEB combo-display-text">
+                                                <div class="umAX umMT" data-value="-1" data-estado="ap"></div>
+                                                <div class="umAX umJT"></div>
+                                                <div class="listbox-content" id="listbox-grade-academic" style="display: none;">
+                                                </div>
+
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </td>
+                            <td><input placeholder="nombre del familiar" type="text" value="" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/pages/FamiliaresJS/indexJS.js"></script>

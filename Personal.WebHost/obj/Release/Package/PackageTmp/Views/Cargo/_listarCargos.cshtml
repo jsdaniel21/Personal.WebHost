@@ -1,0 +1,149 @@
+﻿@model IEnumerable<Personal.ViewModels.listarAreaCargoxPersonaVM>
+
+
+@Html.Hidden("codMenu", (string)ViewBag.codMenu)
+
+<script src="~/Scripts/animation/PopupUp.js"></script>
+<script src="~/Scripts/modulesGlobals/treeAreaJS.js"></script>
+<h1 class="itemtitle">Cargos</h1>
+<div class="itemList">
+    <ul style="z-index: -4; width: 50%">
+        <li class="itemList-img">
+            <img src="../Images/ico-tab-pane-.png">
+        </li>
+        <li class="itemList-active" tabindex="0">Consultar</li>
+        <li tabindex="1" style="display: none">Modificar</li>
+
+    </ul>
+</div>
+
+
+<div class="aux-tabcontent">
+    <div class="gridcontainer">
+
+        <table id="gridQueryCargos">
+            <thead>
+                <tr>
+                    <th style="width:540px">
+                        <a href="#">@Html.DisplayNameFor(m => m.FirstOrDefault().clsInstancia.V_DES_INSTANCIA)</a>
+                    </th>
+                    <th style="width:180px">
+                        <a href="#">@Html.DisplayNameFor(m => m.FirstOrDefault().clsArea.V_DES_FUNCIONES)</a>
+                    </th>
+                    <th style="width:180px">
+                        <a href="#">@Html.DisplayNameFor(m => m.FirstOrDefault().clsCargo.V_DES_CARGO)</a>
+                    </th>
+                    <th style="width:250px">
+                        <a href="#">@Html.DisplayNameFor(m => m.FirstOrDefault().clsPeopleCharge.D_FEC_REGISTRO)</a>
+                    </th>
+                    <th style="width:250px">
+                        <a href="#">@Html.DisplayNameFor(m => m.FirstOrDefault().clsPeopleCharge.D_FEC_BAJA)</a>
+                    </th>
+                    <th style="width:120px">
+                        <a href="#">@Html.DisplayNameFor(m => m.FirstOrDefault().clsPeopleCharge.C_ACTIVO)</a>
+                        <div class="search" id="tableSearch" title="Buscar">
+                            <a>
+                                <img src="../Images/ico-search.png">
+                            </a>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @{int i = -1;}
+                @foreach (var item in Model)
+                {
+                    i++;
+                    var style = "class=not-active-row-td";
+                    if (i == 0)
+                    {
+                        style = "class=active-row-select";
+                    }
+                    <tr @style>
+                        <td class="active-row-td">
+                            <span class="rowId select" style="display: none;">@Html.DisplayFor(modelItem => item.clsPeopleCharge.I_COD_PERSONA_CARGO)</span>
+                            <span class="select">@Html.DisplayFor(modelItem => item.clsInstancia.V_DES_INSTANCIA) </span>
+
+                        </td>
+
+                        <td>
+                            <span>@Html.DisplayFor(modelItem => item.clsArea.V_ABREV_FUNCIONES)</span>
+                        </td>
+                        <td>
+                            <span>@Html.DisplayFor(modelItem => item.clsCargo.V_DES_CARGO)</span>
+                        </td>
+                        <td>
+                            <span>@Html.DisplayFor(modelItem => item.clsPeopleCharge.D_FEC_REGISTRO)</span>
+                        </td>
+                        <td>
+                            @{if (item.clsPeopleCharge.D_FEC_BAJA == DateTime.MinValue)
+                            {
+                                <span></span>
+                            }
+                            else
+                            {                                 
+                                <span>@Html.DisplayFor(modelItem => item.clsPeopleCharge.D_FEC_BAJA)</span>
+                            }
+
+                            }
+
+                        </td>
+                        <td>
+                            <span>@Html.DisplayFor(modelItem => item.clsPeopleCharge.C_ACTIVO)</span>
+                        </td>
+
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+
+    </div>
+</div>
+<div id="PopUp-observacion" style="display: none; margin: -200px 0px 0px -343px; height: 400px;border:none;border-radius:0px 0px " class="PopUp">
+    <div class="titlefancybox" title="Cerrar" id="popup-close">
+    </div>
+
+    <div class="PopUp-content-form" style="height:280px">
+        <a title="cerrar" href="#" class="popUp-Close">
+            <img src="../Images/ico-popup-close.png" alt="cerrar" />
+        </a>
+        <p class="aux-popup-header">Anular cargo</p>
+        <h2 class="PopUp-title-form" style="text-transform: capitalize">anular cargo del empleado</h2>
+
+        <div data-for-popup="ex">
+            <p>
+                Se estará  anulando el <strong>cargo</strong> del 'empleado'. El sistema
+                requiere que ingrese el motivo de la anulacion del cargo para que se ha movido
+                ha otra area o instancia.
+            </p>
+            <div class="tabcontent-form">
+                <div class="form" style="margin-top: 20px">
+                    <div class="form-content">
+                        <div class="form-row">
+                            <div class="form-row-cell title-cell-bold" style="text-transform: capitalize; font: 12px/16px 'Sg-SemiBold'">
+                                ingrese motivo
+                            </div>
+
+                        </div>
+                        <div class="form-row">
+                            <div class="form-row-cell" style="width: 100%">
+                                <textarea rows="6" cols="50" id="motivo" placeholder="Motivo" class="empty" style="width: 100%; font-family: 'Segoe UI'; font-size: 12px"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="popup-footer-ico">
+        <div class="content-ico">
+            <div class="ico-popup-yes" title="aceptar" id="popup-observacion-submit"></div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/pages/CargoJS/listarCargoJS.js"></script>

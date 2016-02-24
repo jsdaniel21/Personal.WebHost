@@ -1,0 +1,24 @@
+﻿@Html.Hidden("codMenu", (string)ViewBag.codMenu)
+
+<script src="~/Scripts/animation/PopupUp.js"></script>
+<script src="~/Scripts/modulesGlobals/listboxJS.js"></script>
+@Html.Hidden("C_COD_PERSONA", HttpContext.Current.Request.QueryString["codPersona"])
+<h1 class="itemtitle">Experiencias Laborales</h1>
+<div class="itemList">
+    <ul style="width: 50%;display: none">
+        <li class="itemList-img">
+            <img src="../Images/ico-tab-pane-.png">
+        </li>
+        <li class="itemList-active" tabindex="0" data-href="/Estudios/_listStudies">Modificar</li>
+
+    </ul>
+</div>
+
+
+<div class="aux-tabcontent">
+    <div id="content-page-ajax">
+        @Html.Partial("_listJobs", (IEnumerable<BussinessEntity.SG_PERSONA_TRABAJO>)ViewBag.Model)
+    </div>
+</div>
+  
+<script src="~/Scripts/pages/JobsJS/indexJS.js"></script>

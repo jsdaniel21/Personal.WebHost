@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "edit";
+}
+@model BussinessEntity.MA_TIPO_MODALIDAD
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        @Html.HiddenFor(model => model.I_COD_TIPO_MODALIDAD)
+        <h1 class="itemtitle">Modalidad</h1>
+        <div class="itemList">
+            <ul style="width: 50%;">
+                <li class="itemList-img">
+                    <img src="../Images/ico-tab-pane-.png">
+                </li>
+                <li tabindex="0" data-href="/Estudios/_listStudies">Detalle</li>
+                <li class="itemList-active" tabindex="0" data-href="/Estudios/_listStudies">Modificar</li>
+            </ul>
+        </div>
+        <div class="aux-tabcontent">
+            <div>
+                <div class="tabcontent-header">
+                    <h2 id="tabcontent-title">
+                        Datos
+                    </h2>
+                </div>
+            </div>
+            <div style="height:450px;position: relative;overflow-y: auto;">
+                <div id="content-page-ajax">
+                    <div class="tabcontent-form">
+                        <div class="form">
+                            <div class="form-content">
+                                <div class="form-row">
+                                    <div class="form-row-cell title-cell-bold">
+                                        Codigo : @Html.DisplayFor(model => model.I_COD_TIPO_MODALIDAD)
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-row-cell title-cell-bold">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-content">
+                                <div class="form-row">
+                                    <div class="form-row-cell title-cell-bold">
+                                        @Html.LabelFor(model => model.V_DES_TIPO_MODALIDA)
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-row-cell ">
+                                        @Html.EditorFor(model => model.V_DES_TIPO_MODALIDA)
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <script src="~/Scripts/pages/Modalidad/indexJS.js"></script>

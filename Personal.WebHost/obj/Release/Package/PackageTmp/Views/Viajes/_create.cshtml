@@ -1,0 +1,107 @@
+﻿@model Personal.ViewModels.listTravelVM
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @*<div class="itemList">
+            <ul style="width: 50%;">
+                <li class="itemList-img">
+                    <img src="../Images/ico-tab-pane-.png">
+                </li>
+                <li class="itemList-active" tabindex="0" data-href="/Estudios/_listStudies">registrar</li>
+
+            </ul>
+        </div>*@
+
+    <div class="tabcontent-form">
+        @*<div class="tabcontent-header">
+                <h2>agrege los viajes realizados por el personal</h2>
+            </div>*@
+        <div class="form">
+            <div class="form-content">
+                <div class="form-row">
+                    <div class="form-row-cell title-cell-bold">
+                        @Html.LabelFor(model => model.clsPais.V_DES_PAIS)
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-row-cell" style="width:97%">
+                        <div class="umIEB">
+                            <span class="umJEB">
+                                <div class="umJEB-parent-img">
+                                    <img style="top: 0px;" src="../Images/ico-gridview-status.png">
+                                </div>
+                            </span>
+                            <span class="umLEB">
+                                <div class="umAX umLT umKEB" style="-webkit-user-select: none;">
+                                    <div class="umAX umMT" data-value="-1" data-estado="ap">seleccione</div>
+                                    <div class="umAX umJT"></div>
+                                    <div class="listbox-content" id="listbox-pais" style="display: none;">
+                                    </div>
+                                    @Html.HiddenFor(Model => Model.clsPais.I_COD_PAIS
+                                                , htmlAttributes: new
+                                                {
+                                                    @id = "I_COD_PAIS"
+
+                                                })
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="form-content">
+                <div class="form-row">
+                    <div class="form-row-cell title-cell-bold">
+                        @Html.LabelFor(model => model.clsPeopleTravel.I_AÑO)
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-row-cell" style="width:100%">
+                        @Html.TextBoxFor(model => model.clsPeopleTravel.I_AÑO, htmlAttributes: new
+                   {
+                       @id = "I_AÑO"
+                   })
+                    </div>
+                </div>
+            </div>
+            <div class="form-content">
+                <div class="form-row">
+                    <div class="form-row-cell title-cell-bold">
+                        @Html.LabelFor(model => model.clsPeopleTravel.V_TIEMPO_PERMANENCIA)
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-row-cell" style="width:100%">
+                        @Html.TextBoxFor(model => model.clsPeopleTravel.V_TIEMPO_PERMANENCIA, htmlAttributes: new
+                   {
+                       @id = "V_TIEMPO_PERMANENCIA"
+                   })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-content">
+                <div class="form-row">
+                    <div class="form-row-cell title-cell-bold">
+                        @Html.LabelFor(model => model.clsPeopleTravel.V_DES_MOTIVO)
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-row-cell" style="width:100%">
+                        @Html.TextBoxFor(model => model.clsPeopleTravel.V_DES_MOTIVO, htmlAttributes: new
+                   {
+                       @id = "V_DES_MOTIVO"
+                   })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @Html.HiddenFor(Model => Model.clsPeopleTravel.C_COD_PERSONA, htmlAttributes: new
+                    {
+                        @id = "_C_COD_PERSONA"
+                    })
+}

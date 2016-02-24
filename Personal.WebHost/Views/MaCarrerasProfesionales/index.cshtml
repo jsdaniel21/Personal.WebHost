@@ -1,0 +1,22 @@
+﻿
+<script src="~/Scripts/animation/PopupUp.js"></script>
+<script src="~/Scripts/modulesGlobals/listboxJS.js"></script>
+<h1 class="itemtitle">CARRERA PROFESIONAL</h1>
+<div class="itemList">
+    <ul style="width: 50%;">
+        <li class="itemList-img">
+            <img src="../Images/ico-tab-pane-.png">
+        </li>
+        <li class="itemList-active" tabindex="0" data-href="/Estudios/_listStudies">Detalle</li>
+        <li tabindex="0" data-href="/Estudios/_listStudies">Modificar</li>
+    </ul>
+</div>
+
+
+
+<div class="aux-tabcontent">
+    <div id="content-page-ajax">
+        @Html.Partial("_listarCarrerasProfesional", (IEnumerable<BussinessEntity.MA_CARRERA_PROFESIONALES>)ViewBag.lista)
+    </div>
+</div>
+<script src="~/Scripts/pages/Modalidad/indexJS.js"></script>

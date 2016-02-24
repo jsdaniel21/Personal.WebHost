@@ -1,0 +1,9 @@
+G:\Sistema Gestion RRHH\Personal.WebHost\Personal.Interfaces\bin\Release\Personal.Interfaces.dll
+G:\Sistema Gestion RRHH\Personal.WebHost\Personal.Interfaces\bin\Release\Personal.Interfaces.pdb
+G:\Sistema Gestion RRHH\Personal.WebHost\Personal.Interfaces\bin\Release\Personal.BussinessEntity.dll
+G:\Sistema Gestion RRHH\Personal.WebHost\Personal.Interfaces\bin\Release\Personal.EntityQuerys.dll
+G:\Sistema Gestion RRHH\Personal.WebHost\Personal.Interfaces\bin\Release\Personal.BussinessEntity.pdb
+G:\Sistema Gestion RRHH\Personal.WebHost\Personal.Interfaces\bin\Release\Personal.EntityQuerys.pdb
+G:\Sistema Gestion RRHH\Personal.WebHost\Personal.Interfaces\obj\Release\Personal.Interfaces.csprojResolveAssemblyReference.cache
+G:\Sistema Gestion RRHH\Personal.WebHost\Personal.Interfaces\obj\Release\Personal.Interfaces.dll
+G:\Sistema Gestion RRHH\Personal.WebHost\Personal.Interfaces\obj\Release\Personal.Interfaces.pdb

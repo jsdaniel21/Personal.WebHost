@@ -1,0 +1,42 @@
+﻿@{
+
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Place Autocomplete</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link href="~/Content/Gmaps.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places" type="text/javascript"></script>
+    <script src="~/Scripts/jMaps.js"></script>
+    <style>
+        .MarkerPopUp {
+            height: 100px;
+            width: 100px;
+        }
+
+        .MarkerContext {
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="mapSearch">
+        <input id="pac-input" class="controls" type="text" placeholder="Enter a location">
+        <div id="type-selector" class="controls">
+
+            <input type="radio" name="type" id="changetype-all" checked="checked">
+            <label for="changetype-all">
+                All
+            </label>
+        </div>
+    </div>
+
+    <div id="map-canvas">
+    </div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+G:\Sistema Gestion RRHH\Personal.WebHost\Personal.Models\bin\Release\Personal.Models.dll
+G:\Sistema Gestion RRHH\Personal.WebHost\Personal.Models\bin\Release\Personal.Models.pdb
+G:\Sistema Gestion RRHH\Personal.WebHost\Personal.Models\obj\Release\Personal.Models.dll
+G:\Sistema Gestion RRHH\Personal.WebHost\Personal.Models\obj\Release\Personal.Models.pdb

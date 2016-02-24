@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3C2D2EE7-E28A-4793-B63A-EDECEB46A267}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Personal.Interfaces</RootNamespace>
+    <AssemblyName>Personal.Interfaces</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IArea.cs" />
+    <Compile Include="IGradoMilitarRepository.cs" />
+    <Compile Include="IMaInstanciaRepository.cs" />
+    <Compile Include="IMatipoEmpleadoRepository.cs" />
+    <Compile Include="IMesesRepository.cs" />
+    <Compile Include="IPeopleCharge.cs" />
+    <Compile Include="IPeopleDomicilio.cs" />
+    <Compile Include="IPeopleFamily.cs" />
+    <Compile Include="IPeopleJobs.cs" />
+    <Compile Include="IPeopleStudies.cs" />
+    <Compile Include="IPeopleTravel.cs" />
+    <Compile Include="IPeopleVehicles.cs" />
+    <Compile Include="IPersona.cs" />
+    <Compile Include="IPrvUsuario.cs" />
+    <Compile Include="IMaTipoModalidadRepository.cs" />
+    <Compile Include="IRptPersonalRepository.cs" />
+    <Compile Include="IutilsRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Personal.BussinessEntity\Personal.BussinessEntity.csproj">
+      <Project>{f46aded7-9cd3-4c6e-a929-8ca6ba0df431}</Project>
+      <Name>Personal.BussinessEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Personal.EntityQuerys\Personal.ViewModels.csproj">
+      <Project>{afb8c90c-4820-4132-8fc3-d7b7d75eb657}</Project>
+      <Name>Personal.ViewModels</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

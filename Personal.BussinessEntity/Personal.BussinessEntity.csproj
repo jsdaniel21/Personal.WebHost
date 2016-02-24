@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F46ADED7-9CD3-4C6E-A929-8CA6BA0DF431}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Personal.BussinessEntity</RootNamespace>
+    <AssemblyName>Personal.BussinessEntity</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MA_APERTURAR_AÑO.cs" />
+    <Compile Include="MA_APERTURAR_AÑOS.cs" />
+    <Compile Include="MA_APERTURAR_MES_PEDIDO.cs" />
+    <Compile Include="MA_AREA.cs" />
+    <Compile Include="MA_AREAS.cs" />
+    <Compile Include="MA_ARTICULO.cs" />
+    <Compile Include="MA_AÑO.cs" />
+    <Compile Include="MA_AÑOS.cs" />
+    <Compile Include="MA_CARGO.cs" />
+    <Compile Include="MA_CARRERA_PROFESIONALES.cs" />
+    <Compile Include="MA_COLOR.cs" />
+    <Compile Include="MA_DEPARTAMENTO.cs" />
+    <Compile Include="MA_DETALLE_RAZGO.cs" />
+    <Compile Include="MA_DETALLE_RAZGOS.cs" />
+    <Compile Include="MA_DISTRITO.cs" />
+    <Compile Include="MA_ESPECIALIDAD.cs" />
+    <Compile Include="MA_ESTADO_CIVIL.cs" />
+    <Compile Include="MA_ESTADO_PECOSA.cs" />
+    <Compile Include="MA_ESTADO_PEDIDO.cs" />
+    <Compile Include="MA_GRADO_ACADEMICO.cs" />
+    <Compile Include="MA_GRADO_MILITAR.cs" />
+    <Compile Include="MA_GRUPO_SANGUINEO.cs" />
+    <Compile Include="MA_INSTANCIA.cs" />
+    <Compile Include="MA_INSTANCIA_AREA.cs" />
+    <Compile Include="MA_INSTANCIA_AREAS.cs" />
+    <Compile Include="MA_INSTITUCION.cs" />
+    <Compile Include="MA_MARCA_ARMA.cs" />
+    <Compile Include="MA_MARCA_VEHICULO.cs" />
+    <Compile Include="MA_MENU.cs" />
+    <Compile Include="MA_MENU_SISTEMA.cs" />
+    <Compile Include="MA_MESES.cs" />
+    <Compile Include="MA_MODELO_VEHICULOS.cs" />
+    <Compile Include="MA_OCUPACION.cs" />
+    <Compile Include="MA_PAI.cs" />
+    <Compile Include="MA_PERFIL_MENU_APLICACION.cs" />
+    <Compile Include="MA_PREGUNTA.cs" />
+    <Compile Include="MA_PREGUNTAS.cs" />
+    <Compile Include="MA_PROVINCIA.cs" />
+    <Compile Include="MA_SEXO.cs" />
+    <Compile Include="MA_SITUACION_MILITAR.cs" />
+    <Compile Include="MA_TIPO_APLICACION.cs" />
+    <Compile Include="MA_TIPO_ARMA.cs" />
+    <Compile Include="MA_TIPO_ARTICULO.cs" />
+    <Compile Include="MA_TIPO_DOMICILIO.cs" />
+    <Compile Include="MA_TIPO_EMPLEADO.cs" />
+    <Compile Include="MA_TIPO_ENTIDAD.cs" />
+    <Compile Include="MA_TIPO_ESTADO.cs" />
+    <Compile Include="MA_TIPO_FAMILIAR.cs" />
+    <Compile Include="MA_TIPO_IDENTIFICACION.cs" />
+    <Compile Include="MA_TIPO_IMAGENE.cs" />
+    <Compile Include="MA_TIPO_IMAGENES.cs" />
+    <Compile Include="MA_TIPO_INSTITUCION.cs" />
+    <Compile Include="MA_TIPO_MODALIDAD.cs" />
+    <Compile Include="MA_TIPO_PEDIDO.cs" />
+    <Compile Include="MA_TIPO_PERFIL.cs" />
+    <Compile Include="MA_TIPO_PERSONA.cs" />
+    <Compile Include="MA_TIPO_PREGUNTA.cs" />
+    <Compile Include="MA_TIPO_PREGUNTAS.cs" />
+    <Compile Include="MA_TIPO_RAZGO.cs" />
+    <Compile Include="MA_TIPO_RAZGOS.cs" />
+    <Compile Include="MA_TIPO_SERVICIO_MILITAR.cs" />
+    <Compile Include="MA_TIPO_SEÑALE.cs" />
+    <Compile Include="MA_TIPO_SEÑALES.cs" />
+    <Compile Include="MA_TIPO_SISTEMA.cs" />
+    <Compile Include="MA_TIPO_TELEFONO.cs" />
+    <Compile Include="MA_UNIDAD_MEDIDA.cs" />
+    <Compile Include="PED_ARTICULO_AREA.cs" />
+    <Compile Include="PED_ARTICULO_AREAS.cs" />
+    <Compile Include="PED_ARTICULO_NO_ASIGNADO.cs" />
+    <Compile Include="PED_CAB_ESTADO_VALE.cs" />
+    <Compile Include="PED_CAB_VALE_RETIRO.cs" />
+    <Compile Include="PED_DET_VALE_RETIRO.cs" />
+    <Compile Include="PED_PECOSA_ESTADO.cs" />
+    <Compile Include="PED_PEDIDO_CABECERA.cs" />
+    <Compile Include="PED_PEDIDO_DETALLE.cs" />
+    <Compile Include="PED_PEDIDO_ESTADO.cs" />
+    <Compile Include="PED_PEDIDO_PECOSA.cs" />
+    <Compile Include="PED_VALE_PEDIDO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PRV_USUARIO.cs" />
+    <Compile Include="PRV_USUARIO_ESTADO.cs" />
+    <Compile Include="PRV_USUARIO_PERFIL.cs" />
+    <Compile Include="RRHH_DET_PERSONA_TIPO.cs" />
+    <Compile Include="RRHH_PERSONA.cs" />
+    <Compile Include="RRHH_PERSONA_CARGO.cs" />
+    <Compile Include="RRHH_PERSONA_DETALLE.cs" />
+    <Compile Include="RRHH_PERSONA_DOMICILIO.cs" />
+    <Compile Include="RRHH_PERSONA_GRADO.cs" />
+    <Compile Include="RRHH_PERSONA_IDENTIFICACION.cs" />
+    <Compile Include="RRHH_PERSONA_MODALIDAD.cs" />
+    <Compile Include="RRHH_PERSONA_TELEFONO.cs" />
+    <Compile Include="SG_CAB_PERSONA_FAMILIAR.cs" />
+    <Compile Include="SG_DET_PERSONA_FAMILIAR.cs" />
+    <Compile Include="SG_PERSONA_ARMA.cs" />
+    <Compile Include="SG_PERSONA_ARMAS.cs" />
+    <Compile Include="SG_PERSONA_ESTUDIOS.cs" />
+    <Compile Include="SG_PERSONA_FAMILIAR.cs" />
+    <Compile Include="SG_PERSONA_IMAGENE.cs" />
+    <Compile Include="SG_PERSONA_IMAGENES.cs" />
+    <Compile Include="SG_PERSONA_PREGUNTA.cs" />
+    <Compile Include="SG_PERSONA_PREGUNTAS.cs" />
+    <Compile Include="SG_PERSONA_RAZGO.cs" />
+    <Compile Include="SG_PERSONA_RAZGOS.cs" />
+    <Compile Include="SG_PERSONA_SEÑALE.cs" />
+    <Compile Include="SG_PERSONA_SEÑALES.cs" />
+    <Compile Include="SG_PERSONA_TRABAJO.cs" />
+    <Compile Include="SG_PERSONA_VEHICULOS.cs" />
+    <Compile Include="SG_PERSONA_VIAJE.cs" />
+    <Compile Include="SG_PERSONA_VIAJES.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Personal.Models\Personal.Models.csproj">
+      <Project>{ab428350-4864-46bf-9d65-26adecc05b79}</Project>
+      <Name>Personal.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

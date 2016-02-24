@@ -1,0 +1,240 @@
+﻿@model BussinessEntity.RRHH_PERSONA
+@Html.Hidden("codMenu", (string)ViewBag.codMenu)
+
+
+<script src="~/Scripts/animation/PopupUp.js"></script>
+<script src="~/Scripts/modulesGlobals/listboxJS.js"></script>
+<style>
+    .form {
+        float: left;
+    }
+
+        .form .form-row > div.form-row-cellInline {
+            width: auto;
+        }
+
+            .form .form-row > div.form-row-cellInline > label, .form .form-row > div.form-row-cellInline > a {
+                vertical-align: middle;
+                height: 29px;
+                display: table-cell;
+            }
+</style>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @Html.Hidden("C_COD_PERSONA", HttpContext.Current.Request.QueryString["codPersona"])
+
+
+    <h1 class="itemtitle">CARACTERISTICA DEL PERSONAL</h1>
+    <div class="itemList">
+        <ul style="width: 50%;">
+            <li class="itemList-img">
+                <img src="../Images/ico-tab-pane-.png">
+            </li>
+            <li class="itemList-active" tabindex="0" data-href="/Estudios/_listStudies">Detalle</li>
+
+        </ul>
+    </div>
+
+
+
+    <div class="aux-tabcontent">
+        <div style="height:450px;position: relative;overflow-y: auto;">
+            <div id="content-page-ajax">
+                <div class="tabcontent-form">
+                    <!--<div style="position: fixed;  margin-top: -6px;  background: white;z-index: 1;  width: 883px; height: 70px;">-->
+                    <div>
+                        <div class="tabcontent-header">
+                            <h2 id="tabcontent-title">
+                                Datos Personal
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="form">
+                        <!--<div class="form-content" style="margin-top: 70px;">-->
+                        <div class="form-content">
+                            <div class="form-row">
+                                <div class="form-row-cell title-cell-bold">
+                                    @Html.LabelFor(model => model.V_NOMBRES)
+                                </div>
+                                <div class="form-row-cell title-cell-bold">
+                                    @Html.LabelFor(model => model.V_APELLIDO_PATERNO)
+                                </div>
+                                <div class="form-row-cell title-cell-bold">
+                                    @Html.LabelFor(model => model.V_APELLIDO_MATERNO)
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-row-cell">
+                                    @Html.EditorFor(m => m.V_NOMBRES)
+                                </div>
+                                <div class="form-row-cell">
+                                    @Html.EditorFor(m => m.V_APELLIDO_PATERNO)
+                                </div>
+                                <div class="form-row-cell">
+                                    @Html.EditorFor(m => m.V_APELLIDO_MATERNO)
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-content">
+                            <div class="form-row">
+                                <div class="form-row-cell title-cell-bold">
+                                    @Html.LabelFor(model => model.RRHH_PERSONA_DETALLE.FirstOrDefault().MA_ESTADO_CIVIL.V_DES_ESTADO_CIVIL)
+                                </div>
+                                <div class="form-row-cell title-cell-bold">
+                                    @Html.LabelFor(model => model.RRHH_PERSONA_DETALLE.FirstOrDefault().MA_SEXO.V_DES_SEXO)
+                                </div>
+                                <div class="form-row-cell title-cell-bold">
+                                    @Html.LabelFor(model => model.RRHH_PERSONA_DETALLE.FirstOrDefault().MA_GRUPO_SANGUINEO.V_DES_GRUPO_SANGUINEO)
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-row-cell">
+                                    @Html.DropDownListFor(m => m.RRHH_PERSONA_DETALLE.FirstOrDefault().I_COD_ESTADO_CIVIL, (SelectList)ViewBag.estadoCivil, "--SELECT--")
+                                </div>
+                                <div class="form-row-cell">
+                                    @Html.DropDownListFor(m => m.RRHH_PERSONA_DETALLE.FirstOrDefault().I_COD_SEXO, (SelectList)ViewBag.sexo, "--SELECT--")
+                                </div>
+                                <div class="form-row-cell">
+                                    @Html.DropDownListFor(m => m.RRHH_PERSONA_DETALLE.FirstOrDefault().I_COD_GRUPO_SANGUINEO, (SelectList)ViewBag.gruposanguineo, "--SELECT--")
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-content">
+                            <div class="form-row">
+                                <div class="form-row-cell title-cell-bold">
+                                    @Html.LabelFor(m => m.RRHH_PERSONA_DETALLE.FirstOrDefault().I_PESO)
+                                </div>
+                                <div class="form-row-cell title-cell-bold">
+                                    @Html.LabelFor(m => m.RRHH_PERSONA_DETALLE.FirstOrDefault().DE_TALLA)
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+                                <div class="form-row-cell">
+                                    @Html.EditorFor(m => m.RRHH_PERSONA_DETALLE.FirstOrDefault().I_PESO)
+                                </div>
+                                <div class="form-row-cell">
+                                    @Html.EditorFor(m => m.RRHH_PERSONA_DETALLE.FirstOrDefault().DE_TALLA)
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form">
+                        <div class="tabcontent-header">
+                            <h2 id="">Modalidad del Personal</h2>
+                        </div>
+                        <div class="form-content">
+                            <div class="form-row">
+                                <div class="form-row-cell title-cell-bold">
+                                    @Html.LabelFor(m => m.RRHH_PERSONA_MODALIDAD.FirstOrDefault().MA_TIPO_MODALIDAD.MA_TIPO_EMPLEADO.V_DES_TIPO_EMPLEADO)
+                                </div>
+                                <div class="form-row-cell title-cell-bold">
+                                    @Html.LabelFor(m => m.RRHH_PERSONA_MODALIDAD.FirstOrDefault().MA_TIPO_MODALIDAD.V_DES_TIPO_MODALIDA)
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-row-cell">
+                                    @Html.DropDownListFor(m => m.RRHH_PERSONA_MODALIDAD.FirstOrDefault().MA_TIPO_MODALIDAD.I_COD_TIPO_EMPLEADO
+                                    , (SelectList)ViewBag.tipoEmpleado, "--SELECT--", htmlAttributes: new { @id = "I_COD_TIPO_EMPLEADO" })
+                                </div>
+                                <div class="form-row-cell">
+                                    @Html.DropDownListFor(m => m.RRHH_PERSONA_MODALIDAD.FirstOrDefault().I_COD_TIPO_MODALIDAD,
+                                    (SelectList)ViewBag.modalidad, "--SELECT--", htmlAttributes: new { @id = "I_COD_TIPO_MODALIDAD" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form">
+                        <div class="tabcontent-header">
+                            <h2 id="">DOCUMENTO IDENTIFICACION</h2>
+                        </div>
+                        <div class="form-content">
+
+                            <div class="form" id="table-control">
+                                <table class="table-control" id="queryIdentificacion">
+                                    <thead>
+                                        <tr>
+                                            <td></td>
+                                            <th>
+                                                @Html.LabelFor(m => m.RRHH_PERSONA_IDENTIFICACION.FirstOrDefault().MA_TIPO_IDENTIFICACION.V_DES_TIPO_IDENTIFICACION
+                                            , htmlAttributes: new { })
+
+                                            </th>
+                                            <th>
+                                                @Html.LabelFor(m => m.RRHH_PERSONA_IDENTIFICACION.FirstOrDefault().MA_TIPO_IDENTIFICACION.I_COD_TIPO_IDENTIFICACION
+                                            , htmlAttributes: new { })
+                                            </th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="form">
+                            <div class="tabcontent-header">
+                                <h2 id="">LUGAR NACIMIENTO</h2>
+                            </div>
+                            <div class="form-content">
+                                <div class="form-row">
+                                    <div class="form-row-cell title-cell-bold">
+                                        @Html.LabelFor(m => m.RRHH_PERSONA_DETALLE.FirstOrDefault().MA_PAIS.V_DES_PAIS)
+                                    </div>
+                                    <div class="form-row-cell title-cell-bold">
+                                        @Html.LabelFor(m => m.RRHH_PERSONA_DETALLE.FirstOrDefault().MA_DEPARTAMENTO.V_DES_DEPARTAMENTO)
+                                    </div>
+                                    <div class="form-row-cell title-cell-bold">
+                                        @Html.LabelFor(m => m.RRHH_PERSONA_DETALLE.FirstOrDefault().MA_PROVINCIA.V_DES_PROVINCIA)
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-row-cell">
+                                        @Html.DropDownListFor(m => m.RRHH_PERSONA_DETALLE.FirstOrDefault().I_COD_PAIS, (SelectList)ViewBag.pais, "--SELECT--")
+                                    </div>
+                                    <div class="form-row-cell">
+                                        @Html.DropDownListFor(m => m.RRHH_PERSONA_DETALLE.FirstOrDefault().C_COD_DEPARTAMENTO, (SelectList)ViewBag.departamento, "--SELECT--")
+                                    </div>
+                                    <div class="form-row-cell">
+                                        @Html.DropDownListFor(m => m.RRHH_PERSONA_DETALLE.FirstOrDefault().C_COD_PROVINCIA, (SelectList)ViewBag.provincia, "--SELECT--")
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="form-content">
+                                <div class="form-row">
+                                    <div class="form-row-cell title-cell-bold">
+                                        @Html.LabelFor(m => m.RRHH_PERSONA_DETALLE.FirstOrDefault().MA_DISTRITO.V_DES_DISTRITO)
+                                    </div>
+                                    <div class="form-row-cell title-cell-bold">
+                                        @Html.LabelFor(m => m.RRHH_PERSONA_DETALLE.FirstOrDefault().D_FEC_NACIMIENTO)
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-row-cell">
+                                        @Html.DropDownListFor(m => m.RRHH_PERSONA_DETALLE.FirstOrDefault().C_COD_DISTRITO, (SelectList)ViewBag.distrito, "--SELECT--")
+                                    </div>
+                                    <div class="form-row-cell">
+                                        @Html.EditorFor(m => m.RRHH_PERSONA_DETALLE.FirstOrDefault().D_FEC_NACIMIENTO)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <script src="~/Scripts/pages/EmployeesJS/detailsJS.js"></script>
+
+    </div>
+}
+

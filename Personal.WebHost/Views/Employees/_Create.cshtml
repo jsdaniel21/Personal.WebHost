@@ -1,0 +1,101 @@
+﻿@model Personal.ViewModels.CreatePeopleVM
+@using BussinessEntity;
+
+<style>
+    body {
+        overflow-y: auto;
+    }
+
+
+
+    .inline-label {
+        width: 130px;
+        box-sizing: border-box;
+        text-align: right;
+    }
+
+    .inline-content {
+        width: 320px !important;
+        box-sizing: border-box !important;
+    }
+
+    select:disabled {
+        background-color: #e6e6e6;
+    }
+</style>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="tabcontent-form" data-page="1">
+        <div class="form">
+            <div class="form-inline-content">
+                @Html.LabelFor(Model => Model.clsPersona.V_NOMBRES, htmlAttributes: new { @class = "form-inline-text-input" })
+                @Html.TextBoxFor(Model => Model.clsPersona.V_NOMBRES, htmlAttributes: new { })
+            </div>
+            <div class="form-inline-content">
+                @Html.LabelFor(Model => Model.clsPersona.V_APELLIDO_PATERNO, htmlAttributes: new { @class = "form-inline-text-input" })
+                @Html.TextBoxFor(Model => Model.clsPersona.V_APELLIDO_PATERNO, htmlAttributes: new { })
+            </div>
+            <div class="form-inline-content">
+                @Html.LabelFor(Model => Model.clsPersona.V_APELLIDO_MATERNO, htmlAttributes: new { @class = "form-inline-text-input" })
+                @Html.TextBoxFor(Model => Model.clsPersona.V_APELLIDO_MATERNO, htmlAttributes: new { })
+            </div>
+            <div class="form-inline-content">
+                @Html.LabelFor(Model => Model.clsTipoEmpleado.V_DES_TIPO_EMPLEADO, htmlAttributes: new { @class = "form-inline-text-input" })
+                @Html.DropDownListFor(Model => Model.clsTipoEmpleado.I_COD_TIPO_EMPLEADO, (SelectList)ViewBag.tipoEmpleado, "---SELECT---", htmlAttributes: new { @id = "I_COD_TIPO_EMPLEADO" })
+            </div>
+            @*<div class="form-inline-content">
+                <span style="font-size:13px">¿Esta persona esta ingresando como contratado? </span>
+                Si <input type="radio" checked value="true" name="boolGrade" />
+                No <input type="radio" value="false" name="boolGrade" />
+            </div>*@
+          
+        </div>
+    </div>
+
+    <div class="tabcontent-form" data-page="2" style="display:none">
+        <div class="form">
+            <div class="form-inline-content">
+                @Html.LabelFor(Model => Model.clsTypeModality.V_DES_TIPO_MODALIDA, htmlAttributes: new { @class = "form-inline-text-input inline-label" })
+                <select id="I_COD_TIPO_MODALIDAD" name="clsTypeModality.I_COD_TIPO_MODALIDAD" class="inline-content">
+                    <option>--SELECT--</option>
+                </select>
+
+            </div>
+            <div class="form-inline-content" id="container-identificacion">
+                @Html.LabelFor(m => m.clsIdentificacion.I_COD_TIPO_IDENTIFICACION, htmlAttributes: new { @class = "form-inline-text-input inline-label" })
+                @Html.DropDownListFor(Model => Model.clsIdentificacion.I_COD_TIPO_IDENTIFICACION, (SelectList)ViewBag.typeIdentificacion, "---SELECT---", htmlAttributes: new { @class = "inline-content", @data_add_item = "identificacion" })
+                <a class="form-ico-content" href="#" title="agregar" data-add-item="identificacion">
+                    <img src="~/Images/ico-a%c3%b1adir.png" />
+                </a>
+
+            </div>
+
+            <section id="militar">
+                <div class="form-inline-content">
+                    @Html.LabelFor(Model => Model.clsInstitucion.V_DES_INSTITUCION, htmlAttributes: new { @class = "form-inline-text-input inline-label" })
+                    @Html.DropDownListFor(m => m.clsInstitucion.I_COD_INSTITUCION, (SelectList)ViewBag.institucion, "---SELECT---", new { @id = "cboInstitucion", @class = "inline-content" })
+                </div>
+                <div class="form-inline-content">
+                    @Html.LabelFor(Model => Model.clsGradeAcademic.V_DES_GRADO, htmlAttributes: new { @class = "form-inline-text-input inline-label" })
+                    <select id="cboGrado" class="inline-content" name="C_COD_GRADO_MILITAR">
+                        <option value="">---SELECT---</option>
+                    </select>
+                </div>
+                <div class="form-inline-content">
+                    @Html.LabelFor(Model => Model.clsSituacionMilitar.I_COD_SITUACION_MILITAR, htmlAttributes: new { @class = "form-inline-text-input inline-label" })
+                    @Html.DropDownListFor(Model => Model.clsSituacionMilitar.I_COD_SITUACION_MILITAR, (SelectList)ViewBag.situacionMilitar, "---SELECT---", new { @id = "cboSituacionMilitar", @class = "inline-content" })
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <div class="tabcontent-form" data-page="3" style="display:none">
+        @Html.Partial("~/Views/Cargo/_crear.cshtml")
+    </div>
+
+}
+<script src="~/Scripts/pages/EmployeesJS/_create.js"></script>

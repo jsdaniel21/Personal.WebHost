@@ -1,0 +1,91 @@
+﻿@media only screen and (min-width:1200px) {
+    /*body {
+        background-color: red; minimo debe tener 1200 para que se cumpla
+    }*/
+
+    #aux-foreground {
+        width: 1160px;
+        margin-left: -580PX;
+    }
+
+    #ly-headerLayout {
+        width: 1160px;
+        margin-left: -580PX;
+    }
+
+    #ly-navpane {
+        margin-left: -580PX;
+    }
+
+    .footer {
+        width: 1160px;
+        margin-left: -580PX;
+    }
+
+
+    #parent-menu-asignados {
+        width: 585px;
+        height: 350px;
+        margin-left: 45px;
+    }
+}
+
+@media only screen and (max-width:1199px)and (min-width: 0) { /* cuando el browser este creciendo hasta 1199 va tener estos estilos*/
+    #aux-foreground {
+        width: 960px;
+        margin-left: -480PX;
+        left: 50%;
+    }
+
+    #parent-menu-asignados {
+        width: 440px;
+        margin-left: 50px;
+    }
+
+    #ly-headerLayout {
+        width: 960px;
+        margin-left: -480PX;
+        left: 50%;
+    }
+
+    #ly-navpane {
+        margin-left: -480PX;
+        left: 50%;
+    }
+
+    .footer {
+        width: 960px;
+        margin-left: -480PX;
+        left: 50%;
+    }
+}
+ 
+
+@media only screen and (max-width:960px) {
+    body {
+        overflow-x: scroll;
+    }
+
+    #aux-foreground {
+        width: 960px;
+        margin-left: 0PX;
+        left: 0px;
+    }
+
+    #ly-headerLayout {
+        width: 960px;
+        margin-left: 0PX;
+        left: 0px;
+    }
+
+    #ly-navpane {
+        margin-left: 0PX;
+        left: 0px;
+    }
+
+    .footer {
+        width: 960px;
+        margin-left: 0PX;
+        left: 0px;
+    }
+}

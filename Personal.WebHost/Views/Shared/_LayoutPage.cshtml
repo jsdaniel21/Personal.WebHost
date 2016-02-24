@@ -1,0 +1,341 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link href="~/Content/_LayoutSite/Site.css" rel="stylesheet" />
+    <link href="~/Content/_LayoutSite/MediaQueryes.css" rel="stylesheet" />
+    <link href="~/Content/_LayoutSite/DeveloperTag.css" rel="stylesheet" />
+    <link href="~/Content/controls.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/_namespace.js"></script>
+
+    <script src="~/Scripts/_GlobalVar.js"></script>
+    <script src="~/Scripts/modulesGlobals/ajax.js"></script>
+
+</head>
+<body>
+
+    @*<div style="float:left"><div style="width: 100px;">CARAJOS</div> </div>
+        <div >JHOEL</div>
+        <div style="float:left">DANIEL</div>
+        <div>SALINAS</div>
+        <div>JIMENEZ</div>
+            resultado --
+            // por que al elemento que se aplico se vera afectado el que este despues de este ..
+        //tambien por su contenido se adjunta
+            carajs jhoel
+            daniel salinas
+            jimenez
+    *@
+
+    <div id="aux-foreground" style="overflow:hidden">
+        <header id="ly-headerLayout">
+
+            <div class="fx-headerLayout-title">Fuero Militar Policial</div>
+
+            <input type="hidden" id="hidden-codTipoSistema" value="2014-SISPER-0002" />
+            <input type="hidden" id="hidden-username" value="@User.Identity.Name" />
+
+
+            <div class="fx-headerLayout-avatar">
+
+                <div class="fx-header-world">
+                </div>
+
+                <a class="fx-headerLayout-link" href="#">
+                    <div class="fx-headerLayout-image" id="viewMenuRight">
+                    </div>
+                    <span class="fx-headerLayout-text">
+                        @User.Identity.Name&#64;fmp.gob
+                    </span>
+                </a>
+                <div class="menu-right">
+                    <div class="menu-right-item">
+                        <ul class="menu-right-ul">
+                            <li>
+                                @Html.ActionLink("Cerrar Sesion", "closedSession", "Login", null, new { @id = "linkcerrar" })
+                            </li>
+                            <li class="separator"></li>
+                            <li>
+                                <a>Instancia</a>
+                            </li>
+                            <li>
+                                <a id="menu-right-Instancia">Instancia</a>
+
+                            </li>
+                            <li>
+                                <a>Area</a>
+                            </li>
+                            <li>
+                                <a id="menu-right-Area">Area</a>
+
+                            </li>
+
+                            <li class="separator"></li>
+                            <li></li>
+                            <li>
+                                <a>Cargo</a>
+                            </li>
+                            <li>
+                                <a id="menu-right-Cargo">Cargo</a>
+
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+        </header>
+
+        <nav id="ly-navpane">
+            <ul id="ly-navigation-container"></ul>
+            <div id="ly-navpane-2">
+                <a id="ly-navpane-back">
+                    <img src="../Images/arrow-circle-left.png"
+                         alt="Atrás" title="Atrás" />
+                </a>
+                <div id="ly-navpane-scroll">
+                    <div id="ly-navpane-scroll-items">
+                        <nav>
+
+                        </nav>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+        <script src="@Url.Content("~/Scripts/animation/menuAnimate.js")"></script>
+        <script src="@Url.Content("~/Scripts/animation/Fixed-scroll.js")"></script>
+        <script src="@Url.Content("~/Scripts/modulesGlobals/modulesJS.js")"></script>
+        <footer>
+            <div class="footer">
+
+                @*<div class="fxs-modalpresenter-shield" style="display: none; background: #171717; padding: 0px 100px 0px 100px; opacity: 1; color: rgba(213, 213, 213, 0.93); ">*@
+                <div class="fxs-modalpresenter-shield" style="display: none">
+                    @*<div style="border-bottom:1px solid #d5d5d5;line-height:40px;">
+                            <div class="itemList">
+                                <ul style=" line-height: 40px; margin: 0; ">
+                                    <li class="itemList-active" style="color: rgba(213, 213, 213, 0.93); " tabindex="0" data-href="/Estudios/_listStudies">FINALIZAR PRESENTACIÓN</li>
+                                </ul>
+                            </div>
+                        </div>*@
+                    @*LOS EMEPLEADOS TAMBIEN PUEDEN TENER DOS CARGOS*@
+
+                    @*<div style="position:relative;margin-top:40px;height:100%">
+                            <div style="float:left;height:100%;width: 760px;">
+                                    <div style="height:40px;text-align:left"> JHOEL DANIEL SALINAS JIMENEZ </div>
+                                    <div style="height:400px;background:#fff"></div>
+                                    <div style="line-height:45px">ICONOS</div>
+                                    <div style="">SIGUIENTE</div>
+                                </div>
+                                <div style="float: right; min-height: 85%; width: 360px; border-left: 1px solid #d5d5d5;padding-left: 20px; ">
+                                    <div style="height:40px;text-align:left"> FOTO DE PERFIL </div>
+                                    <div style="margin: 0;  text-align: left;">
+                                        <img src="/Fotos/_codPersona.jpg" width="160">
+                                    </div>
+                                    <div style="text-align: left; border-top: 1px solid #d5d5d5;padding-top:20px;margin-top:40px"> UBICACIÓN </div>
+                                    <div>
+                                        <img style="-webkit-user-select: none" src="http://www.grupogales.com/admin_upload/imagenes/pagina_educacion/google_map.jpg" width="100%" height="250">
+                                    </div>
+                                </div>
+
+
+                        </div>*@
+
+                </div>
+                <div class="progress-content" id="progress">
+                    <div class="footer-message-action">
+                        <ul class="footer-message-confirmation">
+                            <li id="messageDetails">
+                                <button role="button" type="button">
+                                    <img src="../Images/ico-behavior-yes.png" alt="si, eliminar" />
+                                    <span data-bind="text: text">aceptar</span>
+                                    @*<span class="fxs-confirmation-button-text" data-bind="text: text">aceptar</span>*@
+                                </button>
+
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="progress-content-message">
+                        <div class="progress-content-status ">
+                            <img src="../Images/ico-progress-complete.png" />
+                        </div>
+                        <div class="progress-content-text"></div>
+                    </div>
+
+
+                </div>
+                <div class="footer-message">
+                    <div class="footer-message-action">
+                        <ul class="footer-message-confirmation">
+                            <li class="1" data-request="yes">
+                                <button role="button" type="button">
+                                    <img src="../Images/ico-behavior-yes.png" alt="si, aceptar" />
+                                    <span class="fxs-confirmation-button-text" data-bind="text: text">SÍ, ACEPTAR</span>
+                                </button>
+
+                            </li>
+                            <li class="0" data-request="no">
+                                <button role="button" type="button">
+                                    <img src="../Images/ico-behavior-no.png" alt="no, cancelar" />
+                                    <span class="fxs-confirmation-button-text" data-bind="text: text">NO, CANCELAR</span>
+                                </button>
+
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-message-text">
+                        Si continúa, la base de datos SQL 'ss' se eliminará permanentemente. ¿Está seguro de que desea continuar?
+                    </div>
+
+                </div>
+                @*<div class="footer-menu-buttons">*@
+
+                <div id="footer-menuandbutton" class="footer-menu-buttons">
+
+                    <div class="footer-newbutton" id="newData" data-parent="013-NUEV" style="display:none">
+                        <div class="footer-newbutton-img">
+                            <img src="../Images/ico-drawer-add.png" />
+                        </div>
+                        <span class="footer-newbutton-text">Nuevo</span>
+                    </div>
+
+                    <div class="footer-command">
+                        <ul>
+                            <li style="display: none" data-static="true">
+                                <div class="footer-command-img">
+                                    <div class="footer-comand-wraper">
+                                        <div class="footer-comnand-ico">
+                                            <img src="../Images/ico-action-32-sprites.png?top=-959px" style="top: -959px; position: absolute;">
+                                        </div>
+                                    </div>
+                                    <div class="footer-comand-text">atras</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-drawermenu-content" style="display:none">
+                        <div class="fxs-drawermenu-title">Nuevo</div>
+                        <div id="closedBottomMenu" style="float: right;color: white; font-size: 12px;margin-top: -60px;margin-right: 30px;background: url('../Images/ico-closebutton-32-sprite.png?top=-205px');width: 40px;height: 32px;background-position: -0px 0px;background-repeat: no-repeat;" title="Cerrar"></div>
+                        <div class="fxs-drawermenu-menuandbutton">
+                            <div class="fxs-drawermenu-menuarea">
+
+                                @*<div class="fxs-drawermenu-left">
+                                        <div class="fxs-menu-menu">
+                                            <div class="fx-scrollbar">
+                                                <div class="fx-scrollbar-scrollable">
+                                                    <ul>
+                                                        <li>
+                                                            <div class="fxs-div-table">
+                                                                <a>
+                                                                    <div class="icon">
+                                                                        <img data-bind="attr: { src: image, alt: text }" src="//az213233.vo.msecnd.net/Content/4.12.00298.14.141028-1335/Images/drawer-icons.1.png" alt="Proceso" style="left: 1px;  top: -1200px;position: absolute;">
+                                                                    </div>
+                                                                    <div class="fxs-menu-text">
+                                                                        <div class="fxs-menu-itemtext" data-bind="text: text" style="    font-family: Sg-SemiBold;">SERVICIOS DE RED</div>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="fxs-drawermenu-left" style="display:none">
+                                        <div class="fxs-menu-menu">
+                                            <div class="fx-scrollbar">
+                                                <div class="fx-scrollbar-scrollable">
+                                                    <ul>
+                                                        <li>
+                                                            <div class="fxs-div-table">
+                                                                <a>
+                                                                    <div class="icon">
+                                                                        <img data-bind="attr: { src: image, alt: text }" src="//az213233.vo.msecnd.net/Content/4.12.00298.14.141028-1335/Images/drawer-icons.1.png" alt="Proceso" style="left: 1px;  top: -1200px;position: absolute;">
+                                                                    </div>
+                                                                    <div class="fxs-menu-text">
+                                                                        <div class="fxs-menu-itemtext" data-bind="text: text" style="    font-family: Sg-SemiBold;">SERVICIOS DE RED</div>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="fxs-drawermenu-left" style="display:none">
+                                        <div class="fxs-menu-menu">
+                                            <div class="fx-scrollbar">
+                                                <div class="fx-scrollbar-scrollable">
+                                                    <ul>
+                                                        <li>
+                                                            <div class="fxs-div-table">
+                                                                <a>
+                                                                    <div class="icon">
+                                                                        <img data-bind="attr: { src: image, alt: text }" src="//az213233.vo.msecnd.net/Content/4.12.00298.14.141028-1335/Images/drawer-icons.1.png" alt="Proceso" style="left: 1px;  top: -1200px;position: absolute;">
+                                                                    </div>
+                                                                    <div class="fxs-menu-text">
+                                                                        <div class="fxs-menu-itemtext" data-bind="text: text" style="    font-family: Sg-SemiBold;">SERVICIOS DE RED</div>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>*@
+                                <div class="fxs-drawermenu-details" style="display:none">
+                                    <div class="fxs-drawerdetails-details-box ">Obtenga acceso a datos y registros de cada personal para el Fuero Militar Policial.</div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="footer-menu-notificacion">
+                    <div class="footer-menu-img">
+                        <ul>
+                            <li>
+                                <div class="footer-menu-info-img">
+                                    <img src="../Images/ico-drawer-processing-active.gif" />
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </footer>
+        <script src="~/Scripts/animation/PopupUp.js"></script>
+        <article draggable="false">
+            <div class="body-aux" draggable="false">
+                <div class="body-aux-container" draggable="false">
+                    @*<iframe src="http://localhost:9471/reports/rptPersonal#zoom=85&scrollbar=0&toolbar=0&navpanes=0" width="700" height="800"></iframe>*@
+                    @RenderBody()
+                </div>
+            </div>
+        </article>
+
+    </div>
+
+
+</body>
+</html>

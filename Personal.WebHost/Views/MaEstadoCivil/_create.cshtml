@@ -1,0 +1,46 @@
+﻿@model BussinessEntity.MA_ESTADO_CIVIL
+<style>
+    .title-cell-bold {
+        color: white;
+    }
+
+    .form-row-cell > *:not(label) {
+        width: 350px;
+    }
+
+    .tabcontent-form {
+        position: absolute;
+        min-height: 100%;
+    }
+
+    div.popup-footer-ico {
+        bottom: 0;
+        position: absolute;
+        right: 0;
+    }
+</style>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <div class="tabcontent-form">
+        <div class="form">
+            <div class="form-content">
+                <div class="form-row">
+                    <div class="form-row-cell title-cell-bold">
+                        @Html.LabelFor(model => model.V_DES_ESTADO_CIVIL)
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-row-cell ">
+                        @Html.EditorFor(model => model.V_DES_ESTADO_CIVIL)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup-footer-ico"><div class="content-ico" id="submit"> <div class="ico-popup-yes" title="aceptar" id="aceptar"></div>  </div></div>
+}
+
+<script src="~/Scripts/pages/Modalidad/indexJS.js"></script>

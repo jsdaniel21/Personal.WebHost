@@ -1,0 +1,34 @@
+﻿<style>
+     
+</style>
+
+<div class="body-poup-content" draggable="true">
+
+    <div id="details-upload" style="display:none">
+        <span>Subir</span><div class="arrow-text"></div>
+        <div class="text-details">Fotoperfil.jpg</div>
+    </div>
+    <div class="popup-drag">    
+        <div class="popup-upload-drag">
+            <canvas id="preview" style="display:none"  ></canvas>
+            <img src="~/Images/ico-picker_sprite.png" style="display:inline-block" />
+            <div class="PopUp-upload-text">Arrastra una foto hasta aquí</div>
+            <div class="PopUp-upload-text">
+                — o —
+            </div>
+        </div>
+    </div>
+</div>
+<div id="actions" style="display:none">
+    <form action="/Home/UploadImage" method="POST">
+        <input type="text" id="imageName" name="imageName" />
+        <input type="hidden" id="contentType" name="contentType" />
+        <input type="hidden" id="imageData" name="imageData" />
+        <input id="btnSave" type="submit" value="Save" />
+    </form>
+
+</div>
+<script src="~/Scripts/pages/upload/uploadProfileJS.js"></script>
+<script>
+    
+</script>

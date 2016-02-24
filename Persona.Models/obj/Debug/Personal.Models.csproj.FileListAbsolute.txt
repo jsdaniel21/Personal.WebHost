@@ -1,0 +1,5 @@
+D:\Sistema Gestion RRHH\Personal.WebHost\Persona.Models\bin\Debug\Persona.Models.dll
+D:\Sistema Gestion RRHH\Personal.WebHost\Persona.Models\bin\Debug\Persona.Models.pdb
+D:\Sistema Gestion RRHH\Personal.WebHost\Persona.Models\obj\Debug\Personal.Models.csprojResolveAssemblyReference.cache
+D:\Sistema Gestion RRHH\Personal.WebHost\Persona.Models\obj\Debug\Persona.Models.dll
+D:\Sistema Gestion RRHH\Personal.WebHost\Persona.Models\obj\Debug\Persona.Models.pdb

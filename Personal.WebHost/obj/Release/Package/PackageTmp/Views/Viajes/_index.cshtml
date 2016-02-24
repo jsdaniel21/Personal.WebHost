@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Personal.ViewModels.listTravelVM>
+@Html.Hidden("codMenu", (string)ViewBag.codMenu)
+<script src="~/Scripts/animation/PopupUp.js"></script>
+<script src="~/Scripts/modulesGlobals/listboxJS.js"></script>
+<h1 class="itemtitle">Viajes</h1>
+<div class="itemList">
+    <ul style="width: 50%;display: none">
+        <li class="itemList-img">
+            <img src="../Images/ico-tab-pane-.png">
+        </li>
+        <li class="itemList-active" tabindex="0" data-href="/Estudios/_listStudies">Modificar</li>
+
+    </ul>
+</div>
+
+
+<div class="aux-tabcontent">
+
+    <div id="content-page-ajax">
+        @Html.Partial("_listarViajes", Model)
+    </div>
+</div>
+<script src="~/Scripts/pages/TravelJS/indexJS.js"></script>

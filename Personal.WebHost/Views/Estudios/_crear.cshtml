@@ -1,0 +1,140 @@
+﻿@model BussinessEntity.SG_PERSONA_ESTUDIOS
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    @Html.HiddenFor(m => m.C_COD_PERSONA, new { @data_name = "codPersona" })
+    <div class="tabcontent-form">
+
+        <div data-page="1">
+            <div class="form">
+                <div class="form-content">
+                    <div class="form-row">
+                        <div class="form-row-cell title-cell-bold">
+                            @Html.LabelFor(model => model.MA_INSTITUCION.MA_TIPO_INSTITUCION.V_DES_TIPO_INSTITUCION)
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-row-cell" style="width:100%">
+                            @Html.DropDownListFor(model => model.MA_INSTITUCION.MA_TIPO_INSTITUCION.I_COD_TIPO_INSTITUCION, (SelectList)ViewBag.tipoInstitucion
+         , "--SELECT--", htmlAttributes: new { @id = "I_COD_TIPO_INSTITUCION" })
+                        </div>
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div class="form-row">
+                        <div class="form-row-cell title-cell-bold">
+                            @Html.LabelFor(model => model.MA_INSTITUCION.MA_TIPO_ENTIDAD.V_DES_ENTIDAD)
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-row-cell" style="width:100%">
+                            <select id="I_COD_TIPO_ENTIDAD">
+                                <option>--SELECT--</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div class="form-row">
+                        <div class="form-row-cell title-cell-bold">
+                            @Html.LabelFor(model => model.MA_INSTITUCION.V_DES_INSTITUCION)
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-row-cell" style="width:100%">
+                            <select id="I_COD_INSTITUCION" name="I_COD_INSTITUCION">
+                                <option>--SELECT--</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div class="form-row">
+                        <div class="form-row-cell title-cell-bold">
+                            @Html.LabelFor(model => model.MA_CARRERA_PROFESIONALES.V_DES_CARRERA_PROFESIONAL)
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-row-cell" style="width:100%">
+                            @Html.TextBoxFor(m => m.MA_CARRERA_PROFESIONALES.V_DES_CARRERA_PROFESIONAL, htmlAttributes: new { @type = "text", @id = "V_DES_CARRERA_PROFESIONAL" })
+                            @Html.HiddenFor(m => m.I_COD_CARRERA_PROFESIONAL)
+                            <div id="carrera" data-list="list-carrera" data-autocomplete="1"
+                                 style="border: 3px solid black; margin-left: 2px; display: none; max-height: 150px; overflow-y: auto; width: 600px; position: absolute; top: 28px; z-index: 9; background: #fff;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div data-page="2" style="display:none">
+            <div class="form">
+                <div class="form-content">
+                    <div class="form-row">
+                        <div class="form-row-cell title-cell-bold">
+                            @Html.LabelFor(model => model.MA_ESPECIALIDAD.V_DES_ESPECIALIDAD)
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-row-cell" style="width:100%">
+                            @Html.TextBoxFor(m => m.MA_ESPECIALIDAD.V_DES_ESPECIALIDAD, htmlAttributes: new { @type = "text", @id = "V_DES_ESPECIALIDAD" })
+                            @Html.HiddenFor(m => m.I_COD_ESPECIALIDAD)
+                            <div id="carrera" data-list="list-carrera" data-autocomplete="1"
+                                 style="border: 3px solid black; margin-left: 2px; display: none; max-height: 150px; overflow-y: auto; width: 600px; position: absolute; top: 28px; z-index: 9; background: #fff;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-content">
+                    <div class="form-row">
+                        <div class="form-row-cell title-cell-bold">
+                            @Html.LabelFor(model => model.I_AÑO_INGRESO)
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-row-cell" style="width:100%">
+                            @Html.EditorFor(m => m.I_AÑO_INGRESO)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-content">
+                    <div class="form-row">
+                        <div class="form-row-cell title-cell-bold">
+                            @Html.LabelFor(model => model.I_AÑO_EGRESO)
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-row-cell" style="width:100%">
+                            @Html.EditorFor(m => m.I_AÑO_EGRESO)
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-content">
+                    <div class="form-row">
+                        <div class="form-row-cell title-cell-bold">
+                            @Html.LabelFor(model => model.MA_GRADO_ACADEMICO.V_DES_GRADO_ACADEMICO)
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-row-cell" style="width:100%">
+                            @Html.DropDownListFor(m => m.C_COD_GRADO_ACADEMICO, (SelectList)ViewBag.gradoAcademido, "--SELECT--")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+}

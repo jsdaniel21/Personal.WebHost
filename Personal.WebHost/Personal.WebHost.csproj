@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9A78FB8A-AAD4-4FB8-AA45-52B325BEEF82}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Personal.WebHost</RootNamespace>
+    <AssemblyName>Personal.WebHost</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\areaController.cs" />
+    <Compile Include="Controllers\CargoController.cs" />
+    <Compile Include="Controllers\DomicilioController.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
+    <Compile Include="Controllers\EstudiosController.cs" />
+    <Compile Include="Controllers\ExperienciasController.cs" />
+    <Compile Include="Controllers\FamiliaresController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MaCargoController.cs" />
+    <Compile Include="Controllers\MaCarrerasProfesionalesController.cs" />
+    <Compile Include="Controllers\MaEspecilidadController.cs" />
+    <Compile Include="Controllers\MaEstadoCivilController.cs" />
+    <Compile Include="Controllers\MaGradoMilitarController.cs" />
+    <Compile Include="Controllers\MaGrupoSanguineoController.cs" />
+    <Compile Include="Controllers\MaInstitucionController.cs" />
+    <Compile Include="Controllers\MaOcupacionController.cs" />
+    <Compile Include="Controllers\MapsController.cs" />
+    <Compile Include="Controllers\MaTipoDomicilioController.cs" />
+    <Compile Include="Controllers\MaTipoEmpleadoController.cs" />
+    <Compile Include="Controllers\MaTipoIdentificacionController.cs" />
+    <Compile Include="Controllers\ModalidadController.cs" />
+    <Compile Include="Controllers\PertenenciasController.cs" />
+    <Compile Include="Controllers\RazgosController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
+    <Compile Include="Controllers\UploadController.cs" />
+    <Compile Include="Controllers\ViajesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="helper.cs" />
+    <Compile Include="Helper\fechasHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\dtsPersonal.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsPersonal.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\CaracteristicasVM.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Content\controls.css" />
+    <Content Include="Content\Gmaps.css" />
+    <Content Include="Content\_LayoutSite\HomeAvatarStyle.css" />
+    <Content Include="Content\_LayoutSite\DeveloperTag.css" />
+    <Content Include="Fotos\sin-foto.jpg" />
+    <Content Include="Images\drawer-icons.1.png" />
+    <Content Include="Images\ico-create.png" />
+    <Content Include="Images\ico-inicio-menu.png" />
+    <Content Include="Content\_LayoutSite\MediaQueryes.css" />
+    <Content Include="Content\_LayoutSite\Site.css" />
+    <Content Include="Content\_Login\animate.css" />
+    <Content Include="Content\_Login\site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\arrow-bottom.png" />
+    <Content Include="Images\arrow-circle-left.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\Fire.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\ico-action-32-sprites.png" />
+    <Content Include="Images\ico-añadir.png" />
+    <Content Include="Images\ico-behavior-no.png" />
+    <Content Include="Images\ico-behavior-yes.png" />
+    <Content Include="Images\ico-closebutton-32-sprite.png" />
+    <Content Include="Images\ico-delete.png" />
+    <Content Include="Images\ico-drawer-add.png" />
+    <Content Include="Images\ico-drawer-processing-active.gif" />
+    <Content Include="Images\ico-fancybox.png" />
+    <Content Include="Images\ico-flecha-end.jpg" />
+    <Content Include="Images\ico-flecha-end.png" />
+    <Content Include="Images\ico-flecha-right.jpg" />
+    <Content Include="Images\ico-flecha-roja.png" />
+    <Content Include="Images\ico-gridview-status.png" />
+    <Content Include="Images\ico-listbox-arrow.png" />
+    <Content Include="Images\ico-loading.gif" />
+    <Content Include="Images\ico-menu-caracteristicas.png" />
+    <Content Include="Images\ico-menu-cargo.png" />
+    <Content Include="Images\ico-menu-domicilio.png" />
+    <Content Include="Images\ico-menu-estudios.png" />
+    <Content Include="Images\ico-menu-experiencia.png" />
+    <Content Include="Images\ico-menu-familiares.png" />
+    <Content Include="Images\ico-menu-footer-print.png" />
+    <Content Include="Images\ico-menu-pertenencias.png" />
+    <Content Include="Images\ico-menu-viajes.png" />
+    <Content Include="Images\ico-page.png" />
+    <Content Include="Images\ico-pedidos-atender.png" />
+    <Content Include="Images\ico-pedidos-close-mes.png" />
+    <Content Include="Images\ico-pedidos-emitidos.png" />
+    <Content Include="Images\ico-pedidos-end-order.png" />
+    <Content Include="Images\ico-pedidos-vale.png" />
+    <Content Include="Images\ico-pedidos.png" />
+    <Content Include="Images\ico-personal.png" />
+    <Content Include="Images\ico-picker_sprite.png" />
+    <Content Include="Images\ico-popup-anular-pedido.png" />
+    <Content Include="Images\ico-popup-atender-pedido.png" />
+    <Content Include="Images\ico-popup-close-hover.png" />
+    <Content Include="Images\ico-popup-close.png" />
+    <Content Include="Images\ico-popup-eliminar-pedido.png" />
+    <Content Include="Images\ico-popup-yes.png" />
+    <Content Include="Images\ico-preload.gif" />
+    <Content Include="Images\ico-profile.png" />
+    <Content Include="Images\ico-progress-complete.png" />
+    <Content Include="Images\ico-progress-error.png" />
+    <Content Include="Images\ico-remove-item-input.png" />
+    <Content Include="Images\ico-search-close-y.png" />
+    <Content Include="Images\ico-search-close.png" />
+    <Content Include="Images\ico-search.png" />
+    <Content Include="Images\ico-tab-pane-.png" />
+    <Content Include="Images\ico-table-cancel.png" />
+    <Content Include="Images\ico-todos.png" />
+    <Content Include="Images\ico-vale-pedido.png" />
+    <Content Include="Images\ico-vale-regularizar.png" />
+    <Content Include="Images\ico-validation-invalid.gif" />
+    <Content Include="Images\ico-world.png" />
+    <Content Include="Images\icon-next-popup.png" />
+    <Content Include="Images\icon-prev-popup.png" />
+    <Content Include="Images\ico_carpeta.png" />
+    <Content Include="Images\left-nav-warning.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Images\usu-nav.png" />
+    <Content Include="Images\usu.jpg" />
+    <Content Include="Scripts\animation\Fixed-scroll.js" />
+    <Content Include="Scripts\animation\menuAnimate.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\segeo-ui-semibold-webfont.woff" />
+    <Content Include="fonts\segoe-ui-semibold.ttf" />
+    <Content Include="fonts\SEGOEUIL.eot" />
+    <Content Include="fonts\SEGOEUIL.woff" />
+    <Content Include="fonts\Segoe_UI_bold.ttf" />
+    <None Include="Properties\PublishProfiles\Fmp.pubxml" />
+    <None Include="Properties\PublishProfiles\server.pubxml" />
+    <Content Include="Report\dtsPersonal.xsc">
+      <DependentUpon>dtsPersonal.xsd</DependentUpon>
+    </Content>
+    <None Include="Report\dtsPersonal.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsPersonal.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Report\dtsPersonal.xss">
+      <DependentUpon>dtsPersonal.xsd</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\animation\PopupUp.js" />
+    <Content Include="Scripts\animation\SlidePointJS.js" />
+    <Content Include="Scripts\jMaps.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modulesGlobals\ajax.js" />
+    <Content Include="Scripts\modulesGlobals\listboxJS.js" />
+    <Content Include="Scripts\modulesGlobals\treeAreaJS.js" />
+    <Content Include="Scripts\pages\CargoJS\createChargeJS.js" />
+    <Content Include="Scripts\pages\CargoJS\detailsJS.js" />
+    <Content Include="Scripts\pages\CargoJS\listarCargoJS.js" />
+    <Content Include="Scripts\pages\DomicilioJS\indexJS.js" />
+    <Content Include="Scripts\pages\EmployeesJS\avatarJS.js" />
+    <Content Include="Scripts\pages\EmployeesJS\detailsJS.js" />
+    <Content Include="Scripts\pages\EmployeesJS\Index.js" />
+    <Content Include="Scripts\pages\EmployeesJS\_create.js" />
+    <Content Include="Scripts\pages\EstudiesJS\indexJS.js" />
+    <Content Include="Scripts\pages\FamiliaresJS\indexJS.js" />
+    <Content Include="Scripts\pages\HomeJS.js" />
+    <Content Include="Scripts\modulesGlobals\modulesJS.js" />
+    <Content Include="Scripts\pages\JobsJS\indexJS.js" />
+    <Content Include="Scripts\pages\Modalidad\indexJS.js" />
+    <Content Include="Scripts\pages\TravelJS\indexJS.js" />
+    <Content Include="Scripts\pages\upload\uploadProfileJS.js" />
+    <Content Include="Scripts\pages\upload\workerUploadImage.js" />
+    <Content Include="Scripts\table-Dynamic.js" />
+    <Content Include="Scripts\_GlobalVar.js" />
+    <Content Include="Scripts\_namespace.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\_viewstart.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Employees\Avatar.cshtml" />
+    <Content Include="Views\Cargo\_listarCargos.cshtml" />
+    <Content Include="Views\Domicilio\_listarDomicilio.cshtml" />
+    <Content Include="Views\Estudios\_listStudies.cshtml" />
+    <Content Include="Views\Experiencias\_listJobs.cshtml" />
+    <Content Include="Views\Viajes\_listarViajes.cshtml" />
+    <Content Include="Views\Pertenencias\_listPeopleVehicles.cshtml" />
+    <Content Include="Views\Cargo\_crear.cshtml" />
+    <Content Include="Views\Estudios\_crear.cshtml" />
+    <Content Include="Views\Estudios\_edit.cshtml" />
+    <Content Include="Views\Estudios\_index.cshtml" />
+    <Content Include="Views\Experiencias\_index.cshtml" />
+    <Content Include="Views\Viajes\_index.cshtml" />
+    <Content Include="Views\Viajes\_create.cshtml" />
+    <Content Include="Views\Viajes\_edit.cshtml" />
+    <Content Include="Views\Familiares\_index.cshtml" />
+    <Content Include="Views\Employees\_Create.cshtml" />
+    <Content Include="Views\Upload\_UploadPhotoPerfil.cshtml" />
+    <Content Include="Views\Cargo\Details.cshtml" />
+    <Content Include="Views\Maps\Maps.cshtml" />
+    <Content Include="Views\Domicilio\_index.cshtml" />
+    <Content Include="Views\Domicilio\_create.cshtml" />
+    <Content Include="Views\Domicilio\_update.cshtml" />
+    <Content Include="Views\Experiencias\_create.cshtml" />
+    <Content Include="Views\Experiencias\_Edit.cshtml" />
+    <Content Include="Views\Estudios\_details.cshtml" />
+    <Content Include="Views\Employees\_DetailsPeople.cshtml" />
+    <Content Include="Views\Modalidad\_create.cshtml" />
+    <Content Include="Views\MaCargo\_create.cshtml" />
+    <Content Include="Views\MaCarrerasProfesionales\_create.cshtml" />
+    <Content Include="Views\MaEspecilidad\_create.cshtml" />
+    <Content Include="Views\MaGradoMilitar\_create.cshtml" />
+    <Content Include="Views\MaGrupoSanguineo\_create.cshtml" />
+    <Content Include="Views\MaEstadoCivil\_create.cshtml" />
+    <Content Include="Views\MaTipoIdentificacion\_create.cshtml" />
+    <Content Include="Views\MaTipoDomicilio\_create.cshtml" />
+    <Content Include="Views\MaOcupacion\_create.cshtml" />
+    <Content Include="Views\MaGradoMilitar\index.cshtml" />
+    <Content Include="Views\MaGradoMilitar\_listarGradoMilitar.cshtml" />
+    <Content Include="Views\MaGradoMilitar\_edit.cshtml" />
+    <Content Include="Views\MaGradoMilitar\edit.cshtml" />
+    <Content Include="Views\MaEspecilidad\_listarEspecilidad.cshtml" />
+    <Content Include="Views\MaEspecilidad\edit.cshtml" />
+    <Content Include="Views\MaEspecilidad\index.cshtml" />
+    <Content Include="Views\MaCarrerasProfesionales\_listarCarrerasProfesional.cshtml" />
+    <Content Include="Views\MaCarrerasProfesionales\index.cshtml" />
+    <Content Include="Views\MaCarrerasProfesionales\edit.cshtml" />
+    <Content Include="Views\MaCargo\_listarCargo.cshtml" />
+    <Content Include="Views\MaCargo\index.cshtml" />
+    <Content Include="Views\MaCargo\edit.cshtml" />
+    <Content Include="Views\Modalidad\edit.cshtml" />
+    <Content Include="Views\Modalidad\_List.cshtml" />
+    <Content Include="Views\MaOcupacion\index.cshtml" />
+    <Content Include="Views\Modalidad\index.cshtml" />
+    <Content Include="Views\MaOcupacion\edit.cshtml" />
+    <Content Include="Views\MaOcupacion\_List.cshtml" />
+    <Content Include="Views\MaTipoDomicilio\edit.cshtml" />
+    <Content Include="Views\MaTipoDomicilio\index.cshtml" />
+    <Content Include="Views\MaTipoDomicilio\_List.cshtml" />
+    <Content Include="Views\MaTipoIdentificacion\edit.cshtml" />
+    <Content Include="Views\MaTipoIdentificacion\index.cshtml" />
+    <Content Include="Views\MaTipoIdentificacion\_List.cshtml" />
+    <Content Include="Views\MaEstadoCivil\edit.cshtml" />
+    <Content Include="Views\MaEstadoCivil\index.cshtml" />
+    <Content Include="Views\MaEstadoCivil\_List.cshtml" />
+    <Content Include="Views\MaGrupoSanguineo\edit.cshtml" />
+    <Content Include="Views\MaGrupoSanguineo\index.cshtml" />
+    <Content Include="Views\MaGrupoSanguineo\_List.cshtml" />
+    <Content Include="Views\Shared\_OptionsPrintDialog.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Scripts\pages\MaCargo\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BussinessLogic\Personal.BussinessLogic.csproj">
+      <Project>{f5e8c557-4faa-4fdb-83a3-9c5a5a644117}</Project>
+      <Name>Personal.BussinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Personal.BussinessEntity\Personal.BussinessEntity.csproj">
+      <Project>{f46aded7-9cd3-4c6e-a929-8ca6ba0df431}</Project>
+      <Name>Personal.BussinessEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Personal.EntityQuerys\Personal.ViewModels.csproj">
+      <Project>{afb8c90c-4820-4132-8fc3-d7b7d75eb657}</Project>
+      <Name>Personal.ViewModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Personal.Interfaces\Personal.Interfaces.csproj">
+      <Project>{3c2d2ee7-e28a-4793-b63a-edeceb46a267}</Project>
+      <Name>Personal.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Personal.Models\Personal.Models.csproj">
+      <Project>{ab428350-4864-46bf-9d65-26adecc05b79}</Project>
+      <Name>Personal.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Personal.Utilities\Personal.Utilities.csproj">
+      <Project>{9727b214-ebbc-4c03-b411-ee0983a503ba}</Project>
+      <Name>Personal.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_LayoutPage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Report\rptPersonal.rdlc" />
+    <EmbeddedResource Include="Report\ViewPdf.rdlc" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:9471/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

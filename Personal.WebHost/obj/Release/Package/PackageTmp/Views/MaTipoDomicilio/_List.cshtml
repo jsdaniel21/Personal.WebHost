@@ -1,0 +1,56 @@
+﻿@model IEnumerable<BussinessEntity.MA_TIPO_DOMICILIO>
+<div class="aux-tabcontent">
+    <div class="gridcontainer">
+
+        <table id="gridQueryDOM" class="table-adjust-texto">
+            <thead>
+                <tr>
+
+                    <th style="width:180px">
+                        <a href="#">@Html.DisplayNameFor(m => m.I_COD_TIPO_DOMICILIO)</a>
+                    </th>
+                    <th style="width:180px">
+                        <a href="#">@Html.DisplayNameFor(m => m.V_DES_TIPO_DOMICILIO)</a>
+                    </th>
+
+                    <th style="width:120px">
+                        <a href="#">@Html.DisplayNameFor(m => m.C_ACTIVO)</a>
+                        <div class="search" id="tableSearch" title="Buscar">
+                            <a>
+                                <img src="../Images/ico-search.png">
+                            </a>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @{int i = -1;}
+                @foreach (var item in Model)
+                {
+                    i++;
+                    var style = "class=not-active-row-td";
+                    if (i == 0)
+                    {
+                        style = "class=active-row-select";
+                    }
+                    <tr @style>
+                        <td class="active-row-td">
+                            <span class="rowId select" style="display: none;">@Html.DisplayFor(m => item.I_COD_TIPO_DOMICILIO)</span>
+                            <span class="select">@Html.DisplayFor(m => item.I_COD_TIPO_DOMICILIO)</span>
+                        </td>
+                        <td>
+                            <span>@Html.DisplayFor(modelItem => item.V_DES_TIPO_DOMICILIO)</span>
+                        </td>
+                        <td>
+                            <span>@Html.DisplayFor(modelItem => item.C_ACTIVO)</span>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+
+    </div>
+</div>

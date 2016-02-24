@@ -1,0 +1,315 @@
+﻿@model Personal.ViewModels.dataPeopleForEmployeesVM
+
+
+@{
+    ViewBag.Title = "Avatar";
+}
+<link href="~/Content/_LayoutSite/HomeAvatarStyle.css" rel="stylesheet" />
+<style type="text/css">
+    body > div#aux-foreground {
+        /*background-image: url(http://localhost:2662/Img/bkg-4.png);*/
+    }
+
+    .data-employees-content-parent {
+        position: fixed;
+        padding: 0;
+        margin: 0;
+        width: 200px;
+        min-height: 100%;
+        left: 50%;
+        margin-left: -580px;
+    }
+
+        .data-employees-content-parent > figure {
+            margin: 0;
+        }
+
+            .data-employees-content-parent > figure img {
+                width: 160px;
+                height: 168px;
+                margin: 0px 0px 0px 20px;
+                padding: 0 auto;
+                border: 3px solid black;
+                opacity: 0.9;
+            }
+
+        .data-employees-content-parent figcaption > .data-employees-content {
+            width: 100%;
+            position: absolute;
+            min-height: 100%;
+            margin-top: 5px;
+            border-top: 1px solid #fff;
+        }
+
+    .data-employees-content div:first-child {
+        text-transform: capitalize;
+        text-align: center;
+        background: transparent;
+        height: 20px;
+        border-bottom: 1px solid #fff;
+    }
+    /*even--> pares*/
+    .data-employees-content > div:not(:first-child):not(.data-employees-academic):nth-of-type(even), .data-employees-academic > div.data-employees-row:nth-of-type(odd) div {
+        text-transform: capitalize;
+        text-align: center;
+        background: rgba(25, 90, 181, 0.7);
+        line-height: 20px;
+        border-bottom: 1px solid #fff;
+        opacity: 0.9;
+        color: #ffffff;
+    }
+    /*para todos los div que esten despues del primer hijo q es un div, y quee san de tipo div; pero este comienza a contar des el primer div*/
+    /*odd-> impar*/
+
+    /*.data-employees-content > div ~ div:nth-last-of-type(odd) hacen lo mismo por q el recorrido*/
+    .data-employees-content > div:first-child ~ div:nth-of-type(odd), /*even: pares*/
+    .data-employees-academic > div.data-employees-row:nth-of-type(even) div {
+        text-transform: uppercase;
+        text-align: center;
+        background: transparent;
+        line-height: 20px;
+        border-bottom: 1px solid #fff;
+        color: #EEE;
+        font-weight: 500;
+        font-family: 'Segoe UI Symbol';
+    }
+    /*contara los hij que solamenye sean de tipo div nth-of-typ*/
+    .data-employees-separate {
+        height: 23px;
+        color: red;
+    }
+
+    .data-employees-academic {
+        position: absolute;
+        width: 100%;
+        min-height: 100%;
+    }
+
+    .data-employees-row {
+        position: relative;
+    }
+
+    .data-employees-academic > div.data-employees-row:nth-of-type(odd) div:nth-of-type(odd), .data-employees-academic > div.data-employees-row:nth-of-type(even) div:nth-of-type(odd) {
+        width: 50%;
+        float: left;
+        border-right: 1px solid #fff;
+        padding-left: 3px;
+        font-size: 11.6px;
+        text-transform: capitalize;
+        text-align: left;
+        padding-left: 4px;
+        font-weight: 500;
+        white-space: nowrap; /*no respesta los saltos de linea n iajustes*/
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    /*even: pares*/
+    .data-employees-academic > div.data-employees-row:nth-of-type(odd) div:nth-of-type(even), .data-employees-academic > div.data-employees-row:nth-of-type(even) div:nth-of-type(even) {
+        float: right;
+        width: 46%;
+        padding-left: 3px;
+        font-size: 11px;
+        text-transform: uppercase;
+        text-align: left;
+        font-weight: 500;
+        /*Esta propiedad afecta alos formatos de texto por ejemplo, nowrap no respeta los saltos de linea, nis los tab, considerandolo todo en una sola linea sin*/
+        white-space: nowrap;
+        /*permite cortar el texto si en caso exediera el tamaño poniendole puntos suspensivox*/
+        text-overflow: ellipsis;
+        /*como sobrepaso... este por defecto tiene un scroll para q salga eso se tiene que desactivar*/
+        overflow: hidden;
+    }
+
+    /*--UPLOAD PHOTO-*/
+    section.foto-perfil-content {
+        position: relative;
+    }
+
+    .foto-perfil-parent {
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -14px 0 0 -16px;
+        background-color: rgba(0,0,0,.59);
+        display: none;
+    }
+
+    div.foto-perfil-ico {
+        height: 20px;
+        margin: 8px;
+        width: 24px;
+        background: no-repeat url(../Images/ico-profile.png);
+    }
+
+    .foto-perfil-show {
+        position: absolute;
+        z-index: 5;
+        left: 50%;
+        top: 50%;
+        background: transparent;
+        height: 45px;
+        width: 35px;
+        margin: -18px 0 0 -14px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+        .foto-perfil-show:hover + section.foto-perfil-parent {
+            display: block;
+        }
+</style>
+
+<div class="data-employees-content-parent">
+    <figure>
+
+        <section class="foto-perfil-content">
+            <div class="foto-perfil-preload" style="display:none">
+                <div class="foto-perfil-preloadContent">
+                    <div class="foto-perfil-content-ico"></div><div class="foto-perfil-content-text">Cargando...</div>
+                </div>
+            </div>
+            @if (Model.clsPeopleIMG.V_DES_IMAGEN == "")
+            {
+                <img src="/Fotos/sin-foto.jpg">
+            }
+            else
+            {
+                <img src="@Model.clsPeopleIMG.V_DES_IMAGEN">
+            }
+            <section class="foto-perfil-show"></section>
+            <section class="foto-perfil-parent">
+                <div class="foto-perfil-ico">
+
+                </div>
+            </section>
+        </section>
+
+        <figcaption>
+            <div class="data-employees-content">
+                <div></div>
+                @Html.HiddenFor(model => model.clsPeople.C_COD_PERSONA, htmlAttributes: new
+           {
+               @id = "C_COD_PERSONA"
+           })
+                <div>@Html.DisplayNameFor(model => model.clsPeople.V_APELLIDO_PATERNO)</div>
+                <div>@Html.LabelFor(m => m.clsPeople.V_APELLIDO_PATERNO, Model.clsPeople.V_APELLIDO_PATERNO, new { @name = "V_APELLIDO_PATERNO" })</div>
+                <div>@Html.DisplayNameFor(model => model.clsPeople.V_APELLIDO_MATERNO)</div>
+                <div>@Html.LabelFor(m => m.clsPeople.V_APELLIDO_MATERNO, Model.clsPeople.V_APELLIDO_MATERNO, new { @name = "V_APELLIDO_MATERNO" })</div>
+                <div>@Html.DisplayNameFor(model => model.clsPeople.V_NOMBRES)<span style="text-transform:lowercase">(s)</span></div>
+                <div>@Html.LabelFor(m => m.clsPeople.V_NOMBRES, Model.clsPeople.V_NOMBRES, new { @name = "V_NOMBRES" })</div>
+                <div class="data-employees-separate" style=" background: transparent;"></div>
+                <div class="data-employees-academic">
+                    <div class="data-employees-row">
+                        <div>D.N.I</div>
+                        <div>@Html.DisplayFor(model => model.clsPeopleIdentification.V_NUM_DOCUMENTO)</div>
+                    </div>
+                    <div class="data-employees-row">
+                        <div>@Html.DisplayNameFor(model => model.clsPeopleModalidad.D_FECHA_CONTRATO)</div>
+                        @if (Model.clsPeopleModalidad.D_FECHA_CONTRATO.ToString() != "")
+                        {    <div>@Html.DisplayFor(model => model.clsPeopleModalidad.D_FECHA_CONTRATO)</div>}
+                        else
+                        {  <div>------------</div>
+                        }
+                    </div>
+                    <div class="data-employees-row">
+                        <div>@Html.DisplayNameFor(model => model.clsTipoModalidad.V_DES_TIPO_MODALIDA)</div>
+                        @if (Model.clsTipoModalidad.V_DES_TIPO_MODALIDA != "")
+                        {
+                            <div>@Html.LabelFor(m => m.clsTipoModalidad.V_DES_TIPO_MODALIDA, Model.clsTipoModalidad.V_DES_TIPO_MODALIDA, new { @name = "I_COD_TIPO_MODALIDAD" })</div>
+                        }
+                        else
+                        {
+                            <div>------------</div>
+                        }
+                    </div>
+                    <div class="data-employees-row">
+                        <div>@Html.DisplayNameFor(model => model.clsGradoMilitar.V_DES_GRADO)</div>
+                        @if (Model.clsGradoMilitar.V_ABREV_GRADOS == "")
+                        {
+                            <div>------------</div>
+                        }
+                        else
+                        {
+                            <div>@Html.DisplayFor(model => model.clsGradoMilitar.V_ABREV_GRADOS)</div>
+                        }
+                    </div>
+                    <div class="data-employees-row">
+                        <div>@Html.DisplayNameFor(model => model.clsPeopleDetails.D_FEC_NACIMIENTO)</div>
+                        @if (Model.clsPeopleDetails.D_FEC_NACIMIENTO.ToString() == "")
+                        {
+                            <div>------------</div>
+                        }
+                        else
+                        {
+                            <div>@Html.LabelFor(m => m.clsPeopleDetails.D_FEC_NACIMIENTO, Model.clsPeopleDetails.D_FEC_NACIMIENTO.ToString(), new { @name = "D_FEC_NACIMIENTO" })</div>
+                        }
+
+                    </div>
+                    <div class="data-employees-row">
+                        <div>@Html.DisplayNameFor(model => model.clsMaArea.V_DES_FUNCIONES)</div>
+                        <div>@Html.DisplayFor(model => model.clsMaArea.V_ABREV_FUNCIONES)</div>
+                    </div>
+                    <div class="data-employees-row">
+                        <div>@Html.DisplayNameFor(model => model.clsCargo.V_DES_CARGO)</div>
+                        <div>@Html.DisplayFor(model => model.clsCargo.V_DES_CARGO)</div>
+                    </div>
+                    <div class="data-employees-row">
+                        <div>@Html.DisplayNameFor(model => model.clsEstadoCivil.V_DES_ESTADO_CIVIL)</div>
+                        @if (Model.clsEstadoCivil.V_DES_ESTADO_CIVIL == "")
+                        {
+                            <div>------------</div>
+                        }
+                        else
+                        {
+                            <div style="width:46%;height:21px;">@Html.LabelFor(m => m.clsEstadoCivil.V_DES_ESTADO_CIVIL, Model.clsEstadoCivil.V_DES_ESTADO_CIVIL, new { @name = "I_COD_ESTADO_CIVIL" })</div>
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </figcaption>
+    </figure>
+
+</div>
+
+<div class="content-menu-employees">
+    @foreach (var item in Model.clsPermisosUserVM)
+    {
+        if (item.clsMenuSistema.I_NIVEL_MENU_APLICACION == 1)
+        {
+            var dirImg = item.clsMenuSistema.C_DES_DIRECTORIO_IMG;
+
+            var background = dirImg.Substring(dirImg.IndexOf("background="),
+             dirImg.IndexOf(";", dirImg.IndexOf("background=")) - dirImg.IndexOf("background=")
+               );
+
+            background = background.Replace("=", ":");
+
+            var style = "style=" + background;
+
+
+            <a href="@Html.DisplayFor(modelItem => item.clsMenuSistema.C_NAME_FORM)"
+               data-parent="@Html.DisplayFor(modelItem => item.clsMenuSistema.C_COD_MENU)"
+               data-url="@Html.DisplayFor(modelItem => item.clsMenuSistema.C_NAME_FORM)">
+                <div class="menu-employees-content" @style>
+                    <div>
+                        <img src="@Html.DisplayFor(modelItem => item.clsMenuSistema.C_DES_DIRECTORIO_IMG) " />
+                    </div>
+                    <div>
+                        @Html.DisplayFor(modelItem => item.ClsMenu.V_DES_MENU)
+                    </div>
+                </div>
+            </a>
+        }
+    }
+
+
+</div>
+
+<div class="content-Pages" id="content-Pages">
+
+</div>
+
+<script src="~/Scripts/pages/EmployeesJS/avatarJS.js"></script>

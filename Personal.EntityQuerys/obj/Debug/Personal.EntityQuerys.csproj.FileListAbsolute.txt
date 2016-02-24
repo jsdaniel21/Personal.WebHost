@@ -1,0 +1,14 @@
+D:\Sistema Gestion RRHH\Personal.WebHost\Personal.EntityQuerys\bin\Debug\Personal.EntityQuerys.dll
+D:\Sistema Gestion RRHH\Personal.WebHost\Personal.EntityQuerys\bin\Debug\Personal.EntityQuerys.pdb
+D:\Sistema Gestion RRHH\Personal.WebHost\Personal.EntityQuerys\bin\Debug\Personal.BussinessEntity.dll
+D:\Sistema Gestion RRHH\Personal.WebHost\Personal.EntityQuerys\bin\Debug\Personal.BussinessEntity.pdb
+D:\Sistema Gestion RRHH\Personal.WebHost\Personal.EntityQuerys\obj\Debug\Personal.EntityQuerys.csprojResolveAssemblyReference.cache
+D:\Sistema Gestion RRHH\Personal.WebHost\Personal.EntityQuerys\obj\Debug\Personal.EntityQuerys.dll
+D:\Sistema Gestion RRHH\Personal.WebHost\Personal.EntityQuerys\obj\Debug\Personal.EntityQuerys.pdb
+F:\Sistema Gestion RRHH\Personal.WebHost\Personal.EntityQuerys\bin\Debug\Personal.EntityQuerys.dll
+F:\Sistema Gestion RRHH\Personal.WebHost\Personal.EntityQuerys\bin\Debug\Personal.EntityQuerys.pdb
+F:\Sistema Gestion RRHH\Personal.WebHost\Personal.EntityQuerys\bin\Debug\Personal.BussinessEntity.dll
+F:\Sistema Gestion RRHH\Personal.WebHost\Personal.EntityQuerys\bin\Debug\Personal.BussinessEntity.pdb
+F:\Sistema Gestion RRHH\Personal.WebHost\Personal.EntityQuerys\obj\Debug\Personal.EntityQuerys.csprojResolveAssemblyReference.cache
+F:\Sistema Gestion RRHH\Personal.WebHost\Personal.EntityQuerys\obj\Debug\Personal.EntityQuerys.dll
+F:\Sistema Gestion RRHH\Personal.WebHost\Personal.EntityQuerys\obj\Debug\Personal.EntityQuerys.pdb

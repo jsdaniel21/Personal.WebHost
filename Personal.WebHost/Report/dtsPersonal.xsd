@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dtsPersonal" targetNamespace="http://tempuri.org/dtsPersonal.xsd" xmlns:mstns="http://tempuri.org/dtsPersonal.xsd" xmlns="http://tempuri.org/dtsPersonal.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dtsPersonal" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dtsPersonal" msprop:Generator_UserDSName="dtsPersonal">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RRHH_SP_RPT_LISTAR_PERSONAL" msprop:Generator_TableClassName="RRHH_SP_RPT_LISTAR_PERSONALDataTable" msprop:Generator_TableVarName="tableRRHH_SP_RPT_LISTAR_PERSONAL" msprop:Generator_RowChangedName="RRHH_SP_RPT_LISTAR_PERSONALRowChanged" msprop:Generator_TablePropName="RRHH_SP_RPT_LISTAR_PERSONAL" msprop:Generator_RowDeletingName="RRHH_SP_RPT_LISTAR_PERSONALRowDeleting" msprop:Generator_RowChangingName="RRHH_SP_RPT_LISTAR_PERSONALRowChanging" msprop:Generator_RowEvHandlerName="RRHH_SP_RPT_LISTAR_PERSONALRowChangeEventHandler" msprop:Generator_RowDeletedName="RRHH_SP_RPT_LISTAR_PERSONALRowDeleted" msprop:Generator_RowClassName="RRHH_SP_RPT_LISTAR_PERSONALRow" msprop:Generator_UserTableName="RRHH_SP_RPT_LISTAR_PERSONAL" msprop:Generator_RowEvArgName="RRHH_SP_RPT_LISTAR_PERSONALRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ROW" msprop:Generator_ColumnVarNameInTable="columnROW" msprop:Generator_ColumnPropNameInRow="ROW" msprop:Generator_ColumnPropNameInTable="ROWColumn" msprop:Generator_UserColumnName="ROW" type="xs:int" minOccurs="0" />
+              <xs:element name="C_COD_PERSONA" msprop:Generator_ColumnVarNameInTable="columnC_COD_PERSONA" msprop:Generator_ColumnPropNameInRow="C_COD_PERSONA" msprop:Generator_ColumnPropNameInTable="C_COD_PERSONAColumn" msprop:Generator_UserColumnName="C_COD_PERSONA" type="xs:string" minOccurs="0" />
+              <xs:element name="V_DES_TIPO_MODALIDA" msprop:Generator_ColumnVarNameInTable="columnV_DES_TIPO_MODALIDA" msprop:Generator_ColumnPropNameInRow="V_DES_TIPO_MODALIDA" msprop:Generator_ColumnPropNameInTable="V_DES_TIPO_MODALIDAColumn" msprop:Generator_UserColumnName="V_DES_TIPO_MODALIDA" type="xs:string" minOccurs="0" />
+              <xs:element name="INSTITUCION" msprop:Generator_ColumnVarNameInTable="columnINSTITUCION" msprop:Generator_ColumnPropNameInRow="INSTITUCION" msprop:Generator_ColumnPropNameInTable="INSTITUCIONColumn" msprop:Generator_UserColumnName="INSTITUCION" type="xs:string" minOccurs="0" />
+              <xs:element name="GRADO" msprop:Generator_ColumnVarNameInTable="columnGRADO" msprop:Generator_ColumnPropNameInRow="GRADO" msprop:Generator_ColumnPropNameInTable="GRADOColumn" msprop:Generator_UserColumnName="GRADO" type="xs:string" minOccurs="0" />
+              <xs:element name="V_DES_CARGO" msprop:Generator_ColumnVarNameInTable="columnV_DES_CARGO" msprop:Generator_ColumnPropNameInRow="V_DES_CARGO" msprop:Generator_ColumnPropNameInTable="V_DES_CARGOColumn" msprop:Generator_UserColumnName="V_DES_CARGO" type="xs:string" minOccurs="0" />
+              <xs:element name="V_DES_FUNCIONES" msprop:Generator_ColumnVarNameInTable="columnV_DES_FUNCIONES" msprop:Generator_ColumnPropNameInRow="V_DES_FUNCIONES" msprop:Generator_ColumnPropNameInTable="V_DES_FUNCIONESColumn" msprop:Generator_UserColumnName="V_DES_FUNCIONES" type="xs:string" minOccurs="0" />
+              <xs:element name="V_DES_INSTANCIA" msprop:Generator_ColumnVarNameInTable="columnV_DES_INSTANCIA" msprop:Generator_ColumnPropNameInRow="V_DES_INSTANCIA" msprop:Generator_ColumnPropNameInTable="V_DES_INSTANCIAColumn" msprop:Generator_UserColumnName="V_DES_INSTANCIA" type="xs:string" minOccurs="0" />
+              <xs:element name="C_ACTIVO" msprop:Generator_ColumnVarNameInTable="columnC_ACTIVO" msprop:Generator_ColumnPropNameInRow="C_ACTIVO" msprop:Generator_ColumnPropNameInTable="C_ACTIVOColumn" msprop:Generator_UserColumnName="C_ACTIVO" type="xs:string" minOccurs="0" />
+              <xs:element name="EMPLEADO" msprop:Generator_ColumnVarNameInTable="columnEMPLEADO" msprop:Generator_ColumnPropNameInRow="EMPLEADO" msprop:Generator_ColumnPropNameInTable="EMPLEADOColumn" msprop:Generator_UserColumnName="EMPLEADO" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

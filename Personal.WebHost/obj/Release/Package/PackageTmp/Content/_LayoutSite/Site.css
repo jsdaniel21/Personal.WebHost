@@ -1,0 +1,610 @@
+﻿@font-face {
+    font-family: 'Sg-Bold';
+    src: url('../../fonts/Segoe_UI_bold.ttf');
+}
+
+@font-face {
+    font-family: 'Sg-SemiBold';
+    src: url('../../fonts/segoe-ui-semibold.ttf') format('truetype'),url('../../fonts/segeo-ui-semibold-webfont.woff') format('woff');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'SegoeuiLight';
+    src: url('../../fonts/SEGOEUIL.eot'),url('../../fonts/SEGOEUIL.woff');
+    font-weight: 600;
+}
+
+strong {
+    font-family: Sg-SemiBold;
+    text-shadow: 0px 0px 2px rgb(202, 197, 197);
+}
+
+*:focus {
+    /* es la linea fuera del border*/
+    outline: none;
+}
+
+
+
+img {
+    border: none;
+}
+
+body {
+    margin-top: 0%;
+    background-color: rgb(241, 241, 241);
+    font-size: 12px;
+    font-family: 'Segoe UI';
+    color: #323232;
+    /*-webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;*/
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+article {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -ms-user-select: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.body-aux {
+    margin-left: 200px;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    padding: 30px;
+}
+
+
+
+#aux-foreground {
+    background: none repeat scroll 0% 0% #FFF;
+    min-height: 100%; /* lO MINImo que puede tener es 100%*/
+    left: 50%;
+    box-shadow: 0px 0px 85px rgba(0, 0, 0, 0.3); /*ocupa el ancho del borde*/
+    position: absolute;
+    z-index: -1;
+}
+
+
+#ly-headerLayout {
+    position: fixed;
+    overflow: visible;
+    margin: 0px auto 0px -480px;
+    left: 50%;
+    top: 0px;
+    width: 1160px;
+    background-color: #3c454f;
+    color: #fff;
+    opacity: 1;
+    z-index: 2;
+}
+
+    #ly-headerLayout .fx-headerLayout-title {
+        float: left;
+        margin-left: 18px;
+        padding: 7px 0.5px 0.4rem 1px;
+        opacity: 0.9;
+        font-size: 13px;
+        font-family: 'Sg-SemiBold';
+    }
+
+
+
+    /* == Iconos del Login */
+
+    #ly-headerLayout .fx-headerLayout-avatar {
+        float: right; /*manda ala derecha ami elemento*/
+    }
+
+
+
+.fx-header-world {
+    float: left;
+    background-image: url(../../Images/ico-world.png);
+    height: 16px;
+    width: 16px;
+    margin: 7px 8px 8px 7px;
+}
+
+
+a.fx-headerLayout-link {
+    display: block;
+    padding-left: 6px;
+    text-decoration: none;
+    color: #fff;
+    opacity: 1;
+    float: right;
+}
+
+    a.fx-headerLayout-link .fx-headerLayout-text {
+        font-size: 0.8rem;
+        line-height: 30px; /* permite dar la altura al span*/
+        padding-right: 10px;
+        text-transform: lowercase;
+    } 
+
+    a.fx-headerLayout-link .fx-headerLayout-image {
+        width: 30px;
+        height: 30px;
+        float: right;
+        background: url('../../Images/usu-nav.png') center center no-repeat;
+    }
+
+    a.fx-headerLayout-link:hover {
+        background: #495461;
+    }
+
+/*Menu de navegacion de usuario logeado*/
+
+.menu-right {
+    background-color: #495461;
+    position: absolute;
+    height: 400px;
+    width: 263px;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    top: 30px;
+    right: 0;
+    display: none;
+    border-top: 1px solid #495461;
+}
+
+.menu-right-item {
+    margin: 20px 30px;
+}
+
+ul.menu-right-ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    ul.menu-right-ul li {
+        line-height: 26px;
+        font-size: 13px;
+    }
+
+        ul.menu-right-ul li.separator {
+            margin: 16px 0;
+            border-top: 1px solid #eee;
+            border-color: #94979a;
+        }
+
+        ul.menu-right-ul li a {
+            color: #fff;
+            text-decoration: none;
+            cursor: default;
+            /*color: #2086bf;*/
+        }
+
+        /*par*/
+        ul.menu-right-ul li:nth-of-type(even) a {
+            color: rgb(237, 237, 237);
+            font-size: 12.5px;
+            text-transform: lowercase;
+            margin-left: 7px;
+            display: block;
+        }
+
+            ul.menu-right-ul li:nth-of-type(even) a:first-letter {
+                text-transform: uppercase;
+            }
+        /*impar, odd, calculado*/
+        ul.menu-right-ul li:nth-of-type(2n+1) a {
+            font-size: 13px;
+        }
+
+        ul.menu-right-ul li:first-child a {
+            cursor: pointer;
+            font-size: 13.5px;
+        }
+
+            ul.menu-right-ul li:first-child a:hover {
+                color: #2086bf;
+            }
+
+
+/* menu de navegacion */
+
+#ly-navpane {
+    position: fixed;
+    /*z-index: 1;*/
+    /*z-index: 3;*/
+    /*z-index: -2;*/
+    top: 30px;
+    bottom: 60px;
+    left: 50%;
+    width: 200px;
+    overflow-x: hidden;
+    background-color: #71b1d1;
+}
+
+/*IconosMenu-Nav*/
+ul#ly-navigation-container {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+
+
+
+li.ly-navigation-item {
+    list-style-type: none;
+}
+
+a.ly-div-navigation-link {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    opacity: 1;
+    float: left;
+    width: 190px;
+    min-height: 45px;
+    padding-left: 10px;
+    padding-top: 3px;
+    cursor: pointer;
+}
+
+    a.ly-div-navigation-link div {
+        background-repeat: repeat-x;
+    }
+    /*link,visited,hover,focus,active*/
+    a.ly-div-navigation-link:hover {
+        background-color: #83bedb;
+    }
+ 
+
+a.ly-div-navigation-link > .ly-div-navigation-label {
+    float: left;
+    padding-left: 9.4px;
+    line-height: 26px; /* linea entre el texto y el elemento*/
+    font-family: 'Segoe UI';
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/*subMenu*/
+
+#ly-navpane-2 {
+    background: #519bbd;
+    width: 145px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 140px;
+    /*left: 55px;*/
+    display: none;
+}
+
+
+
+#ly-navpane-back {
+    display: block;
+    font-size: 16px;
+    height: 120px;
+    line-height: 120px;
+    padding: 0;
+    text-transform: lowercase;
+    text-decoration: none;
+    white-space: nowrap;
+    width: 140px;
+}
+
+
+    #ly-navpane-back img {
+        left: 19px;
+        padding-right: 8px;
+        position: relative;
+        top: 24px;
+        opacity: .3;
+        -webkit-transition: opacity .2s ease-in-out;
+        border: none;
+    }
+
+        #ly-navpane-back img:hover {
+            opacity: 1;
+        }
+
+    #ly-navpane-back + #ly-navpane-scroll {
+       /*overflow: scroll; */ 
+        width: 190px;
+        height: 440px;
+        position: relative;
+    }
+/* que tenga un hij odirectamente >, pero sin el signo mayor seria que contenga un
+elemento no importa si no es un hijo directamente que este depsues de el*/
+
+    #ly-navpane-back + #ly-navpane-scroll > #ly-navpane-scroll-items {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+
+#ly-navpane-scroll-items ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    font-family: 'Sg-SemiBold';
+}
+
+    #ly-navpane-scroll-items ul li > a {
+        height: 25px;
+        width: 140px;
+        display: block;
+        color: #fff;
+        padding: 0 18px 0 20px;
+    }
+
+        #ly-navpane-scroll-items ul li > a > span {
+            width: 102px;
+            height: 25px;
+            font-size: 12.2px;
+            line-height: 25px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+            display: inline-block;
+            text-transform: lowercase;
+        }
+/*todos las etiquetas cuando pase el mouse y no este active*/
+#ly-navpane-scroll-items nav ul li > a:hover:not(.active) {
+    background-color: #d6eaee;
+    color: #39444c;
+    font-family: 'Segoe UI Symbol';
+    cursor: pointer;
+}
+
+
+/*----------- pie de Pagina Footer ---------*/
+.footer {
+    position: fixed;
+    bottom: 0;
+    background: #3c454f;
+    height: 60px;
+    left: 50%;
+    margin-left: -580px;
+    width: 1160px;
+    text-align: center;
+    z-index: 3;
+}
+.fxs-modalpresenter-shield {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #000;
+    z-index: 2003;
+    display: none;
+    opacity: 0.75;
+}
+
+
+/*Progress  mensaje*/
+#progress {
+    border-top: 4px solid #77c02f;
+    display: none;
+}
+
+.progress-content-text {
+    line-height: 55px;
+    text-align: left;
+}
+
+.progress-content-status {
+    float: left;
+    line-height: 55px;
+    margin-right: 7px;
+}
+
+.progress-content-message {
+    display: block;
+    height: 55px;
+    line-height: 55px;
+    color: #fff;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    background-position: 30px 50%;
+    padding-left: 30px;
+}
+.footer-message-action {
+    margin-right: 26px;
+    float: right;
+}
+
+    .footer-message-action ul.footer-message-confirmation {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+ul.footer-message-confirmation li {
+    float: left;
+    margin-left: 12px;
+}
+
+ul.footer-message-confirmation button {
+    border: 0;
+    background: transparent;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: "Sg-SemiBold";
+    font-size: 11px;
+    margin: 0;
+    padding: 0 4px;
+    height: 55px;
+    cursor: pointer;
+}
+
+    ul.footer-message-confirmation button img {
+        margin-left: 12px;
+        float: right;
+        border: 0;
+    }
+
+
+    ul.footer-message-confirmation button span {
+        line-height: 30px;
+    }
+
+
+.footer-message, .progress-content {
+    background-color: #495461;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 0px;
+    display: none;
+    top: 0px;
+    z-index: 2004;
+}
+
+
+.footer-message .footer-message-text {
+    display: block;
+    height: 55px;
+    line-height: 55px;
+    color: #fff;
+    text-decoration: none;
+    padding-left: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left;
+}
+
+/* opciones de menu */
+
+
+.footer-newbutton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 28px; /*si no tiene los cuatro parametors el segundo lo concidera como left*/
+    min-width: 69px;
+}
+
+    .footer-newbutton:hover {
+        background-color: #555d65;
+        cursor: pointer;
+    }
+
+.footer-newbutton-img {
+    float: left;
+    padding-top: 17px;
+}
+
+.footer-newbutton-text {
+    color: #fff;
+    font: 14px/25px "Sg-SemiBold";
+    margin-left: 4px;
+    line-height: 60px;
+    text-transform: uppercase;
+}
+
+.footer-command {
+    display: inline-block;
+    color: #fff;
+}
+
+    .footer-command > ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        float: left;
+    }
+
+        .footer-command > ul > li {
+            float: left;
+            text-align: left;
+        }
+
+            .footer-command > ul > li .footer-command-img {
+                background-color: transparent;
+                border: 0;
+                width: 85px;
+                height: 60px;
+                font-size: 9px;
+                color: #fff;
+                cursor: pointer;
+            }
+
+.footer-command-img {
+    padding-top: 2px;
+}
+
+
+.footer-command ul li:hover {
+    background-color: #555d65;
+}
+
+
+
+
+
+.footer-comnand-ico {
+    position: relative;
+    overflow: hidden;
+    width: 32px;
+    height: 32px;
+    margin: 0 auto;
+    padding: 4px 0 0;
+}
+
+.footer-comand-text {
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1em;
+    word-wrap: break-word;
+    padding: 0 2px;
+}
+
+
+.footer-menu-notificacion {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+
+.footer-menu-img ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+    .footer-menu-img ul li {
+        float: left;
+    }
+
+        .footer-menu-img ul li div.footer-menu-info-img {
+            height: 56px;
+            padding: 2px 6px;
+            line-height: 60px;
+            width: 46px;
+        }
+
+
+.footer-menu-info-img img {
+    vertical-align: -3px;
+    top: 22px;
+    text-align: left;
+}
+
+

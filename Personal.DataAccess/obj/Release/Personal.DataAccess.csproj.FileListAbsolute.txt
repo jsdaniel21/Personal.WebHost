@@ -1,0 +1,15 @@
+G:\Sistema Gestion RRHH\Personal.WebHost\Personal.DataAccess\bin\Release\Personal.DataAccess.dll
+G:\Sistema Gestion RRHH\Personal.WebHost\Personal.DataAccess\bin\Release\Personal.DataAccess.pdb
+G:\Sistema Gestion RRHH\Personal.WebHost\Personal.DataAccess\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+G:\Sistema Gestion RRHH\Personal.WebHost\Personal.DataAccess\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+G:\Sistema Gestion RRHH\Personal.WebHost\Personal.DataAccess\bin\Release\Microsoft.Practices.ServiceLocation.dll
+G:\Sistema Gestion RRHH\Personal.WebHost\Personal.DataAccess\bin\Release\Microsoft.Practices.Unity.dll
+G:\Sistema Gestion RRHH\Personal.WebHost\Personal.DataAccess\bin\Release\Microsoft.Practices.Unity.Interception.Configuration.dll
+G:\Sistema Gestion RRHH\Personal.WebHost\Personal.DataAccess\bin\Release\Microsoft.Practices.Unity.Interception.dll
+G:\Sistema Gestion RRHH\Personal.WebHost\Personal.DataAccess\bin\Release\Personal.BussinessEntity.dll
+G:\Sistema Gestion RRHH\Personal.WebHost\Personal.DataAccess\bin\Release\Personal.EntityQuerys.dll
+G:\Sistema Gestion RRHH\Personal.WebHost\Personal.DataAccess\bin\Release\Personal.BussinessEntity.pdb
+G:\Sistema Gestion RRHH\Personal.WebHost\Personal.DataAccess\bin\Release\Personal.EntityQuerys.pdb
+G:\Sistema Gestion RRHH\Personal.WebHost\Personal.DataAccess\obj\Release\Personal.DataAccess.csprojResolveAssemblyReference.cache
+G:\Sistema Gestion RRHH\Personal.WebHost\Personal.DataAccess\obj\Release\Personal.DataAccess.dll
+G:\Sistema Gestion RRHH\Personal.WebHost\Personal.DataAccess\obj\Release\Personal.DataAccess.pdb

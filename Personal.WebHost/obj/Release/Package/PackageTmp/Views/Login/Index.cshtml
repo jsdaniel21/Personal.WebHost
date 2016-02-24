@@ -1,0 +1,49 @@
+﻿@model Personal.Models.usuarioModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+    <link href="~/Content/_Login/site.css" rel="stylesheet" />
+    <link href="~/Content/_Login/animate.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <div id="container">
+
+            @Html.LabelFor(model => model.V_NOM_USUARIO, htmlAttributes: new { @class = "label" })
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.V_NOM_USUARIO)
+                @Html.ValidationMessageFor(model => model.V_NOM_USUARIO)
+            </div>
+
+            @Html.LabelFor(model => model.V_CONTRASEÑA, htmlAttributes: new { @class = "label" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.V_CONTRASEÑA)
+                @Html.ValidationMessageFor(model => model.V_CONTRASEÑA)
+            </div>
+            <div id="lower">
+                @Html.CheckBoxFor(model => model.remember, htmlAttributes: new { @class = "check" }) Mantener Session
+                <input type="submit" class="submit" value="Enviar" />
+            </div>
+        </div>
+    }
+
+</body>
+</html>

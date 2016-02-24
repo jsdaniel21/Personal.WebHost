@@ -1,0 +1,37 @@
+﻿/*para cada div que tenga la clase "" que contenga un etiqueta a*/
+div.content-menu-employees a {
+    display: inline-block;
+    margin-top: 5px;
+}
+
+a > div.menu-employees-content {
+    width: 170px;
+    opacity: 0.65;
+    text-align: center;
+    height: 150px;
+    word-spacing: -5px;
+}
+
+    a > div.menu-employees-content img {
+        margin-top: 16px;
+        width: 100px;
+    }
+
+    a > div.menu-employees-content div:last-child {
+        font-size: 22px;
+        color: rgba(255, 253, 253, 0.95);
+        font-size: 16px;
+        font-style: inherit;
+        font-family: vrinda;
+        text-shadow: 1px 0px 0px rgba(53, 47, 47, 0.37);
+        opacity: 0.9;
+        text-transform: lowercase;
+    }
+    /*funciona con elementos que tenga como tipo display:block o inline-block,list-item*/
+    a > div.menu-employees-content div:first-letter {
+        text-transform: uppercase;
+    }
+
+.content-menu-employees > a:hover > div.menu-employees-content {
+    opacity: 1;
+}

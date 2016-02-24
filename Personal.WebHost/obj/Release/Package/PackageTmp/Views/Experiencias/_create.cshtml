@@ -1,0 +1,64 @@
+﻿@model BussinessEntity.SG_PERSONA_TRABAJO
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    @Html.HiddenFor(m => m.C_COD_PERSONA, new { @data_name = "codPersona" })
+    <div class="tabcontent-form">
+        <div class="form">
+            <div class="form-content">
+                <div class="form-row">
+                    <div class="form-row-cell title-cell-bold">
+                        @Html.LabelFor(model => model.MA_PAIS.I_COD_PAIS)
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-row-cell" style="width:100%">
+                        @Html.DropDownListFor(model => model.I_COD_PAIS, (SelectList)ViewBag.listarPais, "--SELECT--")
+                    </div>
+                </div>
+            </div>
+            <div class="form-content">
+                <div class="form-row">
+                    <div class="form-row-cell title-cell-bold">
+                        @Html.LabelFor(model => model.I_AÑO)
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-row-cell" style="width:100%">
+                        @Html.EditorFor(model => model.I_AÑO)
+                    </div>
+                </div>
+            </div>
+            <div class="form-content">
+                <div class="form-row">
+                    <div class="form-row-cell title-cell-bold">
+                        @Html.LabelFor(model => model.MA_CARGO.I_COD_CARGO)
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-row-cell" style="width:100%">
+                        @Html.DropDownListFor(model => model.I_COD_CARGO, (SelectList)ViewBag.listCargo, "--SELECT--")
+                    </div>
+                </div>
+            </div>
+            <div class="form-content">
+                <div class="form-row">
+                    <div class="form-row-cell title-cell-bold">
+                        @Html.LabelFor(model => model.V_DES_ENTIDAD)
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-row-cell" style="width:100%">
+                        @Html.EditorFor(model => model.V_DES_ENTIDAD)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}

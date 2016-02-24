@@ -1,0 +1,91 @@
+﻿@model Personal.ViewModels.listarAreaCargoxPersonaVM
+<script src="~/Scripts/pages/CargoJS/detailsJS.js"></script>
+<article>
+    @Html.Hidden("latitude", (double)ViewBag.latitude)
+    @Html.Hidden("longitude", (double)ViewBag.longitude)
+    @Html.Hidden("optMaps", "detMaps", htmlAttributes: new { @data_op_maps = "detMaps" })
+    @Html.HiddenFor(m => m.clsPeopleCharge.V_OBSERVACION_ANULADO, htmlAttributes: new { @id = "anulado" })
+    <style>
+        dl.detalle-content dt {
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        dl.detalle-content dd {
+            font-family: 'Segoe UI';
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+    </style>
+    <hr />
+    <section data-page="1">
+        <section>
+            <iframe src="@Url.Action("Maps", "Maps")" class="iframeMaps" id="ifraMaps"></iframe>
+        </section>
+        <section>
+ 
+            <dl class="detalle-content">
+                <dt class="form-row-cell title-cell-bold">
+                    @Html.LabelFor(m => m.clsArea.V_DES_FUNCIONES)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(m => m.clsArea.V_DES_FUNCIONES)
+                </dd>
+                <dt class="form-row-cell title-cell-bold">
+                    @Html.LabelFor(m => m.clsArea.V_ABREV_FUNCIONES)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(m => m.clsArea.V_ABREV_FUNCIONES)
+                </dd>
+                <dt class="form-row-cell title-cell-bold">
+                    @Html.LabelFor(m => m.clsCargo.V_DES_CARGO)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(m => m.clsCargo.V_DES_CARGO)
+                </dd>
+                <dt class="form-row-cell title-cell-bold">
+                    @Html.LabelFor(m => m.clsPeopleCharge.D_FEC_REGISTRO)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(m => m.clsPeopleCharge.D_FEC_REGISTRO)
+                </dd>
+                <dt class="form-row-cell title-cell-bold">
+                    @Html.LabelFor(m => m.clsPeopleCharge.D_FEC_INGRESO)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(m => m.clsPeopleCharge.D_FEC_INGRESO)
+                </dd>
+                <dt class="form-row-cell title-cell-bold">
+                    @Html.LabelFor(m => m.clsPeopleCharge.D_FEC_BAJA)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(m => m.clsPeopleCharge.D_FEC_BAJA)
+                </dd>
+                <dt class="form-row-cell title-cell-bold">
+                    @Html.LabelFor(m => m.clsPeopleCharge.C_ACTIVO)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(m => m.clsPeopleCharge.C_ACTIVO)
+                </dd>
+            </dl>
+        </section>
+    </section>
+
+    <section data-page="2" style="display:none">
+        <dl>
+            <dt class="form-row-cell title-cell-bold">
+                    Detalle de Ingreso de cargo
+                </dt>
+                <dd>
+                    @Html.TextAreaFor(m => m.clsPeopleCharge.V_OBSERVACION_INGRESO, new { @id = "ingreso", @placeholder = "Observacion Ingreso", @disabled = "disabled", @class = "empty observacion" })
+                </dd>
+            <dt class="form-row-cell title-cell-bold">
+                <span style="color:red">Motivo de Anulacion</span>
+            </dt>
+            <dd>                
+                @Html.TextAreaFor(m => m.clsPeopleCharge.V_OBSERVACION_ANULADO, new { @id = "anulado", @placeholder = "Motivo Anulacion", @disabled = "disabled", @class = "empty observacion" })
+            </dd>
+        </dl>
+
+    </section>
+</article>

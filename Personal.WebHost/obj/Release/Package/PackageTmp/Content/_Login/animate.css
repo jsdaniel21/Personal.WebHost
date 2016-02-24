@@ -1,0 +1,63 @@
+﻿
+
+@keyframes intoFade {
+
+    
+    10% {
+        
+        transform: scale(0.5);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+
+    90% {
+        transform: scale(0.8);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@-ms-keyframes  intoFade {
+
+
+    10% {
+        -ms-transform: scale(0.5);
+    }
+
+    40% {
+        -ms-transform: scale(1);
+    }
+
+    90% {
+        -ms-transform: scale(0.8);
+    }
+
+    100% {
+        -ms-transform: scale(1);
+    }
+}
+
+
+@-webkit-keyframes  intoFade {
+
+
+    10% {
+        -webkit-transform: scale(0.5);
+    }
+
+    40% {
+        -webkit-transform: scale(1);
+    }
+
+    90% {
+        -webkit-transform: scale(0.8);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+    }
+}
