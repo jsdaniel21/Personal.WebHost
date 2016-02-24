@@ -146,8 +146,8 @@ F:\SisLocal\Sistema Gestion RRHH\Personal.WebHost\BussinessLogic\obj\Debug\Bussi
 \\10.10.1.70\GitHub\Personal.WebHost\BussinessLogic\bin\Debug\BussinessLogic.pdb
 \\10.10.1.70\GitHub\Personal.WebHost\BussinessLogic\bin\Debug\Personal.BussinessEntity.dll
 \\10.10.1.70\GitHub\Personal.WebHost\BussinessLogic\bin\Debug\Personal.DataAccess.dll
-\\10.10.1.70\GitHub\Personal.WebHost\BussinessLogic\bin\Debug\Personal.EntityQuerys.dll
 \\10.10.1.70\GitHub\Personal.WebHost\BussinessLogic\bin\Debug\Personal.Interfaces.dll
+\\10.10.1.70\GitHub\Personal.WebHost\BussinessLogic\bin\Debug\Personal.ViewModels.dll
 \\10.10.1.70\GitHub\Personal.WebHost\BussinessLogic\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
 \\10.10.1.70\GitHub\Personal.WebHost\BussinessLogic\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
 \\10.10.1.70\GitHub\Personal.WebHost\BussinessLogic\bin\Debug\Microsoft.Practices.ServiceLocation.dll
@@ -155,7 +155,8 @@ F:\SisLocal\Sistema Gestion RRHH\Personal.WebHost\BussinessLogic\obj\Debug\Bussi
 \\10.10.1.70\GitHub\Personal.WebHost\BussinessLogic\bin\Debug\Microsoft.Practices.Unity.Interception.dll
 \\10.10.1.70\GitHub\Personal.WebHost\BussinessLogic\bin\Debug\Personal.BussinessEntity.pdb
 \\10.10.1.70\GitHub\Personal.WebHost\BussinessLogic\bin\Debug\Personal.DataAccess.pdb
-\\10.10.1.70\GitHub\Personal.WebHost\BussinessLogic\bin\Debug\Personal.EntityQuerys.pdb
+\\10.10.1.70\GitHub\Personal.WebHost\BussinessLogic\bin\Debug\Personal.ViewModels.pdb
 \\10.10.1.70\GitHub\Personal.WebHost\BussinessLogic\bin\Debug\Personal.Interfaces.pdb
+\\10.10.1.70\GitHub\Personal.WebHost\BussinessLogic\obj\Debug\Personal.BussinessLogic.csprojResolveAssemblyReference.cache
 \\10.10.1.70\GitHub\Personal.WebHost\BussinessLogic\obj\Debug\BussinessLogic.dll
 \\10.10.1.70\GitHub\Personal.WebHost\BussinessLogic\obj\Debug\BussinessLogic.pdb

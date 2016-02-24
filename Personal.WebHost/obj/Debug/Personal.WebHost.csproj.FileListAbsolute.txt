@@ -579,10 +579,10 @@ F:\Personal.WebHost - jcontreras\Personal.WebHost\obj\Debug\Personal.WebHost.pdb
 \\10.10.1.70\GitHub\Personal.WebHost\Personal.WebHost\bin\Microsoft.Web.Infrastructure.dll
 \\10.10.1.70\GitHub\Personal.WebHost\Personal.WebHost\bin\Newtonsoft.Json.dll
 \\10.10.1.70\GitHub\Personal.WebHost\Personal.WebHost\bin\Personal.BussinessEntity.dll
-\\10.10.1.70\GitHub\Personal.WebHost\Personal.WebHost\bin\Personal.EntityQuerys.dll
 \\10.10.1.70\GitHub\Personal.WebHost\Personal.WebHost\bin\Personal.Interfaces.dll
 \\10.10.1.70\GitHub\Personal.WebHost\Personal.WebHost\bin\Personal.Models.dll
 \\10.10.1.70\GitHub\Personal.WebHost\Personal.WebHost\bin\Personal.Utilities.dll
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.WebHost\bin\Personal.ViewModels.dll
 \\10.10.1.70\GitHub\Personal.WebHost\Personal.WebHost\bin\System.Net.Http.Formatting.dll
 \\10.10.1.70\GitHub\Personal.WebHost\Personal.WebHost\bin\System.Web.Helpers.dll
 \\10.10.1.70\GitHub\Personal.WebHost\Personal.WebHost\bin\System.Web.Http.dll
@@ -600,7 +600,7 @@ F:\Personal.WebHost - jcontreras\Personal.WebHost\obj\Debug\Personal.WebHost.pdb
 \\10.10.1.70\GitHub\Personal.WebHost\Personal.WebHost\bin\Microsoft.Practices.Unity.Interception.dll
 \\10.10.1.70\GitHub\Personal.WebHost\Personal.WebHost\bin\BussinessLogic.pdb
 \\10.10.1.70\GitHub\Personal.WebHost\Personal.WebHost\bin\Personal.BussinessEntity.pdb
-\\10.10.1.70\GitHub\Personal.WebHost\Personal.WebHost\bin\Personal.EntityQuerys.pdb
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.WebHost\bin\Personal.ViewModels.pdb
 \\10.10.1.70\GitHub\Personal.WebHost\Personal.WebHost\bin\Personal.Interfaces.pdb
 \\10.10.1.70\GitHub\Personal.WebHost\Personal.WebHost\bin\Personal.Models.pdb
 \\10.10.1.70\GitHub\Personal.WebHost\Personal.WebHost\bin\Personal.Utilities.pdb
