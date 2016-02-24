@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 using BussinessLogic.DataAccess;
 using Personal.ViewModels;
 using BussinessEntity;
-using BussinessLogic.Interfaces;
-using BussinessLogic.Interfaces;
+using Personal.Interfaces;
+ 
 
 namespace BussinessLogic
 {
@@ -82,9 +82,9 @@ namespace BussinessLogic
         }
 
 
-        public List<RRHH_PERSONA> queryEmployees(string vCodigoPersona, int iCodigoTipoEmpleado, int iCodigoTipoModalidad, int iCodigoInstitucion, string vCodigoGradoMilitar, int iCodigoSituacionMilitar, int iCodigoInstancia)
+        public List<DetallePersonal> queryEmployees(string vCodigoPersona, int iCodigoTipoEmpleado, int iCodigoTipoModalidad, int iCodigoInstitucion, string vCodigoGradoMilitar, int iCodigoSituacionMilitar, int iCodigoInstancia, string cActivo)
         {
-            return new personaDA().queryEmployees(vCodigoPersona, iCodigoTipoEmpleado, iCodigoTipoModalidad, iCodigoInstitucion, vCodigoGradoMilitar, iCodigoSituacionMilitar, iCodigoInstancia);
+            return new personaDA().queryEmployees(vCodigoPersona, iCodigoTipoEmpleado, iCodigoTipoModalidad, iCodigoInstitucion, vCodigoGradoMilitar, iCodigoSituacionMilitar, iCodigoInstancia, cActivo);
         }
 
         public List<rptPersonalList> rptListarPersonal(int iCodigoTipoEmpleado, int iCodigoTipoModalidad, int iCodigoInstitucion, string vCodigoGradoMilitar, int iCodigoSituacionMilitar, int iCodigoInstancia)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Personal.ViewModels;
 using BussinessEntity;
 
-namespace BussinessLogic.Interfaces
+namespace Personal.Interfaces
 {
     public interface IPersona
     {
@@ -21,7 +21,7 @@ namespace BussinessLogic.Interfaces
         RRHH_PERSONA caracteristicasPeople(string codPersona);
         int registrarImagen(SG_PERSONA_IMAGENE entity);
         int registrarEmpleado(RRHH_PERSONA entity);
-        List<RRHH_PERSONA> queryEmployees(string vCodigoPersona, int iCodigoTipoEmpleado,int iCodigoTipoModalidad, int iCodigoInstitucion, string vCodigoGradoMilitar, int iCodigoSituacionMilitar,int iCodigoInstancia);
+        List<DetallePersonal> queryEmployees(string vCodigoPersona, int iCodigoTipoEmpleado, int iCodigoTipoModalidad, int iCodigoInstitucion, string vCodigoGradoMilitar, int iCodigoSituacionMilitar, int iCodigoInstancia, string cActivo);
         dataPeopleForEmployeesVM dataPeopleForEmployees(string codPeople, string codTipoSistema, string username);
         List<MA_TIPO_IDENTIFICACION> listTypeIdentificacion();
         List<MA_TIPO_MODALIDAD> listTypeModality(int codTipoEmpleado);

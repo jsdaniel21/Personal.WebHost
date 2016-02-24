@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Personal.ViewModels;
 using BussinessEntity;
 
-namespace BussinessLogic.Interfaces
+namespace Personal.Interfaces
 
 {
     public interface IRptPersonalRepository

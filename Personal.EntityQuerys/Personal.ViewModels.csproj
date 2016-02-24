@@ -7,8 +7,8 @@
     <ProjectGuid>{AFB8C90C-4820-4132-8FC3-D7B7D75EB657}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Personal.EntityQuerys</RootNamespace>
-    <AssemblyName>Personal.EntityQuerys</AssemblyName>
+    <RootNamespace>Personal.ViewModels</RootNamespace>
+    <AssemblyName>Personal.ViewModels</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

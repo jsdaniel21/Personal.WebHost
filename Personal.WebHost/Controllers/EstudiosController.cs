@@ -10,6 +10,7 @@ using System.Web.Security;
 using Personal.ViewModels;
 using BussinessEntity;
 using System.Runtime.Caching;
+using Personal.Interfaces;
 
 
 namespace BussinessLogic.WebHost.Controllers

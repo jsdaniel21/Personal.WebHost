@@ -17,6 +17,7 @@ using BussinessLogic;
 using System.Configuration;
 
 using Personal.Interfaces;
+
 namespace BussinessLogic.WebHost.Controllers
 {
     public class EmployeesController : Controller
@@ -77,7 +78,7 @@ namespace BussinessLogic.WebHost.Controllers
             ViewBag.instanciaPorTipoInstitucion = new SelectList(_IMaInstanciaRepository.listInstanciaForTypeInst("1"), "I_COD_INSTANCIA", "V_DES_INSTANCIA");
 
 
-            return View(personaRepository.queryEmployees(vCodigoPersona, 0, 0, 0, "", 0,0));
+            return View(personaRepository.queryEmployees(vCodigoPersona, 0, 0, 0, "", 0, 0, "S"));
         }
 
         public ActionResult Avatar(string codPersona, string codTipoSistema)
@@ -170,7 +171,7 @@ namespace BussinessLogic.WebHost.Controllers
         }
 
         [HttpGet]
-        public JsonResult empleados(int iCodigoTipoEmpleado, int iCodigoTipoModalidad, int iCodigoInstitucion, string vCodigoGradoMilitar, int iCodigoSituacionMilitar,int iCodigoInstancia)
+        public JsonResult empleados(int iCodigoTipoEmpleado, int iCodigoTipoModalidad, int iCodigoInstitucion, string vCodigoGradoMilitar, int iCodigoSituacionMilitar, int iCodigoInstancia,string cActivo)
         {
             return Json(personaRepository.queryEmployees(User.Identity.Name.ToString().ToLower().Contains(ConfigurationManager.AppSettings["userMaster"].ToLower()) ? "" : "PERS00000000001",
                 iCodigoTipoEmpleado,
@@ -178,7 +179,8 @@ namespace BussinessLogic.WebHost.Controllers
                 iCodigoInstitucion,
                 vCodigoGradoMilitar,
                 iCodigoSituacionMilitar,
-                iCodigoInstancia
+                iCodigoInstancia, 
+                cActivo
                 )
                 , JsonRequestBehavior.AllowGet);
         }
