@@ -476,9 +476,16 @@ namespace BussinessLogic.DataAccess
 
         }
 
-        public List<RRHH_PERSONA> queryEmployees(string vCodigoPersona, int iCodigoTipoEmpleado, int iCodigoTipoModalidad, int iCodigoInstitucion, string vCodigoGradoMilitar, int iCodigoSituacionMilitar, int iCodigoInstancia)
+        public List<DetallePersonal> queryEmployees(string vCodigoPersona,
+                int iCodigoTipoEmpleado,
+                int iCodigoTipoModalidad,
+                int iCodigoInstitucion,
+                string vCodigoGradoMilitar,
+                int iCodigoSituacionMilitar,
+                int iCodigoInstancia,
+                string cActivo)
         {
-            List<RRHH_PERSONA> lista = new List<RRHH_PERSONA>();
+            List<DetallePersonal> lista = new List<DetallePersonal>();
 
             Database db = DatabaseFactory.CreateDatabase(ConfigurationManager.AppSettings["conecion"].ToString());
 
@@ -490,22 +497,27 @@ namespace BussinessLogic.DataAccess
             db.AddInParameter(cmd, "C_COD_GRADO_MILITAR", DbType.String, vCodigoGradoMilitar);
             db.AddInParameter(cmd, "I_COD_SITUACION_MILITAR", DbType.String, iCodigoSituacionMilitar);
             db.AddInParameter(cmd, "I_COD_INSTANCIA", DbType.Int32, iCodigoInstancia);
+            db.AddInParameter(cmd, "C_ACTIVO", DbType.String, cActivo);
             using (IDataReader lee = db.ExecuteReader(cmd))
             {
                 while (lee.Read())
                 {
-                    RRHH_PERSONA Epersona = new RRHH_PERSONA();
-                    Epersona.C_COD_PERSONA = lee["C_COD_PERSONA"].ToString();
-                    Epersona.V_APELLIDO_PATERNO = lee["V_APELLIDO_PATERNO"].ToString();
-                    Epersona.V_APELLIDO_MATERNO = lee["V_APELLIDO_MATERNO"].ToString();
-                    Epersona.V_NOMBRES = lee["V_NOMBRES"].ToString();
-                    Epersona.C_ACTIVO = lee["C_ACTIVO"].ToString();
+                    DetallePersonal Epersona = new DetallePersonal();
+                    Epersona.iCodigoPersona = lee["C_COD_PERSONA"].ToString();
+                    Epersona.vGrado = lee["GRADO"].ToString();
+                    Epersona.vDNI = lee["DNI"].ToString();
+                    Epersona.vArma = lee["ARMA"].ToString();
+                    Epersona.vEmpleado = lee["EMPLEADO"].ToString();
+                    Epersona.vCargo = lee["CARGO"].ToString();
+                    Epersona.vSexo = lee["SEXO"].ToString();
+                    Epersona.vActivo = lee["C_ACTIVO"].ToString();
                     lista.Add(Epersona);
                 }
             }
 
             return lista;
         }
+
 
         public List<MA_INSTITUCION> listarInstitucionForTipo(int codTipoInstitucion, int codTipoEntidad)
         {

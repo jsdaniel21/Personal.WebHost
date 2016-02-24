@@ -118,3 +118,12 @@ F:\SisLocal\Sistema Gestion RRHH\Personal.WebHost\Personal.DataAccess\bin\Debug\
 F:\SisLocal\Sistema Gestion RRHH\Personal.WebHost\Personal.DataAccess\obj\Debug\Personal.DataAccess.csprojResolveAssemblyReference.cache
 F:\SisLocal\Sistema Gestion RRHH\Personal.WebHost\Personal.DataAccess\obj\Debug\Personal.DataAccess.dll
 F:\SisLocal\Sistema Gestion RRHH\Personal.WebHost\Personal.DataAccess\obj\Debug\Personal.DataAccess.pdb
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.DataAccess\bin\Debug\Personal.DataAccess.dll
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.DataAccess\bin\Debug\Personal.DataAccess.pdb
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.DataAccess\bin\Debug\Personal.BussinessEntity.dll
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.DataAccess\bin\Debug\Personal.EntityQuerys.dll
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.DataAccess\bin\Debug\Personal.BussinessEntity.pdb
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.DataAccess\bin\Debug\Personal.EntityQuerys.pdb
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.DataAccess\obj\Debug\Personal.DataAccess.csprojResolveAssemblyReference.cache
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.DataAccess\obj\Debug\Personal.DataAccess.dll
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.DataAccess\obj\Debug\Personal.DataAccess.pdb

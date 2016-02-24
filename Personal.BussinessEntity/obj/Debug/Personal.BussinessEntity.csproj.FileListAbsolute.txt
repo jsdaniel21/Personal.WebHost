@@ -51,3 +51,10 @@ F:\SisLocal\Sistema Gestion RRHH\Personal.WebHost\Personal.BussinessEntity\bin\D
 F:\SisLocal\Sistema Gestion RRHH\Personal.WebHost\Personal.BussinessEntity\obj\Debug\Personal.BussinessEntity.csprojResolveAssemblyReference.cache
 F:\SisLocal\Sistema Gestion RRHH\Personal.WebHost\Personal.BussinessEntity\obj\Debug\Personal.BussinessEntity.dll
 F:\SisLocal\Sistema Gestion RRHH\Personal.WebHost\Personal.BussinessEntity\obj\Debug\Personal.BussinessEntity.pdb
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.BussinessEntity\bin\Debug\Personal.BussinessEntity.dll
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.BussinessEntity\bin\Debug\Personal.BussinessEntity.pdb
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.BussinessEntity\bin\Debug\Personal.Models.dll
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.BussinessEntity\bin\Debug\Personal.Models.pdb
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.BussinessEntity\obj\Debug\Personal.BussinessEntity.csprojResolveAssemblyReference.cache
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.BussinessEntity\obj\Debug\Personal.BussinessEntity.dll
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.BussinessEntity\obj\Debug\Personal.BussinessEntity.pdb

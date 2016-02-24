@@ -47,3 +47,10 @@ F:\SisLocal\Sistema Gestion RRHH\Personal.WebHost\Personal.EntityQuerys\bin\Debu
 F:\SisLocal\Sistema Gestion RRHH\Personal.WebHost\Personal.EntityQuerys\obj\Debug\Personal.ViewModels.csprojResolveAssemblyReference.cache
 F:\SisLocal\Sistema Gestion RRHH\Personal.WebHost\Personal.EntityQuerys\obj\Debug\Personal.EntityQuerys.dll
 F:\SisLocal\Sistema Gestion RRHH\Personal.WebHost\Personal.EntityQuerys\obj\Debug\Personal.EntityQuerys.pdb
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.EntityQuerys\bin\Debug\Personal.EntityQuerys.dll
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.EntityQuerys\bin\Debug\Personal.EntityQuerys.pdb
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.EntityQuerys\bin\Debug\Personal.BussinessEntity.dll
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.EntityQuerys\bin\Debug\Personal.BussinessEntity.pdb
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.EntityQuerys\obj\Debug\Personal.ViewModels.csprojResolveAssemblyReference.cache
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.EntityQuerys\obj\Debug\Personal.EntityQuerys.dll
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.EntityQuerys\obj\Debug\Personal.EntityQuerys.pdb

@@ -43,6 +43,7 @@
     <Compile Include="CreatePeopleVM.cs" />
     <Compile Include="dataPeopleForEmployeesVM.cs" />
     <Compile Include="estudiesPeopleVM.cs" />
+    <Compile Include="DetallePersonal.cs" />
     <Compile Include="listarAreaCargoxPersonaVM.cs" />
     <Compile Include="listDomicilioPersonaVM.cs" />
     <Compile Include="listPeopleFamilyVM.cs" />

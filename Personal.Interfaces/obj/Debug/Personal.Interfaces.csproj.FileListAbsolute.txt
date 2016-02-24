@@ -70,3 +70,12 @@ F:\SisLocal\Sistema Gestion RRHH\Personal.WebHost\Personal.Interfaces\bin\Debug\
 F:\SisLocal\Sistema Gestion RRHH\Personal.WebHost\Personal.Interfaces\obj\Debug\Personal.Interfaces.csprojResolveAssemblyReference.cache
 F:\SisLocal\Sistema Gestion RRHH\Personal.WebHost\Personal.Interfaces\obj\Debug\Personal.Interfaces.dll
 F:\SisLocal\Sistema Gestion RRHH\Personal.WebHost\Personal.Interfaces\obj\Debug\Personal.Interfaces.pdb
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.Interfaces\bin\Debug\Personal.Interfaces.dll
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.Interfaces\bin\Debug\Personal.Interfaces.pdb
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.Interfaces\bin\Debug\Personal.BussinessEntity.dll
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.Interfaces\bin\Debug\Personal.EntityQuerys.dll
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.Interfaces\bin\Debug\Personal.BussinessEntity.pdb
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.Interfaces\bin\Debug\Personal.EntityQuerys.pdb
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.Interfaces\obj\Debug\Personal.Interfaces.csprojResolveAssemblyReference.cache
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.Interfaces\obj\Debug\Personal.Interfaces.dll
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.Interfaces\obj\Debug\Personal.Interfaces.pdb

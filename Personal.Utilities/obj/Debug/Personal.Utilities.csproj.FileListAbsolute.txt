@@ -38,3 +38,23 @@ E:\SisLocal\Sistema Gestion RRHH\Personal.WebHost\Personal.Utilities\bin\Debug\P
 E:\SisLocal\Sistema Gestion RRHH\Personal.WebHost\Personal.Utilities\obj\Debug\Personal.Utilities.csprojResolveAssemblyReference.cache
 E:\SisLocal\Sistema Gestion RRHH\Personal.WebHost\Personal.Utilities\obj\Debug\Personal.Utilities.dll
 E:\SisLocal\Sistema Gestion RRHH\Personal.WebHost\Personal.Utilities\obj\Debug\Personal.Utilities.pdb
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.Utilities\bin\Debug\Personal.Utilities.dll
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.Utilities\bin\Debug\Personal.Utilities.pdb
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.Utilities\bin\Debug\BussinessLogic.dll
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.Utilities\bin\Debug\Personal.BussinessEntity.dll
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.Utilities\bin\Debug\Personal.Interfaces.dll
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.Utilities\bin\Debug\Personal.EntityQuerys.dll
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.Utilities\bin\Debug\Personal.DataAccess.dll
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.Utilities\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.Utilities\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.Utilities\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.Utilities\bin\Debug\Microsoft.Practices.Unity.dll
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.Utilities\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.Utilities\bin\Debug\BussinessLogic.pdb
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.Utilities\bin\Debug\Personal.BussinessEntity.pdb
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.Utilities\bin\Debug\Personal.Interfaces.pdb
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.Utilities\bin\Debug\Personal.EntityQuerys.pdb
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.Utilities\bin\Debug\Personal.DataAccess.pdb
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.Utilities\obj\Debug\Personal.Utilities.csprojResolveAssemblyReference.cache
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.Utilities\obj\Debug\Personal.Utilities.dll
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.Utilities\obj\Debug\Personal.Utilities.pdb
