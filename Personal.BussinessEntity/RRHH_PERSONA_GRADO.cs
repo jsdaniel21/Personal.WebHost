@@ -22,7 +22,7 @@ namespace BussinessEntity
         public Nullable<System.DateTime> D_FECHA_BAJA { get; set; }
         public string C_ACTIVO { get; set; }
         public Nullable<int> I_COD_INSTITUCION { get; set; }
-        public string V_OBSERVACION_ANULACION { get; set; }
+        public string V_OBSERVACION { get; set; }
         public virtual MA_GRADO_MILITAR MA_GRADO_MILITAR { get; set; }
         public virtual MA_SITUACION_MILITAR MA_SITUACION_MILITAR { get; set; }
         public virtual RRHH_PERSONA RRHH_PERSONA { get; set; }

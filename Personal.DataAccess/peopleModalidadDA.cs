@@ -43,6 +43,8 @@ namespace Personal.DataAccess
                     entity.personaModalidad.D_FECHA_SECE = lee["D_FECHA_SECE"].ToString() == "" ? null : (DateTime?)Convert.ToDateTime(lee["D_FECHA_SECE"].ToString());
                     entity.personaModalidad.V_MOTIVO_CESE_CONTRATO = lee["V_MOTIVO_CESE_CONTRATO"].ToString();
                     entity.personaModalidad.C_ACTIVO = lee["C_ACTIVO"].ToString();
+                    entity.personaGrado.D_FECHA_BAJA = lee["D_FECHA_BAJA"].ToString() == "" ? null : (DateTime?)Convert.ToDateTime(lee["D_FECHA_BAJA"].ToString());
+                    entity.personaGrado.V_OBSERVACION = lee["V_OBSERVACION"].ToString();
                 }
 
             }
