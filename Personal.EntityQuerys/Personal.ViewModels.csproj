@@ -51,6 +51,7 @@
     <Compile Include="listPeopleJobsVM.cs" />
     <Compile Include="listPeopleVehiclesVM.cs" />
     <Compile Include="listTravelVM.cs" />
+    <Compile Include="ModalidadPersonal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="listarPermisosUsuarioVM.cs" />
     <Compile Include="rptPersonalList.cs" />

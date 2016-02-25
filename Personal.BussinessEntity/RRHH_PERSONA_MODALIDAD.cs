@@ -22,7 +22,12 @@ namespace BussinessEntity
         public Nullable<System.DateTime> D_FECHA_CONTRATO { get; set; }
         public Nullable<System.DateTime> D_FECHA_SECE { get; set; }
         public string C_ACTIVO { get; set; }
-    
+        public string V_MOTIVO_CESE_CONTRATO { get; set; }
+        public string V_NRO_DOCUMENTO_INGRESO { get; set; }
+        public string V_NRO_DOCUMENTO_CESE { get; set; }
+        public string V_OBSERVACION_INGRESO { get; set; }
+        public int? I_COD_TIPO_DOCUMENTO_INGRESO { get; set; }
+        public int? I_COD_TIPO_DOCUMENTO_CESE { get; set; }
         public virtual MA_TIPO_MODALIDAD MA_TIPO_MODALIDAD { get; set; }
         public virtual RRHH_PERSONA RRHH_PERSONA { get; set; }
     }

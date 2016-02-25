@@ -74,6 +74,7 @@
     <Compile Include="peopleDomicilioDA.cs" />
     <Compile Include="peopleFamilyDA.cs" />
     <Compile Include="peopleJobsDA.cs" />
+    <Compile Include="peopleModalidadDA.cs" />
     <Compile Include="peopleStudiesDA.cs" />
     <Compile Include="peopleTravelDA.cs" />
     <Compile Include="peopleVehiclesDA.cs" />

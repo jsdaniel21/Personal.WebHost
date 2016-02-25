@@ -1,9 +1,11 @@
-﻿@using (Html.BeginForm())
+﻿@model Personal.ViewModels.DesactivarEmpleadoVM
+
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
     @Html.Hidden("C_COD_PERSONA", HttpContext.Current.Request.QueryString["codPersona"])
-    @Html.Hidden("C_COD_PERSONA", HttpContext.Current.Request.QueryString["codPersona"])
+    @Html.Hidden("C_COD_MENU", (string)ViewBag.codMenu)
 
     <h1 class="itemtitle">DESACTIVAR PERSONAL</h1>
     <div class="itemList">
@@ -16,6 +18,162 @@
         </ul>
     </div>
 
+    <div class="aux-tabcontent">
+        <div style="height:450px;position: relative;overflow-y: auto;overflow-x:hidden">
+
+            <div id="content-page-ajax">
+                <div class="tabcontent-form">
+                    <!--<div style="position: fixed;  margin-top: -6px;  background: white;z-index: 1;  width: 883px; height: 70px;">-->
+                    <div>
+                        <div class="tabcontent-header">
+                            <h2 id="tabcontent-title">
+                                Datos Modalidad
+                            </h2>
+                        </div>
+                    </div>
+
+                    <div class="form">
+                        <div class="form-content">
+                            <div class="form-row">
+                                <div class="form-row-cell title-cell-bold">
+                                    @Html.LabelFor(model => model.tipoEmpleado.I_COD_TIPO_EMPLEADO)
+                                </div>
+                                <div class="form-row-cell title-cell-bold">
+                                    @Html.LabelFor(model => model.tipoModalidad.I_COD_TIPO_MODALIDAD)
+                                </div>
+                              
+                            </div>
+                            <div class="form-row">
+                                <div class="form-row-cell">
+                                    @Html.TextBoxFor(m => m.tipoEmpleado.V_DES_TIPO_EMPLEADO)
+                                </div>
+                                <div class="form-row-cell">
+                                    @Html.TextBoxFor(m => m.tipoModalidad.V_DES_TIPO_MODALIDA)
+                                </div>
+                            
+                            </div>
+                        </div>
+                        <div class="form-content">
+                            <div class="form-row">
+                                <div class="form-row-cell title-cell-bold">
+                                    @Html.LabelFor(model => model.personaModalidad.I_COD_TIPO_DOCUMENTO_INGRESO)
+                                </div>
+                                <div class="form-row-cell title-cell-bold">
+                                    @Html.LabelFor(model => model.personaModalidad.V_NRO_DOCUMENTO_INGRESO)
+                                </div>
+                                <div class="form-row-cell title-cell-bold">
+                                    @Html.LabelFor(model => model.personaModalidad.D_FECHA_CONTRATO)
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-row-cell">
+                                    @Html.DropDownListFor(model => model.personaModalidad.I_COD_TIPO_DOCUMENTO_INGRESO, new SelectList(Model.tipoDocumento, "I_COD_TIPO_DOCUMENTO", "V_DES_TIPO_DOCUMENTO"), "--SELECT--", new { @disabbled = "disabbled" })
+                                </div>
+                                <div class="form-row-cell">
+                                    @Html.TextBoxFor(model => model.personaModalidad.V_NRO_DOCUMENTO_INGRESO)
+                                </div>
+                                <div class="form-row-cell">
+                                    @Html.TextBoxFor(model => model.personaModalidad.D_FECHA_CONTRATO)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-content">
+                            <div class="form-row">
+                                <div class="form-row-cell title-cell-bold">
+                                    @Html.LabelFor(model => model.personaModalidad.I_COD_TIPO_DOCUMENTO_CESE)
+                                </div>
+                                <div class="form-row-cell title-cell-bold">
+                                    @Html.LabelFor(model => model.personaModalidad.V_NRO_DOCUMENTO_CESE)
+                                </div>   <div class="form-row-cell title-cell-bold">
+                                    @Html.LabelFor(model => model.personaModalidad.D_FECHA_SECE)
+                                </div>
 
 
+                            </div>
+                            <div class="form-row">
+                                <div class="form-row-cell">
+                                    @Html.DropDownListFor(model => model.personaModalidad.I_COD_TIPO_DOCUMENTO_CESE, new SelectList(Model.tipoDocumento, "I_COD_TIPO_DOCUMENTO", "V_DES_TIPO_DOCUMENTO"), "--SELECT--")
+                                </div>   <div class="form-row-cell">
+                                    @Html.TextBoxFor(model => model.personaModalidad.V_NRO_DOCUMENTO_CESE)
+                                </div>
+                                <div class="form-row-cell">
+                                    @Html.TextBoxFor(model => model.personaModalidad.D_FECHA_SECE)
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="form-content">
+                            <div class="form-row">
+                                <div class="form-row-cell title-cell-bold">
+                                    @Html.LabelFor(model => model.personaModalidad.V_MOTIVO_CESE_CONTRATO)
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="" style="width:95%">
+                                    @Html.TextAreaFor(model => model.personaModalidad.V_MOTIVO_CESE_CONTRATO, htmlAttributes: new { @class = "empty observacion" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form" id="contentMilitares">
+
+                        <div class="form-content">
+                            <div class="tabcontent-header">
+                                <h2>Datos Militares</h2>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-row-cell title-cell-bold">
+                                    @Html.LabelFor(model => model.institucion.V_DES_INSTITUCION)
+                                </div>
+                                <div class="form-row-cell title-cell-bold">
+                                    @Html.LabelFor(model => model.institucion.MA_GRADO_MILITAR)
+                                </div>
+                                <div class="form-row-cell title-cell-bold">
+                                    @Html.LabelFor(model => model.situacionMilitar.First().V_DES_TIPO_SITUACION)
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-row-cell title-cell-bold">
+                                    @Html.TextBoxFor(model => model.institucion.V_DES_INSTITUCION)
+                                </div>
+                                <div class="form-row-cell title-cell-bold">
+                                    @Html.TextBoxFor(model => model.gradoMilitar.V_DES_GRADO)
+                                </div>
+                                <div class="form-row-cell title-cell-bold">
+                                    <div class="form-row-cell">
+                                        @Html.DropDownListFor(model => model.personaGrado.I_COD_SITUACION_MILITAR, new SelectList(Model.situacionMilitar, "I_COD_SITUACION_MILITAR", "V_DES_TIPO_SITUACION", Model.personaGrado.I_COD_SITUACION_MILITAR), "--SELECT--", new { @disabbled = "disabled" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-content">
+                            <div class="form-row">
+                                <div class="form-row-cell title-cell-bold">
+                                    @Html.LabelFor(model => model.personaGrado.D_FECHA_BAJA)
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-row-cell">
+                                    @Html.TextBoxFor(model => model.personaGrado.D_FECHA_BAJA)
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-content">
+                            <div class="form-row">
+                                <div class="form-row-cell title-cell-bold">
+                                    @Html.LabelFor(model => model.personaGrado.V_OBSERVACION_ANULACION)
+                                </div>
+                                <div class="" style="width:95%">
+                                    @Html.TextAreaFor(model => model.personaGrado.V_OBSERVACION_ANULACION, htmlAttributes: new { @class = "empty observacion" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 }

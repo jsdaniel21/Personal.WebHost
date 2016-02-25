@@ -13,6 +13,7 @@ namespace BussinessEntity
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using Personal.Models;
+     
 
     [MetadataType(typeof(situacionMilitarModel))]
     public partial class MA_SITUACION_MILITAR
@@ -24,8 +25,9 @@ namespace BussinessEntity
     
         public int I_COD_SITUACION_MILITAR { get; set; }
         public string V_DES_TIPO_SITUACION { get; set; }
-        public string C_ACTIVO { get; set; }
-    
+        public string C_ACTIVO { get; set; }    
         public virtual ICollection<RRHH_PERSONA_GRADO> RRHH_PERSONA_GRADO { get; set; }
+
+
     }
 }

@@ -45,9 +45,11 @@
     <Compile Include="IMatipoEmpleadoRepository.cs" />
     <Compile Include="IMesesRepository.cs" />
     <Compile Include="IPeopleCharge.cs" />
+    <Compile Include="IPeopleDegreeRepository.cs" />
     <Compile Include="IPeopleDomicilio.cs" />
     <Compile Include="IPeopleFamily.cs" />
     <Compile Include="IPeopleJobs.cs" />
+    <Compile Include="IPeopleModalidadRepository.cs" />
     <Compile Include="IPeopleStudies.cs" />
     <Compile Include="IPeopleTravel.cs" />
     <Compile Include="IPeopleVehicles.cs" />

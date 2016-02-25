@@ -24,10 +24,12 @@ namespace BussinessLogic.WebHost.Controllers
     {
         //
         // GET: /Employees/
-        private readonly IPersona personaRepository;
+        private readonly IPersona _IPersona;
+        private readonly IPeopleModalidadRepository _IPeopleModalidadRepository;
         private readonly IPeopleDomicilio IPeopleDomicilio;
         private readonly IPeopleTravel IPeopleTravel;
         private readonly IMaInstanciaRepository _IMaInstanciaRepository;
+         
         public EmployeesController()
             : this(new personaBL())
         {
@@ -35,10 +37,11 @@ namespace BussinessLogic.WebHost.Controllers
         }
         public EmployeesController(IPersona personaRepository)
         {
-            this.personaRepository = personaRepository;
+            this._IPersona = personaRepository;
             this.IPeopleDomicilio = new peopleDomicilioBL();
             this.IPeopleTravel = new peopleTravelBL();
             this._IMaInstanciaRepository = new MaInstanciaBL();
+            this._IPeopleModalidadRepository = new peopleModalidadBL();
         }
         /// <summary>
         /// ACCIONES
@@ -49,18 +52,36 @@ namespace BussinessLogic.WebHost.Controllers
         public ActionResult _DesactivarEmpleado(string codMenu, string codPersona)
         {
             ViewBag.codMenu = codMenu;
+            var modalidadActual = _IPeopleModalidadRepository.ModalidadActualPersona(codPersona);
 
-            return PartialView();
+            DesactivarEmpleadoVM model = new DesactivarEmpleadoVM();
+            model.tipoEmpleado.V_DES_TIPO_EMPLEADO = modalidadActual.tipoEmpleado.V_DES_TIPO_EMPLEADO;
+            model.tipoModalidad.V_DES_TIPO_MODALIDA = modalidadActual.tipoModalidad.V_DES_TIPO_MODALIDA;
+            model.personaModalidad.I_COD_TIPO_DOCUMENTO_INGRESO = modalidadActual.personaModalidad.I_COD_TIPO_DOCUMENTO_INGRESO;
+            model.personaModalidad.V_NRO_DOCUMENTO_INGRESO = modalidadActual.personaModalidad.V_NRO_DOCUMENTO_INGRESO; 
+            model.personaModalidad.D_FECHA_CONTRATO = modalidadActual.personaModalidad.D_FECHA_CONTRATO;
+            model.personaModalidad.I_COD_TIPO_DOCUMENTO_CESE = modalidadActual.personaModalidad.I_COD_TIPO_DOCUMENTO_CESE;
+            model.personaModalidad.V_NRO_DOCUMENTO_CESE = modalidadActual.personaModalidad.V_NRO_DOCUMENTO_CESE; 
+            model.personaModalidad.D_FECHA_SECE = modalidadActual.personaModalidad.D_FECHA_SECE;             
+            model.personaModalidad.V_MOTIVO_CESE_CONTRATO = modalidadActual.personaModalidad.V_MOTIVO_CESE_CONTRATO;
+
+            model.institucion.V_DES_INSTITUCION = modalidadActual.institucion.V_DES_INSTITUCION;
+            model.gradoMilitar.V_DES_GRADO = modalidadActual.vDescripcionGrado;
+            model.situacionMilitar = _IPersona.listarSituacionMilitar();
+            model.personaGrado.I_COD_SITUACION_MILITAR = modalidadActual.situacionMilitar.I_COD_SITUACION_MILITAR;
+             
+
+            return PartialView(model);
 
         }
         public ActionResult _DetailsPeople(string codMenu, string codPersona)
         {
-            var entity = personaRepository.caracteristicasPeople(codPersona);
+            var entity = _IPersona.caracteristicasPeople(codPersona);
 
             ViewBag.codMenu = codMenu;
-            ViewBag.estadoCivil = new SelectList(personaRepository.listarEstadoCivil(), "I_COD_ESTADO_CIVIL", "V_DES_ESTADO_CIVIL", entity.RRHH_PERSONA_DETALLE.FirstOrDefault().I_COD_ESTADO_CIVIL);
-            ViewBag.sexo = new SelectList(personaRepository.listarSexo(), "I_COD_SEXO", "V_DES_SEXO", entity.RRHH_PERSONA_DETALLE.FirstOrDefault().I_COD_SEXO);
-            ViewBag.gruposanguineo = new SelectList(personaRepository.listarGrupoSanguineo(), "I_COD_GRUPO_SANGUINEO", "V_DES_GRUPO_SANGUINEO", entity.RRHH_PERSONA_DETALLE.FirstOrDefault().I_COD_GRUPO_SANGUINEO);
+            ViewBag.estadoCivil = new SelectList(_IPersona.listarEstadoCivil(), "I_COD_ESTADO_CIVIL", "V_DES_ESTADO_CIVIL", entity.RRHH_PERSONA_DETALLE.FirstOrDefault().I_COD_ESTADO_CIVIL);
+            ViewBag.sexo = new SelectList(_IPersona.listarSexo(), "I_COD_SEXO", "V_DES_SEXO", entity.RRHH_PERSONA_DETALLE.FirstOrDefault().I_COD_SEXO);
+            ViewBag.gruposanguineo = new SelectList(_IPersona.listarGrupoSanguineo(), "I_COD_GRUPO_SANGUINEO", "V_DES_GRUPO_SANGUINEO", entity.RRHH_PERSONA_DETALLE.FirstOrDefault().I_COD_GRUPO_SANGUINEO);
             ViewBag.pais = new SelectList(IPeopleTravel.listPais(), "I_COD_PAIS", "V_DES_PAIS", selectedValue: entity.RRHH_PERSONA_DETALLE.FirstOrDefault().I_COD_PAIS);
             ViewBag.departamento = new SelectList(IPeopleDomicilio.fillDepartamentoCb(Convert.ToInt32(entity.RRHH_PERSONA_DETALLE.FirstOrDefault().I_COD_PAIS)), "C_COD_DEPARTAMENTO", "V_DES_DEPARTAMENTO"
                 , entity.RRHH_PERSONA_DETALLE.FirstOrDefault().C_COD_DEPARTAMENTO);
@@ -70,9 +91,9 @@ namespace BussinessLogic.WebHost.Controllers
                 , entity.RRHH_PERSONA_DETALLE.FirstOrDefault().C_COD_DEPARTAMENTO
                 , entity.RRHH_PERSONA_DETALLE.FirstOrDefault().C_COD_PROVINCIA)
                 , "C_COD_DISTRITO", "V_DES_DISTRITO", entity.RRHH_PERSONA_DETALLE.FirstOrDefault().C_COD_DISTRITO);
-            ViewBag.tipoEmpleado = new SelectList(personaRepository.listarTipoEmpleado(), "I_COD_TIPO_EMPLEADO", "V_DES_TIPO_EMPLEADO", entity.RRHH_PERSONA_MODALIDAD.FirstOrDefault().MA_TIPO_MODALIDAD.I_COD_TIPO_EMPLEADO);
-            ViewBag.modalidad = new SelectList(personaRepository.listTypeModality(entity.RRHH_PERSONA_MODALIDAD.FirstOrDefault().MA_TIPO_MODALIDAD.I_COD_TIPO_EMPLEADO), "I_COD_TIPO_MODALIDAD", "V_DES_TIPO_MODALIDA", entity.RRHH_PERSONA_MODALIDAD.FirstOrDefault().I_COD_TIPO_MODALIDAD);
-            ViewBag.typeIdentificacion = new SelectList(personaRepository.listTypeIdentificacion(), "I_COD_TIPO_IDENTIFICACION", "V_ABREV_IDENTIFICACION");
+            ViewBag.tipoEmpleado = new SelectList(_IPersona.listarTipoEmpleado(), "I_COD_TIPO_EMPLEADO", "V_DES_TIPO_EMPLEADO", entity.RRHH_PERSONA_MODALIDAD.FirstOrDefault().MA_TIPO_MODALIDAD.I_COD_TIPO_EMPLEADO);
+            ViewBag.modalidad = new SelectList(_IPersona.listTypeModality(entity.RRHH_PERSONA_MODALIDAD.FirstOrDefault().MA_TIPO_MODALIDAD.I_COD_TIPO_EMPLEADO), "I_COD_TIPO_MODALIDAD", "V_DES_TIPO_MODALIDA", entity.RRHH_PERSONA_MODALIDAD.FirstOrDefault().I_COD_TIPO_MODALIDAD);
+            ViewBag.typeIdentificacion = new SelectList(_IPersona.listTypeIdentificacion(), "I_COD_TIPO_IDENTIFICACION", "V_ABREV_IDENTIFICACION");
 
             //retornar una vista parcial de una parte de la pagina
             return PartialView(entity);
@@ -80,26 +101,26 @@ namespace BussinessLogic.WebHost.Controllers
         public ActionResult Index()
         {
             string vCodigoPersona = vCodigoPersona = User.Identity.Name.ToString().ToLower().Contains(ConfigurationManager.AppSettings["userMaster"].ToLower()) ? "PERS00000000001" : "";
-            ViewBag.institucion = new SelectList(personaRepository.listarInstitucionForTipo(2, 12), "I_COD_INSTITUCION", "V_DES_INSTITUCION");
-            ViewBag.situacionMilitar = new SelectList(personaRepository.listarSituacionMilitar(), "I_COD_SITUACION_MILITAR", "V_DES_TIPO_SITUACION");
+            ViewBag.institucion = new SelectList(_IPersona.listarInstitucionForTipo(2, 12), "I_COD_INSTITUCION", "V_DES_INSTITUCION");
+            ViewBag.situacionMilitar = new SelectList(_IPersona.listarSituacionMilitar(), "I_COD_SITUACION_MILITAR", "V_DES_TIPO_SITUACION");
             ViewBag.instanciaPorTipoInstitucion = new SelectList(_IMaInstanciaRepository.listInstanciaForTypeInst("1"), "I_COD_INSTANCIA", "V_DES_INSTANCIA");
 
 
-            return View(personaRepository.queryEmployees(vCodigoPersona, 0, 0, 0, "", 0, 0, "S"));
+            return View(_IPersona.queryEmployees(vCodigoPersona, 0, 0, 0, "", 0, 0, "S"));
         }
 
         public ActionResult Avatar(string codPersona, string codTipoSistema)
         {
             //_codPersona
-            return View(personaRepository.dataPeopleForEmployees(codPersona, codTipoSistema, User.Identity.Name));
+            return View(_IPersona.dataPeopleForEmployees(codPersona, codTipoSistema, User.Identity.Name));
         }
 
         public ActionResult _Create()
         {
-            ViewBag.situacionMilitar = new SelectList(personaRepository.listarSituacionMilitar(), "I_COD_SITUACION_MILITAR", "V_DES_TIPO_SITUACION");
-            ViewBag.typeIdentificacion = new SelectList(personaRepository.listTypeIdentificacion(), "I_COD_TIPO_IDENTIFICACION", "V_ABREV_IDENTIFICACION");
-            ViewBag.institucion = new SelectList(personaRepository.listarInstitucionForTipo(2, 12), "I_COD_INSTITUCION", "V_DES_INSTITUCION");
-            ViewBag.tipoEmpleado = new SelectList(personaRepository.listarTipoEmpleado(), "I_COD_TIPO_EMPLEADO", "V_DES_TIPO_EMPLEADO");
+            ViewBag.situacionMilitar = new SelectList(_IPersona.listarSituacionMilitar(), "I_COD_SITUACION_MILITAR", "V_DES_TIPO_SITUACION");
+            ViewBag.typeIdentificacion = new SelectList(_IPersona.listTypeIdentificacion(), "I_COD_TIPO_IDENTIFICACION", "V_ABREV_IDENTIFICACION");
+            ViewBag.institucion = new SelectList(_IPersona.listarInstitucionForTipo(2, 12), "I_COD_INSTITUCION", "V_DES_INSTITUCION");
+            ViewBag.tipoEmpleado = new SelectList(_IPersona.listarTipoEmpleado(), "I_COD_TIPO_EMPLEADO", "V_DES_TIPO_EMPLEADO");
             return PartialView();
         }
 
@@ -134,7 +155,7 @@ namespace BussinessLogic.WebHost.Controllers
                 D_FEC_INGRESO = Convert.ToDateTime(form["iDia"].ToString() + "/" + form["iMes"].ToString() + "/" + form["iAno"].ToString())
             });
 
-            return Json(personaRepository.registrarEmpleado(entity), JsonRequestBehavior.AllowGet);
+            return Json(_IPersona.registrarEmpleado(entity), JsonRequestBehavior.AllowGet);
 
         }
         /// <summary>
@@ -148,39 +169,39 @@ namespace BussinessLogic.WebHost.Controllers
             var count = 0;
             if (op == "el")
             {
-                count = personaRepository.deletePersonaIdentificacion(Convert.ToInt32(entity.I_COD_TIPO_IDENTIFICACION), entity.C_COD_PERSONA);
+                count = _IPersona.deletePersonaIdentificacion(Convert.ToInt32(entity.I_COD_TIPO_IDENTIFICACION), entity.C_COD_PERSONA);
             }
             else if (op == "srv" || op == "loc")
             {
-                count = personaRepository.registrarIdentificacion(entity);
+                count = _IPersona.registrarIdentificacion(entity);
             }
             return Json(count, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult listTypeModality(int codTipoEmpleado)
         {
-            return Json(new SelectList(personaRepository.listTypeModality(codTipoEmpleado), "I_COD_TIPO_MODALIDAD", "V_DES_TIPO_MODALIDA"), JsonRequestBehavior.AllowGet);
+            return Json(new SelectList(_IPersona.listTypeModality(codTipoEmpleado), "I_COD_TIPO_MODALIDAD", "V_DES_TIPO_MODALIDA"), JsonRequestBehavior.AllowGet);
         }
         public ActionResult listTypeIdentificacion()
         {
-            return Json(personaRepository.listTypeIdentificacion(), JsonRequestBehavior.AllowGet);
+            return Json(_IPersona.listTypeIdentificacion(), JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult listarIdentificacionPersonal(string codPersona)
         {
-            return Json(personaRepository.listarIdentificacionPersonal(codPersona), JsonRequestBehavior.AllowGet);
+            return Json(_IPersona.listarIdentificacionPersonal(codPersona), JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
         public ActionResult registrarCaracteristicas(FormCollection form)
         {
-            return Json(personaRepository.registrarCaracteristicas(personaEntity(form)), JsonRequestBehavior.AllowGet);
+            return Json(_IPersona.registrarCaracteristicas(personaEntity(form)), JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
         public JsonResult empleados(int iCodigoTipoEmpleado, int iCodigoTipoModalidad, int iCodigoInstitucion, string vCodigoGradoMilitar, int iCodigoSituacionMilitar, int iCodigoInstancia, string cActivo)
         {
-            return Json(personaRepository.queryEmployees(User.Identity.Name.ToString().ToLower().Contains(ConfigurationManager.AppSettings["userMaster"].ToLower()) ? "" : "PERS00000000001",
+            return Json(_IPersona.queryEmployees(User.Identity.Name.ToString().ToLower().Contains(ConfigurationManager.AppSettings["userMaster"].ToLower()) ? "" : "PERS00000000001",
                 iCodigoTipoEmpleado,
                 iCodigoTipoModalidad,
                 iCodigoInstitucion,

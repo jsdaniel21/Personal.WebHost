@@ -47,6 +47,7 @@
     <Compile Include="peopleDomicilioBL.cs" />
     <Compile Include="peopleFamilyBL.cs" />
     <Compile Include="peopleJobsBL.cs" />
+    <Compile Include="peopleModalidadBL.cs" />
     <Compile Include="peopleStudiesBL.cs" />
     <Compile Include="peopleTravelBL.cs" />
     <Compile Include="peopleVehiclesBL.cs" />

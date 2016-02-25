@@ -85,6 +85,7 @@
     <Compile Include="MA_TIPO_APLICACION.cs" />
     <Compile Include="MA_TIPO_ARMA.cs" />
     <Compile Include="MA_TIPO_ARTICULO.cs" />
+    <Compile Include="MA_TIPO_DOCUMENTO.cs" />
     <Compile Include="MA_TIPO_DOMICILIO.cs" />
     <Compile Include="MA_TIPO_EMPLEADO.cs" />
     <Compile Include="MA_TIPO_ENTIDAD.cs" />
