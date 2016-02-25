@@ -159,6 +159,7 @@
     <Content Include="Fotos\sin-foto.jpg" />
     <Content Include="Images\drawer-icons.1.png" />
     <Content Include="Images\ico-create.png" />
+    <Content Include="Images\ico-desactivar-Empleado.png" />
     <Content Include="Images\ico-inicio-menu.png" />
     <Content Include="Content\_LayoutSite\MediaQueryes.css" />
     <Content Include="Content\_LayoutSite\Site.css" />
