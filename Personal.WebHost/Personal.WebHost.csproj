@@ -391,6 +391,7 @@
     <Content Include="Views\MaGrupoSanguineo\index.cshtml" />
     <Content Include="Views\MaGrupoSanguineo\_List.cshtml" />
     <Content Include="Views\Shared\_OptionsPrintDialog.cshtml" />
+    <Content Include="Views\Employees\_DesactivarEmpleado.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

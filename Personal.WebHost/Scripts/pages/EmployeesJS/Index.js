@@ -195,8 +195,8 @@
             }, ctrl.cboInstitucion.val().trim() == '' ? 0 : ctrl.cboInstitucion.val())
         },
         fillEmployees: function (iCodigoTipoEmpleado) {
-            var iTabindex = ctrl.tblPanel.parent().find('li.itemList-active').attr('tabindex');
-
+            var iTabindex = parseInt(ctrl.tblPanel.parent().find('li.itemList-active').attr('tabindex'));
+             
             ws.empleados(employees.changeDataTable,
                iCodigoTipoEmpleado.trim() == '' ? 0 : parseInt(iCodigoTipoEmpleado),
                 ctrl.cboTipoModalidad.val().trim() == '' ? 0 : ctrl.cboTipoModalidad.val(),
@@ -406,7 +406,6 @@
         }
         },
         previewPrintDialog: function (that) {
-
             var typeFormat = '';
             var op = 0;
             switch (that.attr('id')) {
@@ -427,14 +426,14 @@
 
             }
             var iTabindex = parseInt(ctrl.tblPanel.parent().find('li.itemList-active').attr('tabindex'));
-
+             
             var url = "/Reports/rptPersonal?op=" + op + "&typeFormat=" + typeFormat + "&iCodigoTipoEmpleado=" + iTipoEmpleado
                          + "&iCodigoTipoModalidad=" + (ctrl.cboTipoModalidad.val().trim() == '' ? 0 : ctrl.cboTipoModalidad.val())
                          + "&iCodigoInstitucion=" + (ctrl.cboInstitucion.val().trim() == '' ? 0 : ctrl.cboInstitucion.val())
                          + "&vCodigoGradoMilitar=" + ctrl.cboGradoMilitar.val()
                          + "&iCodigoSituacionMilitar=" + (ctrl.cboSituacionMilitar.val().trim() == '' ? 0 : ctrl.cboSituacionMilitar.val())
                          + "&iCodigoInstancia=" + (ctrl.cboTribunales.val().trim() == '' ? 0 : ctrl.cboTribunales.val())
-                         + "&vActivo=" + (iTabindex == 0 ? 's' : 'n');
+                         + "&cActivo=" + (iTabindex == 0 ? 's' : 'n');
             window.location.href = url;
         },
         disabledPorTipoEmpleado: function (icodigoTipoEmpleado) {

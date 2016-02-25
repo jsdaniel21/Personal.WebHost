@@ -1,0 +1,21 @@
+﻿@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @Html.Hidden("C_COD_PERSONA", HttpContext.Current.Request.QueryString["codPersona"])
+    @Html.Hidden("C_COD_PERSONA", HttpContext.Current.Request.QueryString["codPersona"])
+
+    <h1 class="itemtitle">DESACTIVAR PERSONAL</h1>
+    <div class="itemList">
+        <ul style="width: 50%;">
+            <li class="itemList-img">
+                <img src="../Images/ico-tab-pane-.png">
+            </li>
+            <li class="itemList-active" tabindex="0" data-href="/Estudios/_listStudies">Detalle</li>
+
+        </ul>
+    </div>
+
+
+
+}

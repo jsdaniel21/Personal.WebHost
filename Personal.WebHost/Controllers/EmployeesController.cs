@@ -46,6 +46,13 @@ namespace BussinessLogic.WebHost.Controllers
         /// <param name="codInstitucion"></param>
         /// <returns></returns>
 
+        public ActionResult _DesactivarEmpleado(string codMenu, string codPersona)
+        {
+            ViewBag.codMenu = codMenu;
+
+            return PartialView();
+
+        }
         public ActionResult _DetailsPeople(string codMenu, string codPersona)
         {
             var entity = personaRepository.caracteristicasPeople(codPersona);
@@ -171,7 +178,7 @@ namespace BussinessLogic.WebHost.Controllers
         }
 
         [HttpGet]
-        public JsonResult empleados(int iCodigoTipoEmpleado, int iCodigoTipoModalidad, int iCodigoInstitucion, string vCodigoGradoMilitar, int iCodigoSituacionMilitar, int iCodigoInstancia,string cActivo)
+        public JsonResult empleados(int iCodigoTipoEmpleado, int iCodigoTipoModalidad, int iCodigoInstitucion, string vCodigoGradoMilitar, int iCodigoSituacionMilitar, int iCodigoInstancia, string cActivo)
         {
             return Json(personaRepository.queryEmployees(User.Identity.Name.ToString().ToLower().Contains(ConfigurationManager.AppSettings["userMaster"].ToLower()) ? "" : "PERS00000000001",
                 iCodigoTipoEmpleado,
@@ -179,7 +186,7 @@ namespace BussinessLogic.WebHost.Controllers
                 iCodigoInstitucion,
                 vCodigoGradoMilitar,
                 iCodigoSituacionMilitar,
-                iCodigoInstancia, 
+                iCodigoInstancia,
                 cActivo
                 )
                 , JsonRequestBehavior.AllowGet);

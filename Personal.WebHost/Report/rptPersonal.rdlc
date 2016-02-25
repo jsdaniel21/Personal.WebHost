@@ -2639,7 +2639,7 @@
         <Top>2.46674cm</Top>
         <Left>0.3cm</Left>
         <Height>4.38521cm</Height>
-        <Width>20.4436cm</Width>
+        <Width>20.44362cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -2687,6 +2687,10 @@
           <DataField>C_COD_PERSONA</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="I_COD_INSTANCIA">
+          <DataField>I_COD_INSTANCIA</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
         <Field Name="V_DES_INSTANCIA">
           <DataField>V_DES_INSTANCIA</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -2703,12 +2707,12 @@
           <DataField>V_DES_TIPO_EMPLEADO</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="I_COD_TIPO_EMPLEADO">
-          <DataField>I_COD_TIPO_EMPLEADO</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
         <Field Name="I_COD_TIPO_MODALIDAD">
           <DataField>I_COD_TIPO_MODALIDAD</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="I_COD_TIPO_EMPLEADO">
+          <DataField>I_COD_TIPO_EMPLEADO</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="GRADO">
@@ -2727,6 +2731,10 @@
           <DataField>EMPLEADO</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="AREA">
+          <DataField>AREA</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="CARGO">
           <DataField>CARGO</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -2739,18 +2747,10 @@
           <DataField>C_ACTIVO</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="I_COD_INSTANCIA">
-          <DataField>I_COD_INSTANCIA</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="AREA">
-          <DataField>AREA</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dtsPersonal</rd:DataSetName>
-        <rd:SchemaPath>E:\SisLocal\Sistema Gestion RRHH\Personal.WebHost - jsalinas\Personal.WebHost\Report\dtsPersonal.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\jsalinas.fmp\Desktop\Personal240216\Personal.WebHost\Report\dtsPersonal.xsd</rd:SchemaPath>
         <rd:TableName>RRHH_SP_RPT_LISTAR_PERSONAL</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />

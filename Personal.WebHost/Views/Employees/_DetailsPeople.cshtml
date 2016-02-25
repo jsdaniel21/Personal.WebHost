@@ -25,7 +25,7 @@
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
     @Html.Hidden("C_COD_PERSONA", HttpContext.Current.Request.QueryString["codPersona"])
-
+    @Html.Hidden("C_COD_MENU", (string)ViewBag.codMenu)
 
     <h1 class="itemtitle">CARACTERISTICA DEL PERSONAL</h1>
     <div class="itemList">

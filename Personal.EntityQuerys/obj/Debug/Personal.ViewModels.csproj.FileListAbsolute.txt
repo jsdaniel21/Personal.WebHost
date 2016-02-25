@@ -54,3 +54,10 @@ F:\SisLocal\Sistema Gestion RRHH\Personal.WebHost\Personal.EntityQuerys\obj\Debu
 \\10.10.1.70\GitHub\Personal.WebHost\Personal.EntityQuerys\obj\Debug\Personal.ViewModels.csprojResolveAssemblyReference.cache
 \\10.10.1.70\GitHub\Personal.WebHost\Personal.EntityQuerys\obj\Debug\Personal.ViewModels.dll
 \\10.10.1.70\GitHub\Personal.WebHost\Personal.EntityQuerys\obj\Debug\Personal.ViewModels.pdb
+\\MELGAR\GitHub\Personal.WebHost\Personal.EntityQuerys\bin\Debug\Personal.ViewModels.dll
+\\MELGAR\GitHub\Personal.WebHost\Personal.EntityQuerys\bin\Debug\Personal.ViewModels.pdb
+\\MELGAR\GitHub\Personal.WebHost\Personal.EntityQuerys\bin\Debug\Personal.BussinessEntity.dll
+\\MELGAR\GitHub\Personal.WebHost\Personal.EntityQuerys\bin\Debug\Personal.BussinessEntity.pdb
+\\MELGAR\GitHub\Personal.WebHost\Personal.EntityQuerys\obj\Debug\Personal.ViewModels.csprojResolveAssemblyReference.cache
+\\MELGAR\GitHub\Personal.WebHost\Personal.EntityQuerys\obj\Debug\Personal.ViewModels.dll
+\\MELGAR\GitHub\Personal.WebHost\Personal.EntityQuerys\obj\Debug\Personal.ViewModels.pdb

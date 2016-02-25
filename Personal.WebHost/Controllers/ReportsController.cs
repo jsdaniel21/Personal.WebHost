@@ -27,10 +27,10 @@ namespace Personal.WebHost.Controllers
         {
             return PartialView("_OptionsPrintDialog");
         }
-        public ActionResult rptPersonal(string typeFormat, int iCodigoTipoEmpleado = 0, int iCodigoTipoModalidad = 0, int iCodigoInstitucion = 0, string vCodigoGradoMilitar = "", int iCodigoSituacionMilitar = 0, int iCodigoInstancia = 0)
+        public ActionResult rptPersonal(string typeFormat, int iCodigoTipoEmpleado = 0, int iCodigoTipoModalidad = 0, int iCodigoInstitucion = 0, string vCodigoGradoMilitar = "", int iCodigoSituacionMilitar = 0, int iCodigoInstancia = 0,string cActivo="")
         {
             ReportDataSource reportDataSource = new ReportDataSource();
-            reportDataSource.Value = _IRptPersonalRepository.rptListarPersonal(iCodigoTipoEmpleado, iCodigoTipoModalidad, iCodigoInstitucion, vCodigoGradoMilitar, iCodigoSituacionMilitar, iCodigoInstancia);
+            reportDataSource.Value = _IRptPersonalRepository.rptListarPersonal(iCodigoTipoEmpleado, iCodigoTipoModalidad, iCodigoInstitucion, vCodigoGradoMilitar, iCodigoSituacionMilitar, iCodigoInstancia,cActivo);
             reportDataSource.Name = "DataSet1";
 
             LocalReport localReport = new LocalReport();

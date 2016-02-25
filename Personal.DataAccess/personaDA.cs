@@ -18,17 +18,18 @@ namespace BussinessLogic.DataAccess
     {
         private string cn = ConfigurationManager.AppSettings["conecion"].ToString();
         #region Reportes
-        public List<rptPersonalList> rptListarPersonal(int iCodigoTipoEmpleado,int iCodigoTipoModalidad,int iCodigoInstitucion,string vCodigoGradoMilitar,int iCodigoSituacionMilitar,int iCodigoInstancia)
+        public List<rptPersonalList> rptListarPersonal(int iCodigoTipoEmpleado, int iCodigoTipoModalidad, int iCodigoInstitucion, string vCodigoGradoMilitar, int iCodigoSituacionMilitar, int iCodigoInstancia, string vActivo)
         {
             List<rptPersonalList> lista = new List<rptPersonalList>();
             Database db = DatabaseFactory.CreateDatabase(cn);
             DbCommand cmd = db.GetStoredProcCommand("RRHH_SP_RPT_LISTAR_PERSONAL");
-            db.AddInParameter(cmd, "I_COD_TIPO_EMPLEADO",DbType.Int32,iCodigoTipoEmpleado);
+            db.AddInParameter(cmd, "I_COD_TIPO_EMPLEADO", DbType.Int32, iCodigoTipoEmpleado);
             db.AddInParameter(cmd, "I_COD_TIPO_MODALIDAD", DbType.Int32, iCodigoTipoModalidad);
             db.AddInParameter(cmd, "I_COD_INSTITUCION", DbType.Int32, iCodigoInstitucion);
             db.AddInParameter(cmd, "C_COD_GRADO_MILITAR", DbType.String, vCodigoGradoMilitar);
             db.AddInParameter(cmd, "I_COD_SITUACION_MILITAR", DbType.Int32, iCodigoSituacionMilitar);
             db.AddInParameter(cmd, "I_COD_INSTANCIA", DbType.Int32, iCodigoInstancia);
+            db.AddInParameter(cmd, "C_ACTIVO", DbType.String, vActivo);
 
             IDataReader lee = db.ExecuteReader(cmd);
             while (lee.Read())
@@ -36,13 +37,20 @@ namespace BussinessLogic.DataAccess
                 rptPersonalList model = new rptPersonalList();
                 model.ROW = Convert.ToInt32(lee["ROW"]);
                 model.C_COD_PERSONA = lee["C_COD_PERSONA"].ToString();
-                model.EMPLEADO = lee["EMPLEADO"].ToString();          
-                model.V_DES_TIPO_MODALIDA = lee["V_DES_TIPO_MODALIDA"].ToString();
-                model.INSTITUCION = lee["INSTITUCION"].ToString();
+                model.I_COD_INSTANCIA = Convert.ToInt32(lee["I_COD_INSTANCIA"].ToString());
+                model.V_DES_INSTANCIA = System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(lee["V_DES_INSTANCIA"].ToString().ToLower());
+                model.TITULO_INSTITUCION = System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(lee["TITULO_INSTITUCION"].ToString().ToLower());
+                model.INSTITUCION = System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(lee["INSTITUCION"].ToString().ToLower());
+                model.V_DES_TIPO_EMPLEADO = lee["V_DES_TIPO_EMPLEADO"].ToString();
+                model.I_COD_TIPO_EMPLEADO = Convert.ToInt32(lee["I_COD_TIPO_EMPLEADO"].ToString());
+                model.I_COD_TIPO_MODALIDAD = Convert.ToInt32(lee["I_COD_TIPO_MODALIDAD"].ToString());
                 model.GRADO = lee["GRADO"].ToString();
-                model.V_DES_CARGO = lee["V_DES_CARGO"].ToString();
-                model.V_DES_FUNCIONES = lee["V_DES_FUNCIONES"].ToString();
-                model.V_DES_INSTANCIA = lee["V_DES_INSTANCIA"].ToString();
+                model.DNI = lee["DNI"].ToString();
+                model.ARMA = lee["ARMA"].ToString();
+                model.EMPLEADO = lee["EMPLEADO"].ToString();
+                model.AREA = lee["V_ABREV_FUNCIONES"].ToString();
+                model.CARGO = lee["CARGO"].ToString();
+                model.SEXO = lee["SEXO"].ToString();
                 model.C_ACTIVO = lee["C_ACTIVO"].ToString();
                 lista.Add(model);
             }

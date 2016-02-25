@@ -79,3 +79,12 @@ F:\SisLocal\Sistema Gestion RRHH\Personal.WebHost\Personal.Interfaces\obj\Debug\
 \\10.10.1.70\GitHub\Personal.WebHost\Personal.Interfaces\obj\Debug\Personal.Interfaces.csprojResolveAssemblyReference.cache
 \\10.10.1.70\GitHub\Personal.WebHost\Personal.Interfaces\obj\Debug\Personal.Interfaces.dll
 \\10.10.1.70\GitHub\Personal.WebHost\Personal.Interfaces\obj\Debug\Personal.Interfaces.pdb
+\\MELGAR\GitHub\Personal.WebHost\Personal.Interfaces\bin\Debug\Personal.Interfaces.dll
+\\MELGAR\GitHub\Personal.WebHost\Personal.Interfaces\bin\Debug\Personal.Interfaces.pdb
+\\MELGAR\GitHub\Personal.WebHost\Personal.Interfaces\bin\Debug\Personal.BussinessEntity.dll
+\\MELGAR\GitHub\Personal.WebHost\Personal.Interfaces\bin\Debug\Personal.ViewModels.dll
+\\MELGAR\GitHub\Personal.WebHost\Personal.Interfaces\bin\Debug\Personal.BussinessEntity.pdb
+\\MELGAR\GitHub\Personal.WebHost\Personal.Interfaces\bin\Debug\Personal.ViewModels.pdb
+\\MELGAR\GitHub\Personal.WebHost\Personal.Interfaces\obj\Debug\Personal.Interfaces.csprojResolveAssemblyReference.cache
+\\MELGAR\GitHub\Personal.WebHost\Personal.Interfaces\obj\Debug\Personal.Interfaces.dll
+\\MELGAR\GitHub\Personal.WebHost\Personal.Interfaces\obj\Debug\Personal.Interfaces.pdb

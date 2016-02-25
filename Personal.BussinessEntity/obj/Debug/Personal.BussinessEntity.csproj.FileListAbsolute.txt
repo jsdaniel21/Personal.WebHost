@@ -58,3 +58,10 @@ F:\SisLocal\Sistema Gestion RRHH\Personal.WebHost\Personal.BussinessEntity\obj\D
 \\10.10.1.70\GitHub\Personal.WebHost\Personal.BussinessEntity\obj\Debug\Personal.BussinessEntity.csprojResolveAssemblyReference.cache
 \\10.10.1.70\GitHub\Personal.WebHost\Personal.BussinessEntity\obj\Debug\Personal.BussinessEntity.dll
 \\10.10.1.70\GitHub\Personal.WebHost\Personal.BussinessEntity\obj\Debug\Personal.BussinessEntity.pdb
+\\MELGAR\GitHub\Personal.WebHost\Personal.BussinessEntity\bin\Debug\Personal.BussinessEntity.dll
+\\MELGAR\GitHub\Personal.WebHost\Personal.BussinessEntity\bin\Debug\Personal.BussinessEntity.pdb
+\\MELGAR\GitHub\Personal.WebHost\Personal.BussinessEntity\bin\Debug\Personal.Models.dll
+\\MELGAR\GitHub\Personal.WebHost\Personal.BussinessEntity\bin\Debug\Personal.Models.pdb
+\\MELGAR\GitHub\Personal.WebHost\Personal.BussinessEntity\obj\Debug\Personal.BussinessEntity.csprojResolveAssemblyReference.cache
+\\MELGAR\GitHub\Personal.WebHost\Personal.BussinessEntity\obj\Debug\Personal.BussinessEntity.dll
+\\MELGAR\GitHub\Personal.WebHost\Personal.BussinessEntity\obj\Debug\Personal.BussinessEntity.pdb
