@@ -141,6 +141,10 @@
     <Compile Include="helper.cs" />
     <Compile Include="Helper\fechasHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\dtsPersonal.cs">
+      <DependentUpon>dtsPersonal.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Report\dtsPersonal.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -160,6 +164,7 @@
     <Content Include="Images\drawer-icons.1.png" />
     <Content Include="Images\ico-create.png" />
     <Content Include="Images\ico-desactivar-Empleado.png" />
+    <Content Include="Images\ico-excel.png" />
     <Content Include="Images\ico-inicio-menu.png" />
     <Content Include="Content\_LayoutSite\MediaQueryes.css" />
     <Content Include="Content\_LayoutSite\Site.css" />
@@ -199,6 +204,7 @@
     <Content Include="Images\ico-menu-pertenencias.png" />
     <Content Include="Images\ico-menu-viajes.png" />
     <Content Include="Images\ico-page.png" />
+    <Content Include="Images\ico-pdf.ico" />
     <Content Include="Images\ico-pedidos-atender.png" />
     <Content Include="Images\ico-pedidos-close-mes.png" />
     <Content Include="Images\ico-pedidos-emitidos.png" />

@@ -11,6 +11,6 @@ namespace Personal.Interfaces
 {
     public interface IRptPersonalRepository
     {
-          List<rptPersonalList> rptListarPersonal(int iCodigoTipoEmpleado, int iCodigoTipoModalidad, int iCodigoInstitucion, string vCodigoGradoMilitar, int iCodigoSituacionMilitar, int iCodigoInstancia);
+          List<rptPersonalList> rptListarPersonal(int iCodigoTipoEmpleado, int iCodigoTipoModalidad, int iCodigoInstitucion, string vCodigoGradoMilitar, int iCodigoSituacionMilitar, int iCodigoInstancia,string cActivo);
     }
 }

@@ -283,21 +283,35 @@ namespace Personal.WebHost.Report {
             
             private global::System.Data.DataColumn columnC_COD_PERSONA;
             
-            private global::System.Data.DataColumn columnV_DES_TIPO_MODALIDA;
-            
-            private global::System.Data.DataColumn columnINSTITUCION;
-            
-            private global::System.Data.DataColumn columnGRADO;
-            
-            private global::System.Data.DataColumn columnV_DES_CARGO;
-            
-            private global::System.Data.DataColumn columnV_DES_FUNCIONES;
+            private global::System.Data.DataColumn columnI_COD_INSTANCIA;
             
             private global::System.Data.DataColumn columnV_DES_INSTANCIA;
             
-            private global::System.Data.DataColumn columnC_ACTIVO;
+            private global::System.Data.DataColumn columnTITULO_INSTITUCION;
+            
+            private global::System.Data.DataColumn columnINSTITUCION;
+            
+            private global::System.Data.DataColumn columnV_DES_TIPO_EMPLEADO;
+            
+            private global::System.Data.DataColumn columnI_COD_TIPO_MODALIDAD;
+            
+            private global::System.Data.DataColumn columnI_COD_TIPO_EMPLEADO;
+            
+            private global::System.Data.DataColumn columnGRADO;
+            
+            private global::System.Data.DataColumn columnDNI;
+            
+            private global::System.Data.DataColumn columnARMA;
             
             private global::System.Data.DataColumn columnEMPLEADO;
+            
+            private global::System.Data.DataColumn columnAREA;
+            
+            private global::System.Data.DataColumn columnCARGO;
+            
+            private global::System.Data.DataColumn columnSEXO;
+            
+            private global::System.Data.DataColumn columnC_ACTIVO;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -350,41 +364,9 @@ namespace Personal.WebHost.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn V_DES_TIPO_MODALIDAColumn {
+            public global::System.Data.DataColumn I_COD_INSTANCIAColumn {
                 get {
-                    return this.columnV_DES_TIPO_MODALIDA;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn INSTITUCIONColumn {
-                get {
-                    return this.columnINSTITUCION;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn GRADOColumn {
-                get {
-                    return this.columnGRADO;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn V_DES_CARGOColumn {
-                get {
-                    return this.columnV_DES_CARGO;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn V_DES_FUNCIONESColumn {
-                get {
-                    return this.columnV_DES_FUNCIONES;
+                    return this.columnI_COD_INSTANCIA;
                 }
             }
             
@@ -398,9 +380,65 @@ namespace Personal.WebHost.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn C_ACTIVOColumn {
+            public global::System.Data.DataColumn TITULO_INSTITUCIONColumn {
                 get {
-                    return this.columnC_ACTIVO;
+                    return this.columnTITULO_INSTITUCION;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn INSTITUCIONColumn {
+                get {
+                    return this.columnINSTITUCION;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn V_DES_TIPO_EMPLEADOColumn {
+                get {
+                    return this.columnV_DES_TIPO_EMPLEADO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn I_COD_TIPO_MODALIDADColumn {
+                get {
+                    return this.columnI_COD_TIPO_MODALIDAD;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn I_COD_TIPO_EMPLEADOColumn {
+                get {
+                    return this.columnI_COD_TIPO_EMPLEADO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn GRADOColumn {
+                get {
+                    return this.columnGRADO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DNIColumn {
+                get {
+                    return this.columnDNI;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ARMAColumn {
+                get {
+                    return this.columnARMA;
                 }
             }
             
@@ -409,6 +447,38 @@ namespace Personal.WebHost.Report {
             public global::System.Data.DataColumn EMPLEADOColumn {
                 get {
                     return this.columnEMPLEADO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AREAColumn {
+                get {
+                    return this.columnAREA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CARGOColumn {
+                get {
+                    return this.columnCARGO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SEXOColumn {
+                get {
+                    return this.columnSEXO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn C_ACTIVOColumn {
+                get {
+                    return this.columnC_ACTIVO;
                 }
             }
             
@@ -449,19 +519,43 @@ namespace Personal.WebHost.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RRHH_SP_RPT_LISTAR_PERSONALRow AddRRHH_SP_RPT_LISTAR_PERSONALRow(int ROW, string C_COD_PERSONA, string V_DES_TIPO_MODALIDA, string INSTITUCION, string GRADO, string V_DES_CARGO, string V_DES_FUNCIONES, string V_DES_INSTANCIA, string C_ACTIVO, string EMPLEADO) {
+            public RRHH_SP_RPT_LISTAR_PERSONALRow AddRRHH_SP_RPT_LISTAR_PERSONALRow(
+                        int ROW, 
+                        string C_COD_PERSONA, 
+                        int I_COD_INSTANCIA, 
+                        string V_DES_INSTANCIA, 
+                        string TITULO_INSTITUCION, 
+                        string INSTITUCION, 
+                        string V_DES_TIPO_EMPLEADO, 
+                        int I_COD_TIPO_MODALIDAD, 
+                        int I_COD_TIPO_EMPLEADO, 
+                        string GRADO, 
+                        string DNI, 
+                        string ARMA, 
+                        string EMPLEADO, 
+                        string AREA, 
+                        string CARGO, 
+                        string SEXO, 
+                        string C_ACTIVO) {
                 RRHH_SP_RPT_LISTAR_PERSONALRow rowRRHH_SP_RPT_LISTAR_PERSONALRow = ((RRHH_SP_RPT_LISTAR_PERSONALRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ROW,
                         C_COD_PERSONA,
-                        V_DES_TIPO_MODALIDA,
-                        INSTITUCION,
-                        GRADO,
-                        V_DES_CARGO,
-                        V_DES_FUNCIONES,
+                        I_COD_INSTANCIA,
                         V_DES_INSTANCIA,
-                        C_ACTIVO,
-                        EMPLEADO};
+                        TITULO_INSTITUCION,
+                        INSTITUCION,
+                        V_DES_TIPO_EMPLEADO,
+                        I_COD_TIPO_MODALIDAD,
+                        I_COD_TIPO_EMPLEADO,
+                        GRADO,
+                        DNI,
+                        ARMA,
+                        EMPLEADO,
+                        AREA,
+                        CARGO,
+                        SEXO,
+                        C_ACTIVO};
                 rowRRHH_SP_RPT_LISTAR_PERSONALRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRRHH_SP_RPT_LISTAR_PERSONALRow);
                 return rowRRHH_SP_RPT_LISTAR_PERSONALRow;
@@ -486,14 +580,21 @@ namespace Personal.WebHost.Report {
             internal void InitVars() {
                 this.columnROW = base.Columns["ROW"];
                 this.columnC_COD_PERSONA = base.Columns["C_COD_PERSONA"];
-                this.columnV_DES_TIPO_MODALIDA = base.Columns["V_DES_TIPO_MODALIDA"];
-                this.columnINSTITUCION = base.Columns["INSTITUCION"];
-                this.columnGRADO = base.Columns["GRADO"];
-                this.columnV_DES_CARGO = base.Columns["V_DES_CARGO"];
-                this.columnV_DES_FUNCIONES = base.Columns["V_DES_FUNCIONES"];
+                this.columnI_COD_INSTANCIA = base.Columns["I_COD_INSTANCIA"];
                 this.columnV_DES_INSTANCIA = base.Columns["V_DES_INSTANCIA"];
-                this.columnC_ACTIVO = base.Columns["C_ACTIVO"];
+                this.columnTITULO_INSTITUCION = base.Columns["TITULO_INSTITUCION"];
+                this.columnINSTITUCION = base.Columns["INSTITUCION"];
+                this.columnV_DES_TIPO_EMPLEADO = base.Columns["V_DES_TIPO_EMPLEADO"];
+                this.columnI_COD_TIPO_MODALIDAD = base.Columns["I_COD_TIPO_MODALIDAD"];
+                this.columnI_COD_TIPO_EMPLEADO = base.Columns["I_COD_TIPO_EMPLEADO"];
+                this.columnGRADO = base.Columns["GRADO"];
+                this.columnDNI = base.Columns["DNI"];
+                this.columnARMA = base.Columns["ARMA"];
                 this.columnEMPLEADO = base.Columns["EMPLEADO"];
+                this.columnAREA = base.Columns["AREA"];
+                this.columnCARGO = base.Columns["CARGO"];
+                this.columnSEXO = base.Columns["SEXO"];
+                this.columnC_ACTIVO = base.Columns["C_ACTIVO"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -503,22 +604,36 @@ namespace Personal.WebHost.Report {
                 base.Columns.Add(this.columnROW);
                 this.columnC_COD_PERSONA = new global::System.Data.DataColumn("C_COD_PERSONA", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnC_COD_PERSONA);
-                this.columnV_DES_TIPO_MODALIDA = new global::System.Data.DataColumn("V_DES_TIPO_MODALIDA", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnV_DES_TIPO_MODALIDA);
-                this.columnINSTITUCION = new global::System.Data.DataColumn("INSTITUCION", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnINSTITUCION);
-                this.columnGRADO = new global::System.Data.DataColumn("GRADO", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGRADO);
-                this.columnV_DES_CARGO = new global::System.Data.DataColumn("V_DES_CARGO", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnV_DES_CARGO);
-                this.columnV_DES_FUNCIONES = new global::System.Data.DataColumn("V_DES_FUNCIONES", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnV_DES_FUNCIONES);
+                this.columnI_COD_INSTANCIA = new global::System.Data.DataColumn("I_COD_INSTANCIA", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnI_COD_INSTANCIA);
                 this.columnV_DES_INSTANCIA = new global::System.Data.DataColumn("V_DES_INSTANCIA", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnV_DES_INSTANCIA);
-                this.columnC_ACTIVO = new global::System.Data.DataColumn("C_ACTIVO", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnC_ACTIVO);
+                this.columnTITULO_INSTITUCION = new global::System.Data.DataColumn("TITULO_INSTITUCION", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTITULO_INSTITUCION);
+                this.columnINSTITUCION = new global::System.Data.DataColumn("INSTITUCION", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnINSTITUCION);
+                this.columnV_DES_TIPO_EMPLEADO = new global::System.Data.DataColumn("V_DES_TIPO_EMPLEADO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnV_DES_TIPO_EMPLEADO);
+                this.columnI_COD_TIPO_MODALIDAD = new global::System.Data.DataColumn("I_COD_TIPO_MODALIDAD", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnI_COD_TIPO_MODALIDAD);
+                this.columnI_COD_TIPO_EMPLEADO = new global::System.Data.DataColumn("I_COD_TIPO_EMPLEADO", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnI_COD_TIPO_EMPLEADO);
+                this.columnGRADO = new global::System.Data.DataColumn("GRADO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGRADO);
+                this.columnDNI = new global::System.Data.DataColumn("DNI", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDNI);
+                this.columnARMA = new global::System.Data.DataColumn("ARMA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnARMA);
                 this.columnEMPLEADO = new global::System.Data.DataColumn("EMPLEADO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEMPLEADO);
+                this.columnAREA = new global::System.Data.DataColumn("AREA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAREA);
+                this.columnCARGO = new global::System.Data.DataColumn("CARGO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCARGO);
+                this.columnSEXO = new global::System.Data.DataColumn("SEXO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSEXO);
+                this.columnC_ACTIVO = new global::System.Data.DataColumn("C_ACTIVO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnC_ACTIVO);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -694,85 +809,18 @@ namespace Personal.WebHost.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string V_DES_TIPO_MODALIDA {
+            public int I_COD_INSTANCIA {
                 get {
                     try {
-                        return ((string)(this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.V_DES_TIPO_MODALIDAColumn]));
+                        return ((int)(this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.I_COD_INSTANCIAColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'V_DES_TIPO_MODALIDA\' in table \'RRHH_SP_RPT_LISTAR_PERSONAL\'" +
-                                " is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.V_DES_TIPO_MODALIDAColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string INSTITUCION {
-                get {
-                    try {
-                        return ((string)(this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.INSTITUCIONColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'INSTITUCION\' in table \'RRHH_SP_RPT_LISTAR_PERSONAL\' is DBNu" +
-                                "ll.", e);
-                    }
-                }
-                set {
-                    this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.INSTITUCIONColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string GRADO {
-                get {
-                    try {
-                        return ((string)(this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.GRADOColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'GRADO\' in table \'RRHH_SP_RPT_LISTAR_PERSONAL\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.GRADOColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string V_DES_CARGO {
-                get {
-                    try {
-                        return ((string)(this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.V_DES_CARGOColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'V_DES_CARGO\' in table \'RRHH_SP_RPT_LISTAR_PERSONAL\' is DBNu" +
-                                "ll.", e);
-                    }
-                }
-                set {
-                    this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.V_DES_CARGOColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string V_DES_FUNCIONES {
-                get {
-                    try {
-                        return ((string)(this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.V_DES_FUNCIONESColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'V_DES_FUNCIONES\' in table \'RRHH_SP_RPT_LISTAR_PERSONAL\' is " +
+                        throw new global::System.Data.StrongTypingException("The value for column \'I_COD_INSTANCIA\' in table \'RRHH_SP_RPT_LISTAR_PERSONAL\' is " +
                                 "DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.V_DES_FUNCIONESColumn] = value;
+                    this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.I_COD_INSTANCIAColumn] = value;
                 }
             }
             
@@ -795,18 +843,134 @@ namespace Personal.WebHost.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string C_ACTIVO {
+            public string TITULO_INSTITUCION {
                 get {
                     try {
-                        return ((string)(this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.C_ACTIVOColumn]));
+                        return ((string)(this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.TITULO_INSTITUCIONColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'C_ACTIVO\' in table \'RRHH_SP_RPT_LISTAR_PERSONAL\' is DBNull." +
-                                "", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TITULO_INSTITUCION\' in table \'RRHH_SP_RPT_LISTAR_PERSONAL\' " +
+                                "is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.C_ACTIVOColumn] = value;
+                    this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.TITULO_INSTITUCIONColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string INSTITUCION {
+                get {
+                    try {
+                        return ((string)(this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.INSTITUCIONColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'INSTITUCION\' in table \'RRHH_SP_RPT_LISTAR_PERSONAL\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.INSTITUCIONColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string V_DES_TIPO_EMPLEADO {
+                get {
+                    try {
+                        return ((string)(this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.V_DES_TIPO_EMPLEADOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'V_DES_TIPO_EMPLEADO\' in table \'RRHH_SP_RPT_LISTAR_PERSONAL\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.V_DES_TIPO_EMPLEADOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int I_COD_TIPO_MODALIDAD {
+                get {
+                    try {
+                        return ((int)(this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.I_COD_TIPO_MODALIDADColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'I_COD_TIPO_MODALIDAD\' in table \'RRHH_SP_RPT_LISTAR_PERSONAL" +
+                                "\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.I_COD_TIPO_MODALIDADColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int I_COD_TIPO_EMPLEADO {
+                get {
+                    try {
+                        return ((int)(this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.I_COD_TIPO_EMPLEADOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'I_COD_TIPO_EMPLEADO\' in table \'RRHH_SP_RPT_LISTAR_PERSONAL\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.I_COD_TIPO_EMPLEADOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string GRADO {
+                get {
+                    try {
+                        return ((string)(this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.GRADOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'GRADO\' in table \'RRHH_SP_RPT_LISTAR_PERSONAL\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.GRADOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DNI {
+                get {
+                    try {
+                        return ((string)(this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.DNIColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DNI\' in table \'RRHH_SP_RPT_LISTAR_PERSONAL\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.DNIColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ARMA {
+                get {
+                    try {
+                        return ((string)(this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.ARMAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ARMA\' in table \'RRHH_SP_RPT_LISTAR_PERSONAL\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.ARMAColumn] = value;
                 }
             }
             
@@ -824,6 +988,71 @@ namespace Personal.WebHost.Report {
                 }
                 set {
                     this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.EMPLEADOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string AREA {
+                get {
+                    try {
+                        return ((string)(this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.AREAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'AREA\' in table \'RRHH_SP_RPT_LISTAR_PERSONAL\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.AREAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CARGO {
+                get {
+                    try {
+                        return ((string)(this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.CARGOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CARGO\' in table \'RRHH_SP_RPT_LISTAR_PERSONAL\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.CARGOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string SEXO {
+                get {
+                    try {
+                        return ((string)(this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.SEXOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SEXO\' in table \'RRHH_SP_RPT_LISTAR_PERSONAL\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.SEXOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string C_ACTIVO {
+                get {
+                    try {
+                        return ((string)(this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.C_ACTIVOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'C_ACTIVO\' in table \'RRHH_SP_RPT_LISTAR_PERSONAL\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.C_ACTIVOColumn] = value;
                 }
             }
             
@@ -853,62 +1082,14 @@ namespace Personal.WebHost.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsV_DES_TIPO_MODALIDANull() {
-                return this.IsNull(this.tableRRHH_SP_RPT_LISTAR_PERSONAL.V_DES_TIPO_MODALIDAColumn);
+            public bool IsI_COD_INSTANCIANull() {
+                return this.IsNull(this.tableRRHH_SP_RPT_LISTAR_PERSONAL.I_COD_INSTANCIAColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetV_DES_TIPO_MODALIDANull() {
-                this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.V_DES_TIPO_MODALIDAColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsINSTITUCIONNull() {
-                return this.IsNull(this.tableRRHH_SP_RPT_LISTAR_PERSONAL.INSTITUCIONColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetINSTITUCIONNull() {
-                this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.INSTITUCIONColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsGRADONull() {
-                return this.IsNull(this.tableRRHH_SP_RPT_LISTAR_PERSONAL.GRADOColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetGRADONull() {
-                this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.GRADOColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsV_DES_CARGONull() {
-                return this.IsNull(this.tableRRHH_SP_RPT_LISTAR_PERSONAL.V_DES_CARGOColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetV_DES_CARGONull() {
-                this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.V_DES_CARGOColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsV_DES_FUNCIONESNull() {
-                return this.IsNull(this.tableRRHH_SP_RPT_LISTAR_PERSONAL.V_DES_FUNCIONESColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetV_DES_FUNCIONESNull() {
-                this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.V_DES_FUNCIONESColumn] = global::System.Convert.DBNull;
+            public void SetI_COD_INSTANCIANull() {
+                this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.I_COD_INSTANCIAColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -925,14 +1106,98 @@ namespace Personal.WebHost.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsC_ACTIVONull() {
-                return this.IsNull(this.tableRRHH_SP_RPT_LISTAR_PERSONAL.C_ACTIVOColumn);
+            public bool IsTITULO_INSTITUCIONNull() {
+                return this.IsNull(this.tableRRHH_SP_RPT_LISTAR_PERSONAL.TITULO_INSTITUCIONColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetC_ACTIVONull() {
-                this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.C_ACTIVOColumn] = global::System.Convert.DBNull;
+            public void SetTITULO_INSTITUCIONNull() {
+                this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.TITULO_INSTITUCIONColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsINSTITUCIONNull() {
+                return this.IsNull(this.tableRRHH_SP_RPT_LISTAR_PERSONAL.INSTITUCIONColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetINSTITUCIONNull() {
+                this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.INSTITUCIONColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsV_DES_TIPO_EMPLEADONull() {
+                return this.IsNull(this.tableRRHH_SP_RPT_LISTAR_PERSONAL.V_DES_TIPO_EMPLEADOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetV_DES_TIPO_EMPLEADONull() {
+                this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.V_DES_TIPO_EMPLEADOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsI_COD_TIPO_MODALIDADNull() {
+                return this.IsNull(this.tableRRHH_SP_RPT_LISTAR_PERSONAL.I_COD_TIPO_MODALIDADColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetI_COD_TIPO_MODALIDADNull() {
+                this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.I_COD_TIPO_MODALIDADColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsI_COD_TIPO_EMPLEADONull() {
+                return this.IsNull(this.tableRRHH_SP_RPT_LISTAR_PERSONAL.I_COD_TIPO_EMPLEADOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetI_COD_TIPO_EMPLEADONull() {
+                this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.I_COD_TIPO_EMPLEADOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsGRADONull() {
+                return this.IsNull(this.tableRRHH_SP_RPT_LISTAR_PERSONAL.GRADOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetGRADONull() {
+                this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.GRADOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDNINull() {
+                return this.IsNull(this.tableRRHH_SP_RPT_LISTAR_PERSONAL.DNIColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDNINull() {
+                this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.DNIColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsARMANull() {
+                return this.IsNull(this.tableRRHH_SP_RPT_LISTAR_PERSONAL.ARMAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetARMANull() {
+                this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.ARMAColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -945,6 +1210,54 @@ namespace Personal.WebHost.Report {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetEMPLEADONull() {
                 this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.EMPLEADOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAREANull() {
+                return this.IsNull(this.tableRRHH_SP_RPT_LISTAR_PERSONAL.AREAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAREANull() {
+                this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.AREAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCARGONull() {
+                return this.IsNull(this.tableRRHH_SP_RPT_LISTAR_PERSONAL.CARGOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCARGONull() {
+                this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.CARGOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSEXONull() {
+                return this.IsNull(this.tableRRHH_SP_RPT_LISTAR_PERSONAL.SEXOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSEXONull() {
+                this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.SEXOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsC_ACTIVONull() {
+                return this.IsNull(this.tableRRHH_SP_RPT_LISTAR_PERSONAL.C_ACTIVOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetC_ACTIVONull() {
+                this[this.tableRRHH_SP_RPT_LISTAR_PERSONAL.C_ACTIVOColumn] = global::System.Convert.DBNull;
             }
         }
         

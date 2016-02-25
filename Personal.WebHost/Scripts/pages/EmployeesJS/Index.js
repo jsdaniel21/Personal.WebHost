@@ -219,7 +219,7 @@
                     return td;
                 },
                 spanPrimary: function (inputValue) {
-                  
+
                     var span = $('<span />');
                     span.addClass('rowId select');
                     span.hide();
@@ -237,9 +237,9 @@
                 ,
                 body: function () {
                     ctrl.gridQuerysEmployees.find('tbody').html('');
-                 
+
                     for (var i = 0; i < data.length; i++) {
-                     
+
                         var parentTr = this.tr();
                         var td = this.td();
                         td.addClass('active-row-td')
@@ -434,7 +434,7 @@
                          + "&vCodigoGradoMilitar=" + ctrl.cboGradoMilitar.val()
                          + "&iCodigoSituacionMilitar=" + (ctrl.cboSituacionMilitar.val().trim() == '' ? 0 : ctrl.cboSituacionMilitar.val())
                          + "&iCodigoInstancia=" + (ctrl.cboTribunales.val().trim() == '' ? 0 : ctrl.cboTribunales.val())
-                         + "&vActivo=" + (iTabindex == 0 ? 's' : 'n');             
+                         + "&vActivo=" + (iTabindex == 0 ? 's' : 'n');
             window.location.href = url;
         },
         disabledPorTipoEmpleado: function (icodigoTipoEmpleado) {
@@ -474,7 +474,7 @@
                     employees.selectAvalibity(ctrl.cboInstitucion);
                     employees.selectAvalibity(ctrl.cboSituacionMilitar);
                     ctrl.cboSituacionMilitar.val('')
-                    if (iTabindex === 0) {                         
+                    if (iTabindex === 0) {
                         //employees.selectDisabled(ctrl.cboSituacionMilitar);
                         ctrl.cboSituacionMilitar.find('option:nth-child(0n+2)').hide();
                     }
