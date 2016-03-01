@@ -4,6 +4,15 @@
 @{
     ViewBag.Title = "Avatar";
 }
+
+@helper IfActivo(string vActivo)
+{
+    if (vActivo.ToUpper() == "N")
+    {
+        @MvcHtmlString.Create("style='display:none'");
+    }
+
+}
 <link href="~/Content/_LayoutSite/HomeAvatarStyle.css" rel="stylesheet" />
 <style type="text/css">
     body > div#aux-foreground {
@@ -289,7 +298,12 @@
 
             var style = "style=" + background;
 
+            @*@IfActivo(Model.clsPeopleModalidad.C_ACTIVO)*@
 
+            if (Model.clsPeopleModalidad.C_ACTIVO.ToUpper() == "N" && item.clsMenuSistema.C_COD_MENU.ToUpper() == "058-DESC")
+            {
+                continue;
+            }
             <a href="@Html.DisplayFor(modelItem => item.clsMenuSistema.C_NAME_FORM)"
                data-parent="@Html.DisplayFor(modelItem => item.clsMenuSistema.C_COD_MENU)"
                data-url="@Html.DisplayFor(modelItem => item.clsMenuSistema.C_NAME_FORM)">

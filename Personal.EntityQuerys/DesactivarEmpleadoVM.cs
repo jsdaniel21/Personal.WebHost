@@ -32,5 +32,6 @@ namespace Personal.ViewModels
         public List<MA_SITUACION_MILITAR> situacionMilitar { get; set; }
         public List<MA_TIPO_DOCUMENTO> tipoDocumento { get; set; }
 
+        public string vTipoDocumeto { get; set; }
     }
 }

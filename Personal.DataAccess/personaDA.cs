@@ -59,6 +59,7 @@ namespace BussinessLogic.DataAccess
         }
         #endregion
         
+         
         public List<MA_TIPO_EMPLEADO> listarTipoEmpleado()
         {
             List<MA_TIPO_EMPLEADO> lista = new List<MA_TIPO_EMPLEADO>();
@@ -606,6 +607,7 @@ namespace BussinessLogic.DataAccess
                 Entity.clsPeopleIdentification.V_NUM_DOCUMENTO = lee["V_NUM_DOCUMENTO"].ToString();
                 Entity.clsPeopleIdentification.I_COD_TIPO_IDENTIFICACION = Convert.ToInt32(lee["I_COD_TIPO_IDENTIFICACION"].ToString());
                 Entity.clsPeopleModalidad.D_FECHA_CONTRATO = lee["D_FECHA_CONTRATO"].ToString() == "" ? null : (DateTime?)Convert.ToDateTime(lee["D_FECHA_CONTRATO"].ToString());
+                Entity.clsPeopleModalidad.C_ACTIVO = lee["C_ACTIVO"].ToString();
                 Entity.clsTipoModalidad.V_DES_TIPO_MODALIDA = lee["V_DES_TIPO_MODALIDA"].ToString();
                 Entity.clsGradoMilitar.C_COD_GRADO_MILITAR = lee["C_COD_GRADO_MILITAR"].ToString();
                 Entity.clsGradoMilitar.V_ABREV_GRADOS = lee["V_ABREV_GRADOS"].ToString();

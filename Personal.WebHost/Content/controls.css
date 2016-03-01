@@ -1,4 +1,12 @@
 ﻿
+
+/*----RadioButton ---*/
+.contentChecked {
+    display: inline-block;
+}
+
+
+
 input[type=text],
 input[type="datetime"],
 input[type=password], select, .label-des,
@@ -154,10 +162,10 @@ input[type="button"].button-blue-filter {
     top: 7px;
 }
 
-input[type="button"].button-blue-filter:hover {
-    opacity: 0.8;
-    cursor: pointer;
-}
+    input[type="button"].button-blue-filter:hover {
+        opacity: 0.8;
+        cursor: pointer;
+    }
 
 .button-blue {
     display: inline-block;

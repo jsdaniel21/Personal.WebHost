@@ -65,3 +65,10 @@ F:\SisLocal\Sistema Gestion RRHH\Personal.WebHost\Personal.BussinessEntity\obj\D
 \\MELGAR\GitHub\Personal.WebHost\Personal.BussinessEntity\obj\Debug\Personal.BussinessEntity.csprojResolveAssemblyReference.cache
 \\MELGAR\GitHub\Personal.WebHost\Personal.BussinessEntity\obj\Debug\Personal.BussinessEntity.dll
 \\MELGAR\GitHub\Personal.WebHost\Personal.BussinessEntity\obj\Debug\Personal.BussinessEntity.pdb
+C:\Users\jsalinas.fmp\Desktop\bk-personal\Personal250216\Personal.BussinessEntity\bin\Debug\Personal.BussinessEntity.dll
+C:\Users\jsalinas.fmp\Desktop\bk-personal\Personal250216\Personal.BussinessEntity\bin\Debug\Personal.BussinessEntity.pdb
+C:\Users\jsalinas.fmp\Desktop\bk-personal\Personal250216\Personal.BussinessEntity\bin\Debug\Personal.Models.dll
+C:\Users\jsalinas.fmp\Desktop\bk-personal\Personal250216\Personal.BussinessEntity\bin\Debug\Personal.Models.pdb
+C:\Users\jsalinas.fmp\Desktop\bk-personal\Personal250216\Personal.BussinessEntity\obj\Debug\Personal.BussinessEntity.csprojResolveAssemblyReference.cache
+C:\Users\jsalinas.fmp\Desktop\bk-personal\Personal250216\Personal.BussinessEntity\obj\Debug\Personal.BussinessEntity.dll
+C:\Users\jsalinas.fmp\Desktop\bk-personal\Personal250216\Personal.BussinessEntity\obj\Debug\Personal.BussinessEntity.pdb

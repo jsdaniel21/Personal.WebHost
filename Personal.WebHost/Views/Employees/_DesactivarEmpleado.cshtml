@@ -4,6 +4,7 @@
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
+    @Html.HiddenFor(m => m.tipoEmpleado.I_COD_TIPO_EMPLEADO, new { @id = "I_COD_TIPO_EMPLEADO" })
     @Html.Hidden("C_COD_PERSONA", HttpContext.Current.Request.QueryString["codPersona"])
     @Html.Hidden("C_COD_MENU", (string)ViewBag.codMenu)
 
@@ -34,23 +35,51 @@
 
                     <div class="form">
                         <div class="form-content">
+
                             <div class="form-row">
+                                @if (Model.personaModalidad.C_ACTIVO.ToUpper() == "S")
+                                {
+                                    <div class="form-row-cell title-cell-bold">
+                                        Tipo de Baja
+                                    </div>
+                                }
                                 <div class="form-row-cell title-cell-bold">
                                     @Html.LabelFor(model => model.tipoEmpleado.I_COD_TIPO_EMPLEADO)
                                 </div>
                                 <div class="form-row-cell title-cell-bold">
                                     @Html.LabelFor(model => model.tipoModalidad.I_COD_TIPO_MODALIDAD)
                                 </div>
-                              
                             </div>
+
+
                             <div class="form-row">
+                                @if (Model.personaModalidad.C_ACTIVO.ToUpper() == "S")
+                                {
+                                    <div class="form-row-cell">
+
+                                        <div class="contentChecked">
+                                            <label for="test">Destacado Otra Institucion</label>
+                                            <label class="myCheckbox">
+                                                <input type="radio" name="vTipoBaja" id="rdbDestacado" />
+                                                <span></span>
+                                            </label>
+                                        </div><div class="contentChecked">
+                                            <label for="test">Retiro</label>
+                                            <label class="myCheckbox">
+                                                <input type="radio" name="vTipoBaja" id="rdbRetiro" />
+                                                <span></span>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                }
                                 <div class="form-row-cell">
-                                    @Html.TextBoxFor(m => m.tipoEmpleado.V_DES_TIPO_EMPLEADO)
+                                    @Html.TextBoxFor(m => m.tipoEmpleado.V_DES_TIPO_EMPLEADO, htmlAttributes: new { @disabled = "disabled", @id = "V_DES_TIPO_EMPLEADO" })
                                 </div>
                                 <div class="form-row-cell">
-                                    @Html.TextBoxFor(m => m.tipoModalidad.V_DES_TIPO_MODALIDA)
+                                    @Html.TextBoxFor(m => m.tipoModalidad.V_DES_TIPO_MODALIDA, htmlAttributes: new { @disabled = "disabled" })
                                 </div>
-                            
+
                             </div>
                         </div>
                         <div class="form-content">
@@ -67,13 +96,13 @@
                             </div>
                             <div class="form-row">
                                 <div class="form-row-cell">
-                                    @Html.DropDownListFor(model => model.personaModalidad.I_COD_TIPO_DOCUMENTO_INGRESO, new SelectList(Model.tipoDocumento, "I_COD_TIPO_DOCUMENTO", "V_DES_TIPO_DOCUMENTO"), "--SELECT--", new { @disabbled = "disabbled" })
+                                    @Html.TextBoxFor(model => model.vTipoDocumeto, new { @disabled = "disabled" })
                                 </div>
                                 <div class="form-row-cell">
-                                    @Html.TextBoxFor(model => model.personaModalidad.V_NRO_DOCUMENTO_INGRESO)
+                                    @Html.TextBoxFor(model => model.personaModalidad.V_NRO_DOCUMENTO_INGRESO, htmlAttributes: new { @disabled = "disabled" })
                                 </div>
                                 <div class="form-row-cell">
-                                    @Html.TextBoxFor(model => model.personaModalidad.D_FECHA_CONTRATO)
+                                    @Html.TextBoxFor(model => model.personaModalidad.D_FECHA_CONTRATO, htmlAttributes: new { @disabled = "disabled" })
                                 </div>
                             </div>
                         </div>
@@ -92,12 +121,20 @@
                             </div>
                             <div class="form-row">
                                 <div class="form-row-cell">
-                                    @Html.DropDownListFor(model => model.personaModalidad.I_COD_TIPO_DOCUMENTO_CESE, new SelectList(Model.tipoDocumento, "I_COD_TIPO_DOCUMENTO", "V_DES_TIPO_DOCUMENTO"), "--SELECT--")
+                                    @Html.DropDownListFor(model => model.personaModalidad.I_COD_TIPO_DOCUMENTO_CESE,
+                                    new SelectList(Model.tipoDocumento, "I_COD_TIPO_DOCUMENTO", "V_DES_TIPO_DOCUMENTO")
+                                    , "--SELECT--"
+                                    , new { @id = "I_COD_TIPO_DOCUMENTO_CESE", @disabled = Model.personaModalidad.C_ACTIVO.ToUpper() == "N" ? "disabled" : "" })
+
                                 </div>   <div class="form-row-cell">
-                                    @Html.TextBoxFor(model => model.personaModalidad.V_NRO_DOCUMENTO_CESE)
+                                    @Html.TextBoxFor(model => model.personaModalidad.V_NRO_DOCUMENTO_CESE, new { @id = "V_NRO_DOCUMENTO_CESE", @disabled = Model.personaModalidad.C_ACTIVO.ToUpper() == "N" ? "disabled" : "" })
                                 </div>
                                 <div class="form-row-cell">
-                                    @Html.TextBoxFor(model => model.personaModalidad.D_FECHA_SECE)
+                                 
+                                    @*@Html.TextBoxFor(model => model.personaModalidad.D_FECHA_SECE,
+
+                              new { @id = "D_FECHA_SECE" },)*@
+
                                 </div>
 
                             </div>
@@ -110,7 +147,20 @@
                             </div>
                             <div class="form-row">
                                 <div class="" style="width:95%">
-                                    @Html.TextAreaFor(model => model.personaModalidad.V_MOTIVO_CESE_CONTRATO, htmlAttributes: new { @class = "empty observacion" })
+                                    @Html.TextAreaFor(model => model.personaModalidad.V_MOTIVO_CESE_CONTRATO,
+                                      Model.personaModalidad.C_ACTIVO.ToUpper() == "N" ?
+                                    (object)new
+                                    {
+                                        @class = "empty observacion",
+                                        @id = "V_MOTIVO_CESE_CONTRATO",
+                                        @disabled = ""
+                                    } :
+                                    (object)new
+                                    {
+                                        @class = "empty observacion",
+                                        @id = "V_MOTIVO_CESE_CONTRATO"
+                                    }
+                                  )
                                 </div>
                             </div>
                         </div>
@@ -136,14 +186,14 @@
                             </div>
                             <div class="form-row">
                                 <div class="form-row-cell title-cell-bold">
-                                    @Html.TextBoxFor(model => model.institucion.V_DES_INSTITUCION)
+                                    @Html.TextBoxFor(model => model.institucion.V_DES_INSTITUCION, htmlAttributes: new { @disabled = "disabled" })
                                 </div>
                                 <div class="form-row-cell title-cell-bold">
-                                    @Html.TextBoxFor(model => model.gradoMilitar.V_DES_GRADO)
+                                    @Html.TextBoxFor(model => model.gradoMilitar.V_DES_GRADO, htmlAttributes: new { @disabled = "disabled" })
                                 </div>
                                 <div class="form-row-cell title-cell-bold">
                                     <div class="form-row-cell">
-                                        @Html.DropDownListFor(model => model.personaGrado.I_COD_SITUACION_MILITAR, new SelectList(Model.situacionMilitar, "I_COD_SITUACION_MILITAR", "V_DES_TIPO_SITUACION", Model.personaGrado.I_COD_SITUACION_MILITAR), "--SELECT--", new { @disabbled = "disabled" })
+                                        @Html.DropDownListFor(model => model.personaGrado.I_COD_SITUACION_MILITAR, new SelectList(Model.situacionMilitar, "I_COD_SITUACION_MILITAR", "V_DES_TIPO_SITUACION", Model.personaGrado.I_COD_SITUACION_MILITAR), "--SELECT--", new { @disabled = "disabled", @id = "I_COD_SITUACION_MILITAR" })
                                     </div>
                                 </div>
                             </div>
@@ -153,27 +203,24 @@
                                 <div class="form-row-cell title-cell-bold">
                                     @Html.LabelFor(model => model.personaGrado.D_FECHA_BAJA)
                                 </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-row-cell">
-                                    @Html.TextBoxFor(model => model.personaGrado.D_FECHA_BAJA)
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="form-content">
-                            <div class="form-row">
                                 <div class="form-row-cell title-cell-bold">
                                     @Html.LabelFor(model => model.personaGrado.V_OBSERVACION_ANULACION)
                                 </div>
-                                <div class="" style="width:95%">
-                                    @Html.TextAreaFor(model => model.personaGrado.V_OBSERVACION_ANULACION, htmlAttributes: new { @class = "empty observacion" })
+                            </div>
+                            <div class="form-row">
+                                <div class="form-row-cell">
+                                    @Html.TextBoxFor(model => model.personaGrado.D_FECHA_BAJA, htmlAttributes: new { @disabled = "disabled" })
+                                </div>
+                                <div class="form-row-cell" style="width:62%">
+                                    @Html.TextBoxFor(model => model.personaGrado.V_OBSERVACION_ANULACION, htmlAttributes: new { @disabled = "disabled" })
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script src="~/Scripts/pages/EmployeesJS/_DesactivarEmpleado.js"></script>
 }

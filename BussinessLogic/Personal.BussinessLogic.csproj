@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="areaBL.cs" />
     <Compile Include="MaInstanciaBL.cs" />
+    <Compile Include="maTipoDocumentoBL.cs" />
     <Compile Include="maTipoEmpleadoBL.cs" />
     <Compile Include="mesesBL.cs" />
     <Compile Include="peopleChargeBL.cs" />

@@ -42,6 +42,7 @@
     <Compile Include="IArea.cs" />
     <Compile Include="IGradoMilitarRepository.cs" />
     <Compile Include="IMaInstanciaRepository.cs" />
+    <Compile Include="IMaTipoDocumentoRepository.cs" />
     <Compile Include="IMatipoEmpleadoRepository.cs" />
     <Compile Include="IMesesRepository.cs" />
     <Compile Include="IPeopleCharge.cs" />

@@ -295,6 +295,7 @@
     <Content Include="Scripts\pages\EmployeesJS\detailsJS.js" />
     <Content Include="Scripts\pages\EmployeesJS\Index.js" />
     <Content Include="Scripts\pages\EmployeesJS\_create.js" />
+    <Content Include="Scripts\pages\EmployeesJS\_DesactivarEmpleado.js" />
     <Content Include="Scripts\pages\EstudiesJS\indexJS.js" />
     <Content Include="Scripts\pages\FamiliaresJS\indexJS.js" />
     <Content Include="Scripts\pages\HomeJS.js" />

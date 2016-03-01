@@ -14,7 +14,55 @@ namespace Personal.DataAccess
 {
     public class peopleModalidadDA
     {
+        public int DesactivarPersonal(string vCodigoPersona,
+            string vTipoBaja,
+            DateTime dFechaCese,
+            string vTexto,
+            int iCodigoTipoEmpleado,
+            string vDescripcionTipoEmpleado,
+            string vDescripcionTipoDocumento,
+            string vNumeroDocumento,
+            int iCodigoTipoDocumento
+            )
+        {
+            int resultado = 0;
+            Database db = DatabaseFactory.CreateDatabase(ConfigurationManager.AppSettings["conecion"].ToString());
+            DbConnection cone = db.CreateConnection();
+            cone.Open();
+            using (DbTransaction trans = cone.BeginTransaction())
+            {
+                try
+                {
+                    DbCommand cmd = db.GetStoredProcCommand("[RRHH_SP_DESACTIVAR_EMPLEADO]");
+                    db.AddInParameter(cmd, "C_COD_PERSONA", DbType.String, vCodigoPersona);
+                    db.AddInParameter(cmd, "vTipoBaja", DbType.String, vTipoBaja);
+                    db.AddInParameter(cmd, "D_FEC_CESE", DbType.Date, dFechaCese);
+                    db.AddInParameter(cmd, "V_TEXTO", DbType.String, vTexto);
+                    db.AddInParameter(cmd, "iCodigoTipoEmpleado", DbType.Int32, iCodigoTipoEmpleado);
+                    db.AddInParameter(cmd, "vDescripcionTipoEmpleado", DbType.String, vDescripcionTipoEmpleado);
+                    db.AddInParameter(cmd, "V_DES_TIPO_DOCUMENTO", DbType.String, vDescripcionTipoDocumento);
+                    db.AddInParameter(cmd, "V_N_DOCUMENTO", DbType.String, vNumeroDocumento);
+                    db.AddInParameter(cmd, "I_COD_TIPO_DOCUMENTO_CESE", DbType.Int32, iCodigoTipoDocumento);
+                    resultado = db.ExecuteNonQuery(cmd, trans);
+                    trans.Commit();
+                }
+                catch (Exception ex)
+                {
 
+                    trans.Rollback();
+                }
+                finally
+                {
+                    if (cone.State == ConnectionState.Open)
+                    {
+                        cone.Close();
+                    }
+
+                }
+            }
+            return resultado;
+
+        }
         public ModalidadPersonal ModalidadActualPersona(string vCodigoPersona)
         {
 
@@ -44,7 +92,7 @@ namespace Personal.DataAccess
                     entity.personaModalidad.V_MOTIVO_CESE_CONTRATO = lee["V_MOTIVO_CESE_CONTRATO"].ToString();
                     entity.personaModalidad.C_ACTIVO = lee["C_ACTIVO"].ToString();
                     entity.personaGrado.D_FECHA_BAJA = lee["D_FECHA_BAJA"].ToString() == "" ? null : (DateTime?)Convert.ToDateTime(lee["D_FECHA_BAJA"].ToString());
-                    entity.personaGrado.V_OBSERVACION = lee["V_OBSERVACION"].ToString();
+                    entity.personaGrado.V_OBSERVACION_ANULACION = lee["V_OBSERVACION_ANULACION"].ToString();
                 }
 
             }

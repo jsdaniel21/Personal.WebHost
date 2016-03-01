@@ -15,6 +15,7 @@ using Newtonsoft.Json;
 using System.Dynamic;
 using BussinessLogic;
 using System.Configuration;
+using Personal.BussinessEntity;
 
 using Personal.Interfaces;
 
@@ -29,7 +30,7 @@ namespace BussinessLogic.WebHost.Controllers
         private readonly IPeopleDomicilio IPeopleDomicilio;
         private readonly IPeopleTravel IPeopleTravel;
         private readonly IMaInstanciaRepository _IMaInstanciaRepository;
-         
+        private readonly IMaTipoDocumentoRepository _IMaTipoDocumentoRepository;
         public EmployeesController()
             : this(new personaBL())
         {
@@ -41,6 +42,7 @@ namespace BussinessLogic.WebHost.Controllers
             this.IPeopleDomicilio = new peopleDomicilioBL();
             this.IPeopleTravel = new peopleTravelBL();
             this._IMaInstanciaRepository = new MaInstanciaBL();
+            this._IMaTipoDocumentoRepository = new maTipoDocumentoBL();
             this._IPeopleModalidadRepository = new peopleModalidadBL();
         }
         /// <summary>
@@ -57,19 +59,25 @@ namespace BussinessLogic.WebHost.Controllers
             DesactivarEmpleadoVM model = new DesactivarEmpleadoVM();
             model.tipoEmpleado.V_DES_TIPO_EMPLEADO = modalidadActual.tipoEmpleado.V_DES_TIPO_EMPLEADO;
             model.tipoModalidad.V_DES_TIPO_MODALIDA = modalidadActual.tipoModalidad.V_DES_TIPO_MODALIDA;
+            model.tipoDocumento = _IMaTipoDocumentoRepository.GetAll<MA_TIPO_DOCUMENTO>();
+
+            model.vTipoDocumeto = _IMaTipoDocumentoRepository.GetById<MA_TIPO_DOCUMENTO>(modalidadActual.personaModalidad.I_COD_TIPO_DOCUMENTO_INGRESO).V_DES_TIPO_DOCUMENTO;
             model.personaModalidad.I_COD_TIPO_DOCUMENTO_INGRESO = modalidadActual.personaModalidad.I_COD_TIPO_DOCUMENTO_INGRESO;
-            model.personaModalidad.V_NRO_DOCUMENTO_INGRESO = modalidadActual.personaModalidad.V_NRO_DOCUMENTO_INGRESO; 
+            model.personaModalidad.V_NRO_DOCUMENTO_INGRESO = modalidadActual.personaModalidad.V_NRO_DOCUMENTO_INGRESO;
             model.personaModalidad.D_FECHA_CONTRATO = modalidadActual.personaModalidad.D_FECHA_CONTRATO;
             model.personaModalidad.I_COD_TIPO_DOCUMENTO_CESE = modalidadActual.personaModalidad.I_COD_TIPO_DOCUMENTO_CESE;
-            model.personaModalidad.V_NRO_DOCUMENTO_CESE = modalidadActual.personaModalidad.V_NRO_DOCUMENTO_CESE; 
-            model.personaModalidad.D_FECHA_SECE = modalidadActual.personaModalidad.D_FECHA_SECE;             
+            model.personaModalidad.V_NRO_DOCUMENTO_CESE = modalidadActual.personaModalidad.V_NRO_DOCUMENTO_CESE;
+            model.personaModalidad.D_FECHA_SECE = modalidadActual.personaModalidad.D_FECHA_SECE;
             model.personaModalidad.V_MOTIVO_CESE_CONTRATO = modalidadActual.personaModalidad.V_MOTIVO_CESE_CONTRATO;
+            model.personaModalidad.C_ACTIVO = modalidadActual.personaModalidad.C_ACTIVO;
 
             model.institucion.V_DES_INSTITUCION = modalidadActual.institucion.V_DES_INSTITUCION;
             model.gradoMilitar.V_DES_GRADO = modalidadActual.vDescripcionGrado;
             model.situacionMilitar = _IPersona.listarSituacionMilitar();
             model.personaGrado.I_COD_SITUACION_MILITAR = modalidadActual.situacionMilitar.I_COD_SITUACION_MILITAR;
-             
+            model.personaGrado.D_FECHA_BAJA = modalidadActual.personaGrado.D_FECHA_BAJA;
+            model.personaGrado.V_OBSERVACION_ANULACION = modalidadActual.personaGrado.V_OBSERVACION_ANULACION;
+            
 
             return PartialView(model);
 
@@ -164,6 +172,18 @@ namespace BussinessLogic.WebHost.Controllers
         /// <param name="codInstitucion"></param>
         /// <returns></returns>
         #region Json
+        [HttpPost]
+        public ActionResult desactivarEmpleado(string vCodigoPersona, string vTipoBaja, string vFechaCese, string vTexto,
+            int iCodigoTipoEmpleado,
+            string vDescricionTipoEmpleado,
+            string vDescripcionTipoDocumentoCese,
+            string vNumeroDocumenCese,
+            int iCodigoTipoDocumentoCese)
+        {
+
+            return Json(_IPeopleModalidadRepository.DesactivarPersonal(vCodigoPersona, vTipoBaja, Convert.ToDateTime(vFechaCese), vTexto, iCodigoTipoEmpleado, vDescricionTipoEmpleado, vDescripcionTipoDocumentoCese, vNumeroDocumenCese,iCodigoTipoDocumentoCese)
+                , JsonRequestBehavior.AllowGet);
+        }
         public ActionResult personaIdentificacion(RRHH_PERSONA_IDENTIFICACION entity, string op)
         {
             var count = 0;

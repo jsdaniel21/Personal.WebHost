@@ -1,14 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
-using System.Collections;
+using System.Web.WebPages;
+using System.Web.Profile;
+using System.Globalization;
 using System.Linq.Expressions;
+using System.Web.Mvc.Html;
+using System.Web.Routing;
 
-namespace BussinessLogic.WebHost
+
+namespace Personal.WebHost
 {
+   
     public static class HtmlExtensions
     {
 
@@ -18,6 +24,14 @@ namespace BussinessLogic.WebHost
             name = helper.ViewContext.ViewData.TemplateInfo.GetFullHtmlFieldName(name);
             var metadata = ModelMetadataProviders.Current.GetMetadataForProperty(null, typeof(TClass), name);
             return new MvcHtmlString(metadata.DisplayName);
+        }
+
+        public static MvcHtmlString MyTextBoxFor<TModel, TProperty>(this HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TProperty>> expression, object htmlAttributes, bool disabled)
+        {
+            var attributes = new RouteValueDictionary(htmlAttributes);
+            if (disabled)
+                attributes["disabled"] = "disabled";
+            return htmlHelper.TextBoxFor(expression, htmlAttributes);
         }
     }
 }

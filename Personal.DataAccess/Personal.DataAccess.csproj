@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="areaDA.cs" />
     <Compile Include="MaInstanciaDA.cs" />
+    <Compile Include="MaTipoDoumentoDA.cs" />
     <Compile Include="maTipoEmpleadoDA.cs" />
     <Compile Include="mesesDA.cs" />
     <Compile Include="peopleChargeDA.cs" />
