@@ -13,6 +13,13 @@
     }
 
 }
+
+@helper IfSituacionAdmin(string vActivo)
+{
+    string style = vActivo.ToUpper() == "S" ? "#5D905A" : "#D82222";
+    string html = vActivo.ToUpper() == "S" ? "LABORANDO" : "NO LABORANDO";
+    @MvcHtmlString.Create("<div style='background-color:" + style + "'>Situacion Adm.</div><div style='background-color:" + style + "'>" + html + "</div>")
+}
 <link href="~/Content/_LayoutSite/HomeAvatarStyle.css" rel="stylesheet" />
 <style type="text/css">
     body > div#aux-foreground {
@@ -211,6 +218,9 @@
                 <div class="data-employees-separate" style=" background: transparent;"></div>
                 <div class="data-employees-academic">
                     <div class="data-employees-row">
+                        @IfSituacionAdmin(Model.clsPeopleModalidad.C_ACTIVO)
+                    </div>
+                    <div class="data-employees-row">
                         <div>D.N.I</div>
                         <div>@Html.DisplayFor(model => model.clsPeopleIdentification.V_NUM_DOCUMENTO)</div>
                     </div>
@@ -300,7 +310,8 @@
 
             @*@IfActivo(Model.clsPeopleModalidad.C_ACTIVO)*@
 
-            if (Model.clsPeopleModalidad.C_ACTIVO.ToUpper() == "N" && item.clsMenuSistema.C_COD_MENU.ToUpper() == "058-DESC")
+            if (Model.clsPeopleModalidad.C_ACTIVO.ToUpper() == "N" && item.clsMenuSistema.C_COD_MENU.ToUpper() == "058-DESC" ||
+                Model.clsPeopleModalidad.C_ACTIVO.ToUpper() == "S" && item.clsMenuSistema.C_COD_MENU.ToUpper() == "059-ACEM")
             {
                 continue;
             }
