@@ -1,4 +1,5 @@
 ﻿@model Personal.ViewModels.DesactivarEmpleadoVM
+@using Personal.WebHost.Helper;
 
 @using (Html.BeginForm())
 {
@@ -124,16 +125,17 @@
                                     @Html.DropDownListFor(model => model.personaModalidad.I_COD_TIPO_DOCUMENTO_CESE,
                                     new SelectList(Model.tipoDocumento, "I_COD_TIPO_DOCUMENTO", "V_DES_TIPO_DOCUMENTO")
                                     , "--SELECT--"
-                                    , new { @id = "I_COD_TIPO_DOCUMENTO_CESE", @disabled = Model.personaModalidad.C_ACTIVO.ToUpper() == "N" ? "disabled" : "" })
+                                    , new { @id = "I_COD_TIPO_DOCUMENTO_CESE" }
+                                    , Model.personaModalidad.C_ACTIVO.ToUpper() == "N" ? true : false)
 
                                 </div>   <div class="form-row-cell">
-                                    @Html.TextBoxFor(model => model.personaModalidad.V_NRO_DOCUMENTO_CESE, new { @id = "V_NRO_DOCUMENTO_CESE", @disabled = Model.personaModalidad.C_ACTIVO.ToUpper() == "N" ? "disabled" : "" })
+                                    @Html.TextBoxFor(model => model.personaModalidad.V_NRO_DOCUMENTO_CESE, new { @id = "V_NRO_DOCUMENTO_CESE" }, Model.personaModalidad.C_ACTIVO.ToUpper() == "N" ? true : false)
                                 </div>
                                 <div class="form-row-cell">
-                                 
+                                    @Html.TextBoxFor(model => model.personaModalidad.D_FECHA_SECE, new { @id = "D_FECHA_SECE" }, Model.personaModalidad.C_ACTIVO.ToUpper() == "N" ? true : false)
                                     @*@Html.TextBoxFor(model => model.personaModalidad.D_FECHA_SECE,
 
-                              new { @id = "D_FECHA_SECE" },)*@
+                                        new { @id = "D_FECHA_SECE" },)*@
 
                                 </div>
 

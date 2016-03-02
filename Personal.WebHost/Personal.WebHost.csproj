@@ -139,7 +139,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="helper.cs" />
-    <Compile Include="Helper\fechasHelper.cs" />
+    <Compile Include="Helper\ExtensionHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Report\dtsPersonal.cs">
       <DependentUpon>dtsPersonal.xsd</DependentUpon>
