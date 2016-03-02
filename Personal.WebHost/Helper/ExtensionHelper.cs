@@ -15,14 +15,14 @@ namespace Personal.WebHost.Helper
     {
         public static MvcHtmlString DropDownListFor<TModel, TProperty>(this HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TProperty>> expression, IEnumerable<SelectListItem> selectList, string optionLabel, object htmlAttributes, bool disabled)
         {
-            Func<TModel, TProperty> method = expression.Compile();
-            string value = method(htmlHelper.ViewData.Model) as string;
+            //Func<TModel, TProperty> method = expression.Compile();
+            //string value = method(htmlHelper.ViewData.Model) as string;
 
             var attributes = new RouteValueDictionary(htmlAttributes);
             if (disabled)
                 attributes["disabled"] = "disabled";
 
-            return htmlHelper.DropDownListFor(expression, selectList, optionLabel, attributes, disabled);
+            return htmlHelper.DropDownListFor(expression, selectList, optionLabel, attributes);
         }
         public static MvcHtmlString TextBoxFor<TModel, TProperty>(this HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TProperty>> expression, object htmlAttributes, bool disabled)
         {
