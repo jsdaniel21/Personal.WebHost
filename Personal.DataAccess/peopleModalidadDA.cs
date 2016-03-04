@@ -99,6 +99,46 @@ namespace Personal.DataAccess
 
             return entity;
         }
+
+
+        public List<ModalidadPersonal> ListarModalidadesXpersona(string vCodigoPersona)
+        {
+            List<ModalidadPersonal> lista = new List<ModalidadPersonal>();
+            Database db = DatabaseFactory.CreateDatabase(ConfigurationManager.AppSettings["conecion"].ToString());
+            DbCommand cmd = db.GetStoredProcCommand("[RRHH_SP_BUSCAR_MODALIDAD_ACTUAL_X_PERSONA]");
+            db.AddInParameter(cmd, "C_COD_PERSONA", DbType.String, vCodigoPersona);
+
+            using (IDataReader lee = db.ExecuteReader(cmd))
+            {
+                while (lee.Read())
+                {
+                    ModalidadPersonal entity = new ModalidadPersonal();
+
+                    entity.persona.C_COD_PERSONA = lee["C_COD_PERSONA"].ToString();
+                    entity.institucion.V_DES_INSTITUCION = lee["V_DES_INSTITUCION"].ToString();
+                    entity.situacionMilitar.I_COD_SITUACION_MILITAR = lee["I_COD_SITUACION_MILITAR"].ToString() == "" ? 0 : Convert.ToInt32(lee["I_COD_SITUACION_MILITAR"]);
+                    entity.tipoModalidad.I_COD_TIPO_MODALIDAD = Convert.ToInt32(lee["I_COD_TIPO_MODALIDAD"].ToString());
+                    entity.tipoModalidad.V_DES_TIPO_MODALIDA = lee["V_DES_TIPO_MODALIDA"].ToString();
+                    entity.tipoEmpleado.I_COD_TIPO_EMPLEADO = Convert.ToInt32(lee["I_COD_TIPO_EMPLEADO"].ToString());
+                    entity.tipoEmpleado.V_DES_TIPO_EMPLEADO = lee["V_DES_TIPO_EMPLEADO"].ToString();
+                    entity.vDescripcionGrado = lee["GRADO"].ToString();
+                    entity.vDescripcionArma = lee["ARMA"].ToString();
+                    entity.personaModalidad.I_COD_TIPO_DOCUMENTO_INGRESO = lee["I_COD_TIPO_DOCUMENTO_INGRESO"].ToString() == "" ? null : (int?)Convert.ToInt32(lee["I_COD_TIPO_DOCUMENTO_INGRESO"].ToString());
+                    entity.personaModalidad.V_NRO_DOCUMENTO_INGRESO = lee["V_NRO_DOCUMENTO_INGRESO"].ToString();
+                    entity.personaModalidad.D_FECHA_CONTRATO = lee["D_FECHA_CONTRATO"].ToString() == "" ? null : (DateTime?)Convert.ToDateTime(lee["D_FECHA_CONTRATO"].ToString());
+                    entity.personaModalidad.I_COD_TIPO_DOCUMENTO_CESE = lee["I_COD_TIPO_DOCUMENTO_CESE"].ToString() == "" ? null : (int?)Convert.ToInt32(lee["I_COD_TIPO_DOCUMENTO_CESE"].ToString());
+                    entity.personaModalidad.V_NRO_DOCUMENTO_CESE = lee["V_NRO_DOCUMENTO_CESE"].ToString();
+                    entity.personaModalidad.D_FECHA_SECE = lee["D_FECHA_SECE"].ToString() == "" ? null : (DateTime?)Convert.ToDateTime(lee["D_FECHA_SECE"].ToString());
+                    entity.personaModalidad.V_MOTIVO_CESE_CONTRATO = lee["V_MOTIVO_CESE_CONTRATO"].ToString();
+                    entity.personaModalidad.C_ACTIVO = lee["C_ACTIVO"].ToString();
+                    entity.personaGrado.D_FECHA_BAJA = lee["D_FECHA_BAJA"].ToString() == "" ? null : (DateTime?)Convert.ToDateTime(lee["D_FECHA_BAJA"].ToString());
+                    entity.personaGrado.V_OBSERVACION_ANULACION = lee["V_OBSERVACION_ANULACION"].ToString();
+
+                    lista.Add(entity);
+                }
+                return lista;
+            }
+        }
         //public List<DetallePersonaModalidadRpt> RptListarModalidad(string vCodigoPersona)
         //{
 

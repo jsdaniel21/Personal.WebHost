@@ -9,7 +9,7 @@ namespace Personal.Models
 {
     public partial class personaModalidadModel
     {
-        [Display(Name="Fecha de Contrato")]
+        [Display(Name="Fec.Contrato")]
         [DataType(DataType.DateTime)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime D_FECHA_CONTRATO;

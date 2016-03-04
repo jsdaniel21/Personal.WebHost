@@ -68,3 +68,10 @@ C:\Users\jsalinas.fmp\Desktop\bk-personal\Personal250216\Personal.EntityQuerys\b
 C:\Users\jsalinas.fmp\Desktop\bk-personal\Personal250216\Personal.EntityQuerys\obj\Debug\Personal.ViewModels.csprojResolveAssemblyReference.cache
 C:\Users\jsalinas.fmp\Desktop\bk-personal\Personal250216\Personal.EntityQuerys\obj\Debug\Personal.ViewModels.dll
 C:\Users\jsalinas.fmp\Desktop\bk-personal\Personal250216\Personal.EntityQuerys\obj\Debug\Personal.ViewModels.pdb
+C:\Users\jsalinas.fmp\Desktop\bk-personal\Personal030316\Personal.EntityQuerys\bin\Debug\Personal.ViewModels.dll
+C:\Users\jsalinas.fmp\Desktop\bk-personal\Personal030316\Personal.EntityQuerys\bin\Debug\Personal.ViewModels.pdb
+C:\Users\jsalinas.fmp\Desktop\bk-personal\Personal030316\Personal.EntityQuerys\bin\Debug\Personal.BussinessEntity.dll
+C:\Users\jsalinas.fmp\Desktop\bk-personal\Personal030316\Personal.EntityQuerys\bin\Debug\Personal.BussinessEntity.pdb
+C:\Users\jsalinas.fmp\Desktop\bk-personal\Personal030316\Personal.EntityQuerys\obj\Debug\Personal.ViewModels.csprojResolveAssemblyReference.cache
+C:\Users\jsalinas.fmp\Desktop\bk-personal\Personal030316\Personal.EntityQuerys\obj\Debug\Personal.ViewModels.dll
+C:\Users\jsalinas.fmp\Desktop\bk-personal\Personal030316\Personal.EntityQuerys\obj\Debug\Personal.ViewModels.pdb

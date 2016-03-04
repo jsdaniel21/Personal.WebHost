@@ -20,11 +20,11 @@
             })
         },
         listarGradoMilitarXinstitucion: function (target, codInstitucion, callback) {
- 
+
             $.ajax({
                 type: "GET",
                 url: '/MaGradoMilitar/listarGradoMilitarXinstitucion',
-               // contentType: "application/json; charset=utf-8",
+                // contentType: "application/json; charset=utf-8",
                 data: { iCodigoInstitucion: codInstitucion },
                 dataType: 'json',
                 success: function (e) {
@@ -33,12 +33,18 @@
             })
         },
         saveEmployees: function (IICdentificacion) {
+
+            $('form').find('select[disabled]').addClass('disabled');
+            $('form').find('select[disabled]').removeAttr('disabled')
+
             var serialize = $('form').serialize() + '&IICdentificacion=' + JSON.stringify(IICdentificacion);
             $.ajax({
                 type: "POST",
                 url: "/Employees/saveEmployees",
                 data: serialize,
                 success: function (e) {
+                    $('form').find('select[class*="disabled"]').removeClass('disabled');
+
                     if (e > 0) {
                         location.href = "Index"
                     }
@@ -47,6 +53,8 @@
         }
     }
     var ctrl = {
+        rdbCivil: $('#rdbCivil'),
+        rdbMilitar: $('#rdbMilitar'),
         p_headerPopup: $('p.aux-popup-header'),
         h2_TitlePopup: $('h2.PopUp-title-form'),
         d_containerIcoPopup: $('div.popup-footer-ico'),
@@ -166,10 +174,12 @@
                 $('#pageCount').html(_pageCurrent);
             };
             this.setEventsTags = function () {
-                ctrl.s_cboInstitucion.change(this.changeOptions)
+                ctrl.s_cboInstitucion.change(this.changeOptionsInstitucion)
                 ctrl.a_dataAddItem.click(this.clickAddInputItem)
                 ctrl.r_boolGrade.click(this.checkedRadio)
-                ctrl.d_tipoEmpleado.change(this.changeOptions)
+                ctrl.d_tipoEmpleado.change(this.changeOptions);
+                ctrl.rdbCivil.click(this.click_rdbCivil)
+                ctrl.rdbMilitar.click(this.click_rdbMilitar)
             };
             this.fillSelect = function (target, e) {
                 var option = "";
@@ -268,6 +278,83 @@
             this.removeItems = function (target) {
                 target.find('option:not(:first-child)').remove();
             }
+            this.selectAvalibity = function (select) {
+                select.removeAttr('disabled');
+                select.removeAttr('style');
+            }
+            this.selectDisabled = function (select) {
+                select.css('background', '#E6E6E6')
+                select.attr('disabled', 'disabled');
+            }
+            this.clearSelect = function (select) {
+                select.find('option:not(:first-child)').remove();
+            }
+            this.disabledPorTipoEmpleado = function (iCodigoTipoEmpleado) {
+
+                that.selectAvalibity(ctrl.s_cboGrado);
+                that.clearSelect(ctrl.s_cboGrado);
+
+                ctrl.s_cboSituacionMilitar.find('option:nth-child(0n+2)').show();
+                ctrl.s_cboSituacionMilitar.val('');
+                ctrl.s_cboInstitucion.val('');
+                ctrl.rdbCivil.removeClass('rdbChecked')
+                ctrl.rdbCivil.attr('disabled', 'disabled');
+                ctrl.rdbMilitar.removeAttr('disabled', 'disabled');
+
+                switch (iCodigoTipoEmpleado) {
+                    case 100:
+                        ctrl.rdbMilitar.addClass('rdbChecked');
+
+                        that.selectDisabled(ctrl.s_cboInstitucion);
+                        that.selectDisabled(ctrl.s_cboSituacionMilitar);
+                        ctrl.s_cboSituacionMilitar.val(1);
+                        ctrl.s_cboInstitucion.val(40);
+                        ctrl.s_cboInstitucion.trigger('change');
+                        break;
+                    case 200:
+                        ctrl.rdbMilitar.addClass('rdbChecked');
+
+                        that.selectDisabled(ctrl.s_cboSituacionMilitar);
+                        that.selectAvalibity(ctrl.s_cboInstitucion);
+                        ctrl.s_cboInstitucion.find('option[value=40]').hide();
+                        ctrl.s_cboSituacionMilitar.val(1);
+                        break;
+                    case 300:
+                        $('#rdbCivil').removeAttr('disabled');
+                        $('#rdbMilitar').removeAttr('checked');
+                        $('#rdbCivil').attr('checked', 'checked')
+                        ctrl.rdbCivil.addClass('rdbChecked')
+
+                        that.selectAvalibity(ctrl.s_cboInstitucion);
+                        //that.selectDisabled(ctrl.s_cboSituacionMilitar);                         
+                        ctrl.s_cboSituacionMilitar.val('');
+                        ctrl.s_cboSituacionMilitar.find('option:nth-child(0n+2)').hide();
+                        ctrl.rdbCivil.trigger('click');
+                        break;
+                    case 400:
+
+                        $('#rdbCivil').removeAttr('disabled');
+                        $('#rdbMilitar').removeAttr('checked');
+                        ctrl.rdbCivil.addClass('rdbChecked')
+                        ctrl.rdbCivil.attr('checked', 'checked');
+                        ctrl.rdbMilitar.attr('disabled', 'disabled');
+
+                        that.selectAvalibity(ctrl.s_cboInstitucion);
+                        that.selectDisabled(ctrl.s_cboSituacionMilitar);
+                        that.selectDisabled(ctrl.s_cboGrado);
+                        ctrl.s_cboSituacionMilitar.val('');
+                        break;
+                    default:                                                  
+                        ctrl.rdbMilitar.addClass('rdbChecked')
+                        ctrl.rdbMilitar.attr('checked', 'checked');
+                        ctrl.rdbCivil.attr('disabled', 'disabled');
+
+                        that.selectAvalibity(ctrl.s_cboInstitucion);
+                        that.selectAvalibity(ctrl.s_cboSituacionMilitar);
+                        break;
+                }
+
+            }
         }
     }
 
@@ -294,15 +381,24 @@
                 that.showPageContainer(this);
                 that.setPageCount();
             },
+            changeOptionsInstitucion: function () {
+                if (that.clearItemsSelect(ctrl.s_cboGrado, $(this).val()) === true) {
+                    ws.listarGradoMilitarXinstitucion(ctrl.s_cboGrado, $(this).val(), function (target, e) {
+                        that.fillSelect(target, e);
+                        if (ctrl.d_tipoEmpleado.val() == '400') {
+                            ctrl.s_cboGrado.find('option').each(function () {
+                                if ($(this).text().toLowerCase() == 'empleado civil') {
+                                    ctrl.s_cboGrado.val($(this).val())
+                                }
+                            })
+                        }
+                    });
+                }
+
+            },
             changeOptions: function () {
-          
-                if ($(this).attr('id') == 'cboInstitucion') {              
-                    if (that.clearItemsSelect(ctrl.s_cboGrado, $(this).val()) === true)
-                        ws.listarGradoMilitarXinstitucion(ctrl.s_cboGrado, $(this).val(), that.fillSelect);
-                }
-                else if ($(this).attr('id') == 'I_COD_TIPO_EMPLEADO') {
-                    ws.lisTipoModalidad(ctrl.s_tipoModalidad, $(this).val(), that.fillSelect);
-                }
+                that.disabledPorTipoEmpleado(parseInt($(this).val()));
+                ws.lisTipoModalidad(ctrl.s_tipoModalidad, $(this).val(), that.fillSelect);
             },
 
             clickAddInputItem: function () {
@@ -321,15 +417,48 @@
             ,
             checkedRadio: function (e) {
                 that.disabledInstitucion(e);
+            },
+            click_rdbCivil: function () {
+                ctrl.rdbMilitar.removeClass('rdbChecked');
+
+                if (ctrl.rdbCivil.is(':checked') && ctrl.rdbMilitar.is(':disabled') == false) {
+                    ctrl.s_cboInstitucion.val('');
+                    ctrl.s_cboGrado.val('');
+                    ctrl.s_cboSituacionMilitar.val('');
+                    ctrl.rdbCivil.addClass('rdbChecked');
+
+                    that.selectDisabled(ctrl.s_cboInstitucion);
+                    that.selectDisabled(ctrl.s_cboGrado);
+                    that.selectDisabled(ctrl.s_cboSituacionMilitar);
+                }
+            },
+            click_rdbMilitar: function () {
+                ctrl.rdbCivil.removeClass('rdbChecked');
+
+                if (ctrl.rdbMilitar.is(':checked') && ctrl.rdbCivil.attr('disabled') != 'disabled') {
+                    ctrl.rdbMilitar.addClass('rdbChecked');
+                    ctrl.s_cboInstitucion.val('');
+                    ctrl.s_cboGrado.val('');
+                    ctrl.s_cboSituacionMilitar.val('');
+
+                    that.selectAvalibity(ctrl.s_cboInstitucion);
+                    that.selectAvalibity(ctrl.s_cboGrado);
+                    that.selectDisabled(ctrl.s_cboSituacionMilitar);
+                    ctrl.s_cboSituacionMilitar.val(2)
+                }
             }
+
         }
 
         this.clickPopUpIco = listener.clickPopUpIco;
         this.changeOptions = listener.changeOptions;
+        this.changeOptionsInstitucion = listener.changeOptionsInstitucion;
         this.clickAddInputItem = listener.clickAddInputItem;
         this.removeItemInput = listener.removeItemInput;
         this.saveEmployees = listener.saveEmployees;
         this.checkedRadio = listener.checkedRadio;
+        this.click_rdbCivil = listener.click_rdbCivil;
+        this.click_rdbMilitar = listener.click_rdbMilitar;
 
         this.initialize = function () {
             listener.initialize();

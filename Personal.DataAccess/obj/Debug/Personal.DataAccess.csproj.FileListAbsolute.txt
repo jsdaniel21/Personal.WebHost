@@ -154,3 +154,12 @@ C:\Users\jsalinas.fmp\Desktop\bk-personal\Personal260216\Personal.DataAccess\bin
 C:\Users\jsalinas.fmp\Desktop\bk-personal\Personal260216\Personal.DataAccess\obj\Debug\Personal.DataAccess.csprojResolveAssemblyReference.cache
 C:\Users\jsalinas.fmp\Desktop\bk-personal\Personal260216\Personal.DataAccess\obj\Debug\Personal.DataAccess.dll
 C:\Users\jsalinas.fmp\Desktop\bk-personal\Personal260216\Personal.DataAccess\obj\Debug\Personal.DataAccess.pdb
+C:\Users\jsalinas.fmp\Desktop\bk-personal\Personal030316\Personal.DataAccess\bin\Debug\Personal.DataAccess.dll
+C:\Users\jsalinas.fmp\Desktop\bk-personal\Personal030316\Personal.DataAccess\bin\Debug\Personal.DataAccess.pdb
+C:\Users\jsalinas.fmp\Desktop\bk-personal\Personal030316\Personal.DataAccess\bin\Debug\Personal.BussinessEntity.dll
+C:\Users\jsalinas.fmp\Desktop\bk-personal\Personal030316\Personal.DataAccess\bin\Debug\Personal.ViewModels.dll
+C:\Users\jsalinas.fmp\Desktop\bk-personal\Personal030316\Personal.DataAccess\bin\Debug\Personal.BussinessEntity.pdb
+C:\Users\jsalinas.fmp\Desktop\bk-personal\Personal030316\Personal.DataAccess\bin\Debug\Personal.ViewModels.pdb
+C:\Users\jsalinas.fmp\Desktop\bk-personal\Personal030316\Personal.DataAccess\obj\Debug\Personal.DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\jsalinas.fmp\Desktop\bk-personal\Personal030316\Personal.DataAccess\obj\Debug\Personal.DataAccess.dll
+C:\Users\jsalinas.fmp\Desktop\bk-personal\Personal030316\Personal.DataAccess\obj\Debug\Personal.DataAccess.pdb

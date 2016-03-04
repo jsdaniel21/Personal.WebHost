@@ -41,3 +41,4 @@ F:\SisLocal\Sistema Gestion RRHH\Personal.WebHost\Personal.Models\obj\Debug\Pers
 \\MELGAR\GitHub\Personal.WebHost\Personal.Models\obj\Debug\Personal.Models.csprojResolveAssemblyReference.cache
 \\MELGAR\GitHub\Personal.WebHost\Personal.Models\obj\Debug\Personal.Models.dll
 \\MELGAR\GitHub\Personal.WebHost\Personal.Models\obj\Debug\Personal.Models.pdb
+\\10.10.1.70\GitHub\Personal.WebHost\Personal.Models\obj\Debug\Personal.Models.csprojResolveAssemblyReference.cache

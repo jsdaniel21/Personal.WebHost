@@ -22,9 +22,12 @@ namespace Personal.ViewModels
             this.clsArea = new MA_AREA();
             this.clsCargo = new MA_CARGO();
             this.clsTipoEmpleado = new MA_TIPO_EMPLEADO();
+            this.clsPersonaDetalle = new RRHH_PERSONA_DETALLE();
         }
 
         public MA_TIPO_MODALIDAD clsTypeModality;
+
+        public RRHH_PERSONA_DETALLE clsPersonaDetalle;
 
         public RRHH_PERSONA clsPersona;
 

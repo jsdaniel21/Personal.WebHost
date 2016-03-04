@@ -31,6 +31,7 @@ namespace BussinessLogic.WebHost.Controllers
         private readonly IPeopleTravel IPeopleTravel;
         private readonly IMaInstanciaRepository _IMaInstanciaRepository;
         private readonly IMaTipoDocumentoRepository _IMaTipoDocumentoRepository;
+        private readonly IPeopleCharge _IPeopleChargeRepository;
         public EmployeesController()
             : this(new personaBL())
         {
@@ -44,13 +45,26 @@ namespace BussinessLogic.WebHost.Controllers
             this._IMaInstanciaRepository = new MaInstanciaBL();
             this._IMaTipoDocumentoRepository = new maTipoDocumentoBL();
             this._IPeopleModalidadRepository = new peopleModalidadBL();
+            this._IPeopleChargeRepository = new peopleChargeBL();
+
         }
         /// <summary>
         /// ACCIONES
         /// </summary>
         /// <param name="codInstitucion"></param>
         /// <returns></returns>
-
+        /// 
+        public ActionResult _ModalidadCargo()
+        {
+            return PartialView();
+        }
+        public ActionResult _ActivarEmpleado(string codMenu, string codPersona)
+        {
+            ActivarEmpleadoVM model = new ActivarEmpleadoVM();
+            model.modalidadesDelPersonal = _IPeopleModalidadRepository.ListarModalidadesXpersona(codPersona);
+            model.personaCargos = _IPeopleChargeRepository.listarAreaCargoxPersona(codPersona);
+            return PartialView(model);
+        }
         public ActionResult _DesactivarEmpleado(string codMenu, string codPersona)
         {
             ViewBag.codMenu = codMenu;
@@ -77,7 +91,7 @@ namespace BussinessLogic.WebHost.Controllers
             model.personaGrado.I_COD_SITUACION_MILITAR = modalidadActual.situacionMilitar.I_COD_SITUACION_MILITAR;
             model.personaGrado.D_FECHA_BAJA = modalidadActual.personaGrado.D_FECHA_BAJA;
             model.personaGrado.V_OBSERVACION_ANULACION = modalidadActual.personaGrado.V_OBSERVACION_ANULACION;
-            
+
 
             return PartialView(model);
 
@@ -129,6 +143,8 @@ namespace BussinessLogic.WebHost.Controllers
             ViewBag.typeIdentificacion = new SelectList(_IPersona.listTypeIdentificacion(), "I_COD_TIPO_IDENTIFICACION", "V_ABREV_IDENTIFICACION");
             ViewBag.institucion = new SelectList(_IPersona.listarInstitucionForTipo(2, 12), "I_COD_INSTITUCION", "V_DES_INSTITUCION");
             ViewBag.tipoEmpleado = new SelectList(_IPersona.listarTipoEmpleado(), "I_COD_TIPO_EMPLEADO", "V_DES_TIPO_EMPLEADO");
+            ViewBag.sexo = new SelectList(_IPersona.listarSexo(), "I_COD_SEXO", "V_DES_SEXO");
+
             return PartialView();
         }
 
@@ -181,7 +197,7 @@ namespace BussinessLogic.WebHost.Controllers
             int iCodigoTipoDocumentoCese)
         {
 
-            return Json(_IPeopleModalidadRepository.DesactivarPersonal(vCodigoPersona, vTipoBaja, Convert.ToDateTime(vFechaCese), vTexto, iCodigoTipoEmpleado, vDescricionTipoEmpleado, vDescripcionTipoDocumentoCese, vNumeroDocumenCese,iCodigoTipoDocumentoCese)
+            return Json(_IPeopleModalidadRepository.DesactivarPersonal(vCodigoPersona, vTipoBaja, Convert.ToDateTime(vFechaCese), vTexto, iCodigoTipoEmpleado, vDescricionTipoEmpleado, vDescripcionTipoDocumentoCese, vNumeroDocumenCese, iCodigoTipoDocumentoCese)
                 , JsonRequestBehavior.AllowGet);
         }
         public ActionResult personaIdentificacion(RRHH_PERSONA_IDENTIFICACION entity, string op)

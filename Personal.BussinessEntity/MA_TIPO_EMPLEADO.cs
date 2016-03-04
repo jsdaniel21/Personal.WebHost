@@ -5,9 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using BussinessEntity;
 
+using System.ComponentModel.DataAnnotations;
+using Personal.Models;
+
 namespace BussinessEntity
 {
-    public class MA_TIPO_EMPLEADO
+    [MetadataType(typeof(tipoEmpleadoModel))]
+    public partial class MA_TIPO_EMPLEADO
     {
         public MA_TIPO_EMPLEADO()
         {

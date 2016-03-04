@@ -65,6 +65,7 @@
     <Compile Include="situacionMilitarModel.cs" />
     <Compile Include="SpecialtyEducationalModel.cs" />
     <Compile Include="SpecialtyModel.cs" />
+    <Compile Include="tipoEmpleadoModel.cs" />
     <Compile Include="tipoModalidadModel.cs" />
     <Compile Include="typeFamilyModel.cs" />
     <Compile Include="TypeInstitutionModel.cs" />
